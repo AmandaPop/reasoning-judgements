@@ -1,0 +1,400 @@
+FILENAME:	2377_1041_1096
+TOPIC#:		347
+DATE:		910402
+TRANSCRIBER:	CLC
+DIFFICULTY:	1
+TOPICALITY:	1
+NATURALNESS:	1
+ECHO_FROM_B:	1
+ECHO_FROM_A:	3
+STATIC_ON_A:	2
+STATIC_ON_B:	1
+BACKGROUND_A:	2
+BACKGROUND_B:	1
+REMARKS:  	There was a consistent static hum in the background 
+throughout the conversation.
+
+=====================================================================
+
+A.1:  Well, I'm, uh, an engineer so I'm heartedly in favor of this country
+converting to metric.
+
+B.2:  I bet you are.  I bet you are.  I don't know, you know, when I was in, uh,
+when I was in high school several years ago, you know, we did probably, two,
+two or three weeks on the subject, you know, and tried to teach you the whole
+thing in two or three weeks and of course when you're that age you really
+don't care anyway and I didn't get into it very much, but then I took a, just
+a basic math class a couple of semesters ago, and we, uh, we were pretty
+heavily into the metric system and, and before we started I just thought oh,
+no, I don't want to do this, you know, this is just going to be so hard and
+once I really realized how easy it was,
+
+A.3:  Uh-huh. 
+
+B.4:  uh, it was wonderful.  I mean, it was just incredible how much simpler it
+is than what, you know, I guess we just all have this mind set that oh, this
+is so hard and we can't do this.  And it's really not hard I was surprised at
+how very easy it was.  I think most people just, uh, you know, automatically
+have their minds set against it and don't give it a chance,
+
+A.5:  #Yeah.#
+
+B.6:  #you know,# so,
+
+A.7:  Well, I think, uh, you know, from an elementary standpoint it would help to
+get rid of some of the, the oddball conversion units like,
+
+B.8:  Oh, sure. 
+
+A.9:  twelve inches to the foot and, 
+
+B.10:  #Exactly.#
+
+A.11:  #thirty-six# inches, [laughter]
+
+B.12:  #Exactly.#
+
+A.13:  #to the yard# and things like that.  But, uh,
+
+B.14:  [Noise].
+
+A.15:  I think, uh, from my work experience I found, well, wh-, in college I
+learned, uh, to use a rationalized system of measure.
+
+B.16:  Uh. 
+
+A.17:  which turned out to be the metric system ...
+
+B.18:  Uh-huh. 
+
+A.19:  And an awful lot of the problems that we did on exams and our homework
+assignments and everything else involved (( )) converting --
+
+B.20:  Uh-huh. 
+
+A.21:  -- from, uh, english units or nonstandard units into this, uh,
+rationalized M K F system.
+
+B.22:  Uh-huh.
+
+A.23:  And, uh, so I became quite accustomed to, uh, to a rationalized system and,
+and used to making all the necessary conversions.
+
+B.24:  Uh-huh. 
+
+A.25:  And since then I have discovered, uh, other engineers are very prone to
+make mistakes because they will pick up a textbook and, uh, and find some
+formula for solving a problem,
+
+B.26:  [Lipsmack].  Yeah, #uh-huh.# 
+
+A.27:  #and# they fail to realize,
+
+B.28:  [Throat_clearing].
+
+A.29:  that the formula is expressed in the, the rationalized M K F system,
+
+B.30:  Uh-huh. 
+
+A.31:  and they'll proceed to plug in inches and feet and pounds,
+
+B.32:  [Laughter]. 
+
+A.33:  and, uh, [laughter] things like that,
+
+B.34:  It just don't work [laughter].
+
+A.35:  and they come up with a funniest answers you ever, you can imagine.
+
+B.36:  I bet, I bet. 
+
+A.37:  And some of them don't realize that they've made a mistake and so, uh, you
+know, a lot of energy and, uh, a lot of work and so forth, uh, goes into
+building something only to discover it doesn't work [laughter].
+
+B.38:  Right, right.  Well, you know I think that the, that the only way that we
+are ever going to get this country switched over to metrics is just to start
+other with, with the kids right now.
+
+A.39:  #Yeah.#
+
+B.40:  #You know,# you, you, you're going to have to start with the kids who are
+in scho-, that are in when school and you're going to have to teach it well.
+Not like I was in school and do two weeks on it, in a math class and that's
+all you ever hear about it, you know.  They're going to have to start with the
+little ones and teach it right now and then when, you know, those little ones
+are our age, you know, that's what they're going to know and that's what
+they're going to use.  There's no way you're going to get, you know, most of
+the United States adult population to automatically relearn and switch,
+
+A.41:  #Yeah.# 
+
+B.42:  #you know,# it's just not going to happen that way.  But, I do think if
+they would start with the kids now, at, you know, in, you know, twenty years
+from now we could be switched over, #you know.#
+
+A.43:  #Yeah,# I kind of agree that, uh, maybe ten on or twenty years ago we
+should have gone into a, uh, sort of a dual display,
+
+B.44:  Uh-huh. 
+
+A.45:  arrangement where, you know, our, our speed limit signs were, were sort
+of a double sign with a a big miles per hour and a little kilometers per hour,
+
+B.46:  Yeah. 
+
+A.47:  type, uh, marking on the side.
+
+B.48:  #Yeah, I agree.# 
+
+A.49:  #and then# over the years the, the kilometers per hour gets bigger than
+the miles per hour [laughter],
+
+B.50:  Yeah. 
+
+A.51:  and eventually disappears. 
+
+B.52:  Very good idea, yeah, #yeah.# 
+
+A.53:  #Uh,# and, little things like that.  I, I notice in a lot of, uh, uh,
+technical literature that you pick up and catalogs and so forth that you will
+find the metric units expressed in parenthesis or sometimes the other way
+around the metric units are expressed first and then the english equivalent,
+
+B.54:  #Uh-huh.# 
+
+A.55:  #that's, uh,# is put into parenthesis,
+
+B.56:  Uh-huh. 
+
+A.57:  for reference.
+
+B.58:  Yeah, I think, I think it's going to take that but I, you know, I, I think
+it's going to take a lot more than that too, you know, it's going to take,
+it's going to take this education with o-, with our kids I really believe that
+but, you know, yo-, we, we knew that we weren't going to have to ever use it
+again.  We knew we were going to have two or three weeks of it in math class
+so why take the time to really learn it.  You know, I mean, you would, you
+know, learn enough to get by on the test and then you forgot about it because
+you knew you were never going to see it again in the rest of your years of
+school, you know, and, and that, that's not the way to convert over, you're
+going to have these kids teaching it dually even, you know, teaching both
+systems which is a lot, I know, a lot more for the teachers to have to teach
+but that's the only way they're going to get switched over, #you know,#
+
+A.59:  #Yeah.#  I think also equally important is that, uh, it needs to be put
+into practice in, #in,#
+
+B.60:  #Oh#, #yes,#
+
+A.61:  #everyday# life.
+
+B.62:  Yeah.
+
+A.63:  We're seeing a little bit of it now that you go out to work on your car and
+you discover your english wrenches don't fit,
+
+B.64:  Yeah.
+
+A.65:  [Laughter].
+
+B.66:  Yeah.  That's true too.  #That's true.#
+
+A.67:  #You've# got to go out and buy a metric #set.#
+
+B.68:  #Buy a# whole knew metric set, yeah.  Well, I think, you know it's
+something that's going to take quite some time to happen but I, I still don't
+think that they're doing all that it's going to take to make it happen, you
+know, it's going to happen slowly no matter what but there's going to have to
+be a lot more education involved than there is right now,
+
+A.69:  #Uh-huh.# 
+
+B.70:  #to get# it to, to get it to switch over. 
+
+A.71:  I was a little disappointed that, uh, United States is lagging the rest of
+the world #but,#
+
+B.72:  #Oh,# yeah.
+
+A.73:  all of the other countries in the world have made the change,
+
+B.74:  Yeah. 
+
+A.75:  and even the British, which are probably the most stodgy, 
+
+B.76:  Uh-huh.
+
+A.77:  population and the originator of our english system of measure, uh, they
+have gone metric.
+
+B.78:  Even they have switched.
+
+A.79:  #Yeah.#
+
+B.80:  #Yeah,# so.  Yeah, we're not, uh, we're not necessarily cutting edge in
+everything are we, [laughter]
+
+A.81:  Right. 
+
+B.82:  just like we think we are.  So, well I think eventually it will happen,
+you know, it's just going to take, it's just going to take a lot of education
+and a lot of time and like I said, I was just totally amazed at how, at how
+very easy it was,
+
+A.83:  Uh-huh.
+
+B.84:  you know I, I just couldn't, you know, I just, when I going into it I
+just had this block and I went there's just no way I'm going to be able to
+learn this and when I sat down and really said okay just, you know, forget
+your old prejudices and really look at it, you know, and once you look at it's
+so really simple, you know, you, there's really nothing to memorize, there's
+nothing to learn it just all works the same, you know, you just, you know,
+transform that little, you know, dot,
+
+A.85:  Yeah.
+
+B.86:  from one place, one way to the other, you know, and that's about all you
+have to do, so.  Anyway,
+
+A.87:  #I,# 
+
+B.88:  #I# think it will happen eventually. 
+
+A.89:  I think one of the other concepts that, uh, comes along with using a
+rationalized system of measure is, uh,
+
+B.90:  [Talking].
+
+A.91:  a technique of keeping track of units.
+
+B.92:  Uh-huh. 
+
+A.93:  When you're solving a problem that if you're sitting there trying to, uh,
+establish a relationship with some physical system, uh, when you come up with
+your final formula if you analyze the units of measure they should come out
+right.
+
+B.94:  Uh-huh. 
+
+A.95:  And the, the basic units of measure are, are distance and time and mass and
+electric charge.
+
+B.96:  Uh-huh. 
+
+A.97:  And so if you convert all your measure into those, uh, fundamental units
+and analyze them you can, uh, get a pretty good sense as to whether your
+formula is correct.
+
+B.98:  Uh-huh. 
+
+A.99:  Maybe you left out a factor of pi or something like that but, [laughter].
+
+B.100:  Right, right.  {Pause}.  Well, you know, I think, uh, I think it's going to
+happen.  I don't know, I don't know what else I could suggest to them, you
+know, if they ask me what should we do. I don't know, I wouldn't know what
+else to suggest to them, just education.  Start with these little kids, you
+know, and like you said, you know, start making it practice, you know, start
+showing all the street signs, and all the ca-, of course I think all the cars
+are manufactured that way, they, aren't, they aren't all of them, most of the
+new ones I'm seeing,
+
+A.101:  #Well, I,#
+
+B.102:  #are, are# made with miles per hour and kilometers on #them.#
+
+A.103:  #most# of them have, uh, the option.
+
+B.104:  Oh, really. 
+
+A.105:  The American, American made cars have, uh, the, the miles per hour as the
+big scale and they're little tick marks,
+
+B.106:  Right. 
+
+A.107:  Uh, sort of hidden on the scale which shows kilometers,
+
+B.108:  Uh-huh. 
+
+A.109:  per hour.  But those that are manufactured for sale in, in Europe, and so
+forth, are quite the other way around.
+
+B.110:  Right. 
+
+A.111:  And in a lot of the Japanese cars that come to this country particularly
+those that have the, uh, electronic panels there's a little push button some
+place on the panel that you can switch between, uh, kilometers per hour and
+miles per hour.
+
+B.112:  Is there really, huh. 
+
+A.113:  My wife's, uh, Chrysler convertible has little buttons that you can choose
+what display you want to see.
+
+B.114:  Well, that's interesting, yeah.  #Well,# 
+
+A.115:  #Yeah, I noticed# my van has a, uh, a button on the temperature gauge that
+you can switch between centigrade and fahrenheit.
+
+B.116:  Oh, that's interesting too, I had never seen that.  Yeah, you know, you
+look at most of the, you know, like the bank clocks and stuff like that, it
+tells you, you know, fahrenheit and centigrade and it's going take those kinds
+of things, you know, so sure, you know, (( )) getting us all accustomed to
+seeing both, you know.
+
+A.117:  Yeah.
+
+B.118:  But, most people don't pay any attention, you know, it's going to take
+some education right along with it, most people don't know what that means,
+#you know.#
+
+A.119:  #Well,#
+
+B.120:  So,
+
+A.121:  we also need to be a little bit careful and maybe we start to not use the
+english measure anymore like when you listen to the weather forecast the, the
+weather man may give the temperature in centigrade and fahrenheit and
+everybody ignores the centigrade and #listens,#
+
+B.122:  #That's right,#
+
+A.123:  to the fahrenheit,
+
+B.124:  because that's what they're familiar with.
+
+A.125:  and we, we sort of have to get accustomed to the fact that our body
+temperature is thirty-seven degrees centigrade.
+
+B.126:  Right. 
+
+A.127:  [Laughter]. 
+
+B.128:  That's going to be hard to do.
+
+A.129:  Yes.
+
+B.130:  It's going to be very hard to do.  #You know you,#
+
+A.131:  #and that it's# a nice day when it's twenty-five degrees outside
+[laughter],
+
+B.132:  [Laughter].  You know, I'm so used to saying oh, my babies got a hundred
+and three degree fever and, you know, just say it's thirty-nine is not just
+going to sound very bad [laughter].
+
+A.133:  Yeah, the Europeans think that you're baby is boiling over [laughter].
+
+B.134:  That's right, that's right your baby's still alive with (( )) [laughter].
+So, yeah, it's going to take a changing lot of our old prejudices and, you
+know, just making up our minds that yes we are going to do this and we're just
+going to forgot this old way and we're just going to do it,
+
+A.135:  #Yeah.# 
+
+B.136:  #you know,# and I don't think the older generation is probably
+ready to do that, you know. (( )) 
+
+A.137:  No, I hope we get to the point where maybe a couple of generations from now
+when somebody reads the old adage ...
+
