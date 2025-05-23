@@ -14,7 +14,7 @@ complete: function(results) {
 });
 
 function startExperiment() {
-  const jsPsych = initJsPsych(); 
+  const jsPsych = initJsPsych({ display_element: 'jspsych-target' }); 
 
   var trial = {
     type: jsPsychHtmlSliderResponse,
