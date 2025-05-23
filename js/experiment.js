@@ -8,7 +8,7 @@ complete: function(results) {
     target: `<p>${row.target}</p>`,
     context: `<p>${row.context}</p>`
     }));
-
+    console.log('Stimuli loaded:', stimuli);
     startExperiment(); 
 }
 });
@@ -21,9 +21,7 @@ function startExperiment() {
     stimulus: function() {
       return jsPsych.timelineVariable('target');
     },
-    prompt: function() {
-      return jsPsych.timelineVariable('context');
-    },
+
     labels: ['0', '100'],
     require_movement: true,
     button_label: 'Continue'
