@@ -1,6 +1,6 @@
 var stimuli = [];
 
-Papa.parse('data_csv/think_wiki.csv', {
+Papa.parse('data_csv/believe_wiki.csv', {
 download: true,
 header: true,
 complete: function(results) {
@@ -14,27 +14,29 @@ complete: function(results) {
 });
 
 function startExperiment() {
-var trial = {
+  const jsPsych = initJsPsych(); 
+
+  var trial = {
     type: jsPsychHtmlSliderResponse,
     stimulus: function() {
-    return jsPsych.timelineVariable('target');
+      return jsPsych.timelineVariable('target');
     },
     prompt: function() {
-    return jsPsych.timelineVariable('context');
+      return jsPsych.timelineVariable('context');
     },
     labels: ['0', '100'],
     require_movement: true,
     button_label: 'Continue'
-};
+  };
 
-var trial_procedure = {
+  var trial_procedure = {
     timeline: [trial],
     timeline_variables: stimuli,
     randomize_order: true
-};
+  };
 
-var timeline = [];
-timeline.push(trial_procedure);
+  var timeline = [];
+  timeline.push(trial_procedure);
 
-jsPsych.run(timeline);
+  jsPsych.run(timeline); 
 }
