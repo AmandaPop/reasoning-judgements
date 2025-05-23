@@ -12,7 +12,7 @@ function shuffleArray(array) {
 //Function for sampling from random order of data//
 function random_sample(arr, n) {
     shuffled = shuffleArray(arr)
-    return shuffled = arr.slice(0, n)
+    return shuffled.slice(0, n)
 }
 
 //Loads the csv data//
