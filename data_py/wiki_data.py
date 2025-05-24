@@ -13,7 +13,7 @@ def get_corpus(ds, max_sentences=10):
 
     for entry in full_corpus:
         text = entry['text']
-        if 'think' in text or 'thinks' in text or 'thought' in text:
+        if 'believe' in text:
             sentences = text.split('\n')
             if len(sentences) > 20:
                 pass
@@ -72,8 +72,8 @@ def write_csv(filename, sentences):
 
 if __name__ == "__main__":
     corpus = get_corpus(ds)
-    sentences = get_sentences(corpus, 'think')
-    #final_sentences = remove_believe_in(sentences)
-    write_csv('think_wiki.csv', sentences)
+    sentences = get_sentences(corpus, 'believe')
+    final_sentences = remove_believe_in(sentences)
+    write_csv('think_wiki.csv', final_sentences)
     end_time = time.time()
     print("Total Time to get through all entries:", end_time - start_time)
