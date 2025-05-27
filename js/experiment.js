@@ -16,7 +16,7 @@ function random_sample(arr, n) {
 }
 
 //Loads the csv data//
-Papa.parse('data_csv/think_wiki.csv', {
+Papa.parse('data_csv/think_nq_wiki.csv', {
 download: true,
 header: true,
 complete: function(results) {
