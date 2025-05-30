@@ -1,7 +1,7 @@
 var stimuli = [];
 
-const expID = cmnR4NDGseyo // this experiment ID is from DataPipe
-//see if you can change this later to get the ID from prolific 
+const expID = cmnR4NDGseyo // this experiment ID is from DataPipe//
+//see if you can change this later to get the ID from prolific //
 const participantID = jsPsych.randomization.randomID(10);
 jsPsych.data.addProperties({participant_id: participant_id});
 
@@ -14,7 +14,7 @@ function shuffleArray(array) {
     return array
 }
 
-//Function for sampling from random order of data//
+//Function for selecting first n items in shuffled data//
 function random_sample(arr, n) {
     shuffled = shuffleArray(arr)
     return shuffled.slice(0, n)
@@ -30,13 +30,13 @@ complete: function(results) {
     context: `<p>${row.context}</p>`
     }));
     stimuli = random_sample(allStimuli, 4)
-    //remove this when experiment is ready
+    //remove this when experiment is ready//
     console.log('Stimuli loaded:', stimuli);
     startExperiment(); 
 }
 });
 
-//run experiment
+//run experiment//
 function startExperiment() {
   const jsPsych = initJsPsych({
     display_element: 'jspsych-target',
@@ -59,7 +59,7 @@ function startExperiment() {
     stimulus: function() {
       return jsPsych.timelineVariable('target');
     },
-
+    prompt: 'How similar are the following two sentences?',
     labels: ['0', '100'],
     require_movement: true,
     button_label: 'Continue',
@@ -94,8 +94,8 @@ function startExperiment() {
     <p>You can close this tab.</p>
     `,
     choices: ['NO_KEYS'],
-  }
   };
+  
 
   var timeline = [];
   timeline.push(welcome);
