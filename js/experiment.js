@@ -39,6 +39,18 @@ function startExperiment() {
     } 
   }); 
 
+  var welcome = {
+    type: jsPsychHtmlKeyboardResponse, 
+    //stimulus to display on the screen
+    stimulus: `
+    <h1>Welcome to the experiment!</h1> 
+    <p>Instructions here.</p>
+    <p>Press SPACE to begin.</p>
+    `,
+    choices: [' '], 
+  };
+  
+
   var trial = {
     type: jsPsychHtmlSliderResponse,
     stimulus: function() {
@@ -57,6 +69,7 @@ function startExperiment() {
   };
 
   var timeline = [];
+  timeline.push(welcome);
   timeline.push(trial_procedure);
 
   jsPsych.run(timeline); 
