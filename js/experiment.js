@@ -84,6 +84,8 @@ function startExperiment() {
       let data = jsPsych.data
         .get()
         .filter({ collect: true }) 
+        .ignore(['trial_type', 'trial_index', 'plugin_version',
+               'collect', 'internal_node_id', 'slider_start'])
         .csv();
       console.log(data);
 }
