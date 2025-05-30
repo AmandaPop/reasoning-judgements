@@ -75,10 +75,10 @@ def write_csv(filename, sentences):
         writer.writeheader()
         writer.writerows(sentences)
 
-if __name__ == "__main__":
-    corpus = get_corpus(ds)
-    sentences = get_sentences(corpus, 'believe')
-    final_sentences = remove_believe_in(sentences)
-    write_csv('think_wiki.csv', final_sentences)
-    end_time = time.time()
-    print("Total Time to get through all entries:", end_time - start_time)
+
+corpus = get_corpus(ds)
+sentences = get_sentences(corpus, 'believe')
+final_sentences = remove_believe_in(sentences)
+write_csv('think_wiki.csv', final_sentences)
+end_time = time.time()
+print("Total Time to get through all entries:", end_time - start_time)
