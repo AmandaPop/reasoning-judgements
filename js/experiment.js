@@ -37,10 +37,10 @@ function startExperiment() {
     display_element: 'jspsych-target',
   }); 
 
-  const expID = cmnR4NDGseyo // this experiment ID is from DataPipe//
+  const expID = 'cmnR4NDGseyo' // this experiment ID is from DataPipe//
   //change this later to get the ID from prolific //
   const participantID = jsPsych.randomization.randomID(10);
-  jsPsych.data.addProperties({participant_id: participant_id});
+  jsPsych.data.addProperties({participant_id: participantID});
   //getting participantID from Prolific 
   // var subject_id = jsPsych.data.getURLVariable('PROLIFIC_PID');
   // jsPsych.data.addProperties({subject_id: subject_id});
@@ -63,7 +63,7 @@ function startExperiment() {
     stimulus: function() {
       return jsPsych.timelineVariable('target');
     },
-    prompt: 'How similar are the following two sentences?',
+    prompt: 'Which sentence makes more sense?',
     labels: ['0', '100'],
     require_movement: true,
     button_label: 'Continue',
