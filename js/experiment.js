@@ -32,7 +32,12 @@ complete: function(results) {
 
 //run experiment
 function startExperiment() {
-  const jsPsych = initJsPsych({ display_element: 'jspsych-target' }); 
+  const jsPsych = initJsPsych({
+    display_element: 'jspsych-target',
+    on_finish: function() {
+      jsPsych.data.displayData();
+    } 
+  }); 
 
   var trial = {
     type: jsPsychHtmlSliderResponse,
