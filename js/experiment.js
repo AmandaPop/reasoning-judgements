@@ -20,9 +20,7 @@ Papa.parse('data_csv/think_wiki.csv', {
 download: true,
 header: true,
 complete: function(results) {
-    const allStimuli = results.data
-    .filter(row => row.target && row.context) //removes any blank lines
-    .map(row => ({
+    const allStimuli = results.data.map(row => ({
     target: `<p>${row.target}</p>`,
     context: `<p>${row.context}</p>`
     }));
