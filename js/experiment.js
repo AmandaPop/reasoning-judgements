@@ -84,7 +84,7 @@ function startExperiment() {
         .filter({ collect: true }) 
         .ignore(['trial_type', 'trial_index', 'plugin_version',
                'collect', 'internal_node_id', 'slider_start'])
-        .csv();
+        .csv()
   };
 
   var finish = {
@@ -94,14 +94,14 @@ function startExperiment() {
     <p>You can close this tab.</p>
     `,
     choices: ['NO_KEYS'],
-}
-};
+  }
+  };
 
   var timeline = [];
   timeline.push(welcome);
   timeline.push(trial_procedure);
-  timeline.push(save_data)
-  timeline.push(finish)
+  timeline.push(save_data);
+  timeline.push(finish);
 
   jsPsych.run(timeline); 
-}
+  }
