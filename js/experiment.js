@@ -1,5 +1,10 @@
 var stimuli = [];
 
+const expID = cmnR4NDGseyo // this experiment ID is from DataPipe
+//see if you can change this later to get the ID from prolific 
+const participantID = jsPsych.randomization.randomID(10);
+jsPsych.data.addProperties({participant_id: participant_id});
+
 // Function for shuffling order of the data//
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -69,6 +74,19 @@ function startExperiment() {
     randomize_order: true
   };
 
+  const save_data = {
+  type: jsPsychPipe,
+  action: "save",
+  experiment_id: expID, 
+  filename: `${participantID}.csv`,
+  data_string: ()=> jsPsych.data
+        .get()
+        .filter({ collect: true }) 
+        .ignore(['trial_type', 'trial_index', 'plugin_version',
+               'collect', 'internal_node_id', 'slider_start'])
+        .csv();
+  };
+
   var finish = {
     type: jsPsychHtmlKeyboardResponse,
     stimulus: `
@@ -76,20 +94,13 @@ function startExperiment() {
     <p>You can close this tab.</p>
     `,
     choices: ['NO_KEYS'],
-    on_start: function () {
-      let data = jsPsych.data
-        .get()
-        .filter({ collect: true }) 
-        .ignore(['trial_type', 'trial_index', 'plugin_version',
-               'collect', 'internal_node_id', 'slider_start'])
-        .csv();
-      console.log(data);
 }
 };
 
   var timeline = [];
   timeline.push(welcome);
   timeline.push(trial_procedure);
+  timeline.push(save_data)
   timeline.push(finish)
 
   jsPsych.run(timeline); 
