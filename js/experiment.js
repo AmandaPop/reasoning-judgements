@@ -15,7 +15,7 @@ function random_sample(arr, n) {
     return shuffled.slice(0, n)
 }
 
-//Loads the csv data//
+//loads the csv data//
 Papa.parse('data_csv/think_nq_wiki.csv', {
 download: true,
 header: true,
@@ -30,7 +30,7 @@ complete: function(results) {
 }
 });
 
-//Run experiment procedure
+//run experiment
 function startExperiment() {
   const jsPsych = initJsPsych({ display_element: 'jspsych-target' }); 
 
