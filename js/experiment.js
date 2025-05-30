@@ -35,10 +35,6 @@ complete: function(results) {
 function startExperiment() {
   const jsPsych = initJsPsych({
     display_element: 'jspsych-target',
-    //remove this when experiment is ready
-    on_finish: function() {
-      jsPsych.data.displayData();
-    } 
   }); 
 
   var welcome = {
