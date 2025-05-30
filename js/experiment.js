@@ -1,10 +1,5 @@
 var stimuli = [];
 
-const expID = cmnR4NDGseyo // this experiment ID is from DataPipe//
-//see if you can change this later to get the ID from prolific //
-const participantID = jsPsych.randomization.randomID(10);
-jsPsych.data.addProperties({participant_id: participant_id});
-
 // Function for shuffling order of the data//
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -41,6 +36,15 @@ function startExperiment() {
   const jsPsych = initJsPsych({
     display_element: 'jspsych-target',
   }); 
+
+  const expID = cmnR4NDGseyo // this experiment ID is from DataPipe//
+  //change this later to get the ID from prolific //
+  const participantID = jsPsych.randomization.randomID(10);
+  jsPsych.data.addProperties({participant_id: participant_id});
+  //getting participantID from Prolific 
+  // var subject_id = jsPsych.data.getURLVariable('PROLIFIC_PID');
+  // jsPsych.data.addProperties({subject_id: subject_id});
+
 
   var welcome = {
     type: jsPsychHtmlKeyboardResponse, 
