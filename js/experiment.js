@@ -25,6 +25,7 @@ complete: function(results) {
     context: `<p>${row.context}</p>`
     }));
     stimuli = random_sample(allStimuli, 4)
+    //remove this when experiment is ready
     console.log('Stimuli loaded:', stimuli);
     startExperiment(); 
 }
@@ -34,6 +35,7 @@ complete: function(results) {
 function startExperiment() {
   const jsPsych = initJsPsych({
     display_element: 'jspsych-target',
+    //remove this when experiment is ready
     on_finish: function() {
       jsPsych.data.displayData();
     } 
@@ -59,7 +61,10 @@ function startExperiment() {
 
     labels: ['0', '100'],
     require_movement: true,
-    button_label: 'Continue'
+    button_label: 'Continue',
+    data: {
+    collect: true, 
+    },
   };
 
   var trial_procedure = {
@@ -68,9 +73,26 @@ function startExperiment() {
     randomize_order: true
   };
 
+  var finish = {
+    type: jsPsychHtmlKeyboardResponse,
+    stimulus: `
+    <h1>Thank you for participating!</h1> 
+    <p>You can close this tab.</p>
+    `,
+    choices: ['NO_KEYS'],
+    on_start: function () {
+      let data = jsPsych.data
+        .get()
+        .filter({ collect: true }) 
+        .csv();
+      console.log(data);
+}
+};
+
   var timeline = [];
   timeline.push(welcome);
   timeline.push(trial_procedure);
+  timeline.push(finish)
 
   jsPsych.run(timeline); 
 }
