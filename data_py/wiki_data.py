@@ -3,6 +3,11 @@ import csv
 import stanza
 from datasets import load_dataset
 
+""" Note: Only searchs a random 100,000 wiki pedia articles. As well,
+only searhes through short articles - Longer takes to long for stanza 
+to process. Need to change whether the file is searching for think or 
+believe before running. """
+
 ds = load_dataset("wikimedia/wikipedia", "20231101.en")
 
 start_time = time.time()

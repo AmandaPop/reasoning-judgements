@@ -24,7 +24,7 @@ complete: function(results) {
     target: `<p>${row.target}</p>`,
     context: `<p>${row.context}</p>`
     }));
-    stimuli = random_sample(allStimuli, 60)
+    stimuli = random_sample(allStimuli, 5)
     console.log('Stimuli loaded:', stimuli);
     startExperiment(); 
 }
