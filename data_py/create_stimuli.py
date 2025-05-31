@@ -84,9 +84,9 @@ with open(file, 'r') as f:
             stimulus = {'original': original_sentence, 
                         'target': target_sentence, 
                         'context': context,
-                        'tense': tense if tense else ' ',
-                        'form': form if form else ' ',
-                        'person': person if person else ' '}
+                        'tense': tense if tense else 'none',
+                        'form': form if form else 'none',
+                        'person': person if person else 'none'}
             
             stimuli.append(stimulus)
 
