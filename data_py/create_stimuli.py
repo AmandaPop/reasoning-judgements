@@ -89,7 +89,8 @@ with open(file, 'r') as f:
                         'person': person if person else 'none'}
             
             stimuli.append(stimulus)
-
+for i, row in enumerate(stimuli):
+    print(f"Row {i}: {row!r}")
 write_csv(out_file, stimuli)
 
 
