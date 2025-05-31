@@ -68,7 +68,7 @@ function startExperiment() {
       return `
         <div>
           <p>${jsPsych.timelineVariable('original')}</p>
-          ${jsPsych.timelineVariable('target')}
+          <p>${jsPsych.timelineVariable('target')}</p>
         </div>
       `;
     },
