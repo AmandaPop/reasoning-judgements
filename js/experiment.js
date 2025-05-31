@@ -28,7 +28,7 @@ complete: function(results) {
     form: row.form,
     person: row.person
     }));
-    stimuli = random_sample(allStimuli, 4)
+    stimuli = random_sample(allStimuli, 1)
     //remove this when experiment is ready//
     console.log('Stimuli loaded:', stimuli);
     startExperiment(); 
@@ -54,7 +54,7 @@ function startExperiment() {
     type: jsPsychHtmlKeyboardResponse, 
     //stimulus to display on the screen
     stimulus: `
-    <h1>Welcome to the experiment!</h1> 
+    <h3>Welcome to the experiment!</h3> 
     <p>Instructions here.</p>
     <p>Press SPACE to begin.</p>
     `,
