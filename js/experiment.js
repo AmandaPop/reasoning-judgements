@@ -16,13 +16,17 @@ function random_sample(arr, n) {
 }
 
 //loads the csv data//
-Papa.parse('data_csv/think_wiki.csv', {
+Papa.parse('data_csv/test_stimuli.csv', {
 download: true,
 header: true,
 complete: function(results) {
     const allStimuli = results.data.map(row => ({
+    original: row.original,
     target: `<p>${row.target}</p>`,
-    context: `<p>${row.context}</p>`
+    context: `<p>${row.context}</p>`,
+    tense: row.tense,
+    form: row.form,
+    person: row.person
     }));
     stimuli = random_sample(allStimuli, 4)
     //remove this when experiment is ready//
@@ -61,14 +65,25 @@ function startExperiment() {
   var trial = {
     type: jsPsychHtmlSliderResponse,
     stimulus: function() {
-      return jsPsych.timelineVariable('target');
+      return `
+        <div>
+          <p>${jsPsych.timelineVariable('original')}</p>
+          ${jsPsych.timelineVariable('target')}
+        </div>
+      `;
     },
     prompt: 'Which sentence makes more sense?',
     labels: ['0', '100'],
     require_movement: true,
     button_label: 'Continue',
     data: {
-    collect: true, 
+      collect: true, 
+      original: jsPsych.timelineVariable('original'),
+      target: jsPsych.timelineVariable('target'),
+      context: jsPsych.timelineVariable('context'),
+      tense: jsPsych.timelineVariable('tense'),
+      form: jsPsych.timelineVariable('form'),
+      person: jsPsych.timelineVariable('person')
     },
   };
 
@@ -87,7 +102,7 @@ function startExperiment() {
         .get()
         .filter({ collect: true }) 
         .ignore(['trial_type', 'trial_index', 'plugin_version',
-               'collect', 'internal_node_id', 'slider_start'])
+               'collect', 'internal_node_id', 'slider_start', 'stimulus']) //also ignoring stimulus because that is both target and original sentence
         .csv()
   };
 
