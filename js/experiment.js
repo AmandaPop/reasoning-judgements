@@ -28,7 +28,7 @@ complete: function(results) {
     form: row.form,
     person: row.person
     }));
-    stimuli = random_sample(allStimuli, 6)
+    stimuli = random_sample(allStimuli, 7)
     //remove this when experiment is ready//
     console.log('Stimuli loaded:', stimuli);
     startExperiment(); 
