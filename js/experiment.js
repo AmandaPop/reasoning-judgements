@@ -29,7 +29,7 @@ complete: function(results) {
     person: row.person
     }));
     stimuli = random_sample(allStimuli, 7)
-    //remove this when experiment is ready//
+    //print to console to see whats going on//
     console.log('Stimuli loaded:', stimuli);
     startExperiment(); 
 }
