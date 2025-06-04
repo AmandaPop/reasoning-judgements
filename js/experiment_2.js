@@ -1,17 +1,17 @@
 var stimuli = [];
 
-// Function for shuffling order of the data//
-function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
-    return array
-}
+//function for shuffling order of the data//
+//function shuffleArray(array) {
+   // for (let i = array.length - 1; i > 0; i--) {
+   //     const j = Math.floor(Math.random() * (i + 1));
+   //     [array[i], array[j]] = [array[j], array[i]];
+   // }
+    //return array
+//}
 
-//Function for selecting first n items in shuffled data//
+//function for selecting first n items in shuffled data//
 function random_sample(arr, n) {
-    shuffled = shuffleArray(arr)
+    shuffled = jsPsych.randomization.repeat(arr, 1);
     return shuffled.slice(0, n)
 }
 
@@ -52,7 +52,7 @@ function startExperiment() {
 
   var welcome = {
     type: jsPsychHtmlKeyboardResponse, 
-    //stimulus to display on the screen
+    //stimulus to display on the screen//
     stimulus: `
     <h3>Welcome to the experiment!</h3> 
     <p>Instructions here.</p>
@@ -71,14 +71,14 @@ function startExperiment() {
             <p>${jsPsych.timelineVariable('context')}</p>
           </div>
           <div style="text-align: center;">
-            <p><strong>A:</strong>${jsPsych.timelineVariable('original')}</p>
+            <p><strong>A:</strong> ${jsPsych.timelineVariable('original')}</p>
             <p><strong>B:</strong> ${jsPsych.timelineVariable('target')}</p>
           </div>
         </div>
       `;
     },
     prompt: 'Which sentence is a better continuation/makes more sense/is more likely to be true?<br>',
-    labels: ['A', 'B'],
+    labels: ['<strong>A</strong>', '<strong>B</strong>'],
     require_movement: true,
     button_label: 'Continue',
     data: {
@@ -107,7 +107,7 @@ function startExperiment() {
         .get()
         .filter({ collect: true }) 
         .ignore(['trial_type', 'trial_index', 'plugin_version',
-               'collect', 'internal_node_id', 'slider_start', 'stimulus']) //also ignoring stimulus because that is both target and original sentence
+               'collect', 'internal_node_id', 'slider_start', 'stimulus']) //also ignoring stimulus because that is both target and original sentence//
         .csv()
   };
 
