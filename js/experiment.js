@@ -76,7 +76,7 @@ function startExperiment() {
           </div>
         </div>
       `;
-    }
+    },
     prompt: 'Which sentence makes more sense?',
     labels: ['0', '100'],
     require_movement: true,
