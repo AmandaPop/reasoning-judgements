@@ -10,10 +10,10 @@ var stimuli = [];
 //}
 
 //function for selecting first n items in shuffled data//
-function random_sample(arr, n) {
-    shuffled = jsPsych.randomization.repeat(arr, 1);
-    return shuffled.slice(0, n)
-}
+//function random_sample(arr, n) {
+    //shuffled = jsPsych.randomization.repeat(arr, 1);
+    //return shuffled.slice(0, n)
+//}
 
 //loads the csv data//
 Papa.parse('data_csv/test_stimuli.csv', {
@@ -28,7 +28,7 @@ complete: function(results) {
     form: row.form,
     person: row.person
     }));
-    stimuli = random_sample(allStimuli, 7)
+    stimuli = jsPsych.randomization.sampleWithoutReplacement(allStimuli, 6)
     //print to console to see whats going on//
     console.log('Stimuli loaded:', stimuli);
     startExperiment(); 
