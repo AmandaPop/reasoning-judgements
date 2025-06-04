@@ -71,14 +71,14 @@ function startExperiment() {
             <p>${jsPsych.timelineVariable('context')}</p>
           </div>
           <div class="sentence-block">
-            <p><strong>Original:</strong> ${jsPsych.timelineVariable('original')}</p>
-            <p><strong>Target:</strong> ${jsPsych.timelineVariable('target')}</p>
+            <p><strong>A:</strong>${jsPsych.timelineVariable('original')}</p>
+            <p><strong>B:</strong> ${jsPsych.timelineVariable('target')}</p>
           </div>
         </div>
       `;
     },
-    prompt: 'Which sentence makes more sense?',
-    labels: ['0', '100'],
+    prompt: 'Which sentence is a better continuation/makes more sense?',
+    labels: ['A', 'B'],
     require_movement: true,
     button_label: 'Continue',
     data: {
