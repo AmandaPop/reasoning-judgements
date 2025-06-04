@@ -11,7 +11,7 @@ out_file = sys.argv[3]
 
 def write_csv(filename, sentences):
     with open(filename, mode='w', newline='') as file:
-        writer = csv.DictWriter(file, fieldnames=['original', "target", "context", 'tense', 'form', 'person'])
+        writer = csv.DictWriter(file, fieldnames=['original', "target", "context", 'tense', 'form', 'person', ])
         writer.writeheader()
         writer.writerows(sentences)
 

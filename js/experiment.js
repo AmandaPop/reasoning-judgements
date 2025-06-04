@@ -22,8 +22,8 @@ header: true,
 complete: function(results) {
     const allStimuli = results.data.map(row => ({
     original: row.original,
-    target: `<p>${row.target}</p>`,
-    context: `<p>${row.context}</p>`,
+    target: `${row.target}`,
+    context: `${row.context}`,
     tense: row.tense,
     form: row.form,
     person: row.person
@@ -67,6 +67,7 @@ function startExperiment() {
     stimulus: function() {
       return `
         <div>
+          <p>${jsPsych.timelineVariable('context')}</p>
           <p>${jsPsych.timelineVariable('original')}</p>
           <p>${jsPsych.timelineVariable('target')}</p>
         </div>
