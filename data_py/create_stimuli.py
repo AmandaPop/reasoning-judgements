@@ -3,6 +3,12 @@ import csv
 import itertools
 import stanza 
 
+
+"""
+NEED TO EDIT THIS SO THE CONTEXT SAVES AS ONE LONG STRING
+"""
+
+
 nlp = stanza.Pipeline(lang='en', processors='tokenize,mwt,pos,lemma,depparse')
 
 file = sys.argv[1]

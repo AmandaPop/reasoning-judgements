@@ -66,13 +66,17 @@ function startExperiment() {
     type: jsPsychHtmlSliderResponse,
     stimulus: function() {
       return `
-        <div>
-          <p>${jsPsych.timelineVariable('context')}</p>
-          <p>${jsPsych.timelineVariable('original')}</p>
-          <p>${jsPsych.timelineVariable('target')}</p>
+        <div style="text-align: left; max-width: 800px; margin: 0 auto;">
+          <div class="context-block" style="margin-bottom: 96px;">
+            <p>${jsPsych.timelineVariable('context')}</p>
+          </div>
+          <div class="sentence-block">
+            <p><strong>Original:</strong> ${jsPsych.timelineVariable('original')}</p>
+            <p><strong>Target:</strong> ${jsPsych.timelineVariable('target')}</p>
+          </div>
         </div>
       `;
-    },
+    }
     prompt: 'Which sentence makes more sense?',
     labels: ['0', '100'],
     require_movement: true,
