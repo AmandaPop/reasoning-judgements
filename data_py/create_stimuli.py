@@ -28,6 +28,7 @@ with open(file, 'r') as f:
     #data = list(itertools.islice(data, 0, 2)) #just want to only do 2 sentences for now
     for line in data:
         context = line[1]
+        
         line = str(line[0])
         
         doc = nlp(line)
@@ -95,8 +96,7 @@ with open(file, 'r') as f:
                         'person': person if person else 'none'}
             
             stimuli.append(stimulus)
-for i, row in enumerate(stimuli):
-    print(f"Row {i}: {row!r}")
+
 write_csv(out_file, stimuli)
 
 
