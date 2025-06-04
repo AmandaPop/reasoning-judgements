@@ -65,20 +65,26 @@ function startExperiment() {
   var trial = {
     type: jsPsychHtmlSliderResponse,
     stimulus: function() {
+      const showOriginal = Math.random() < 0.5; //randomly selecting whether participant sees original or target
+      const sentence = showOriginal
+      ? jsPsych.timelineVariable('original') 
+      : jsPsych.timelineVariable('target');
+
+    //save which sentence type was shown for data
+    jsPsych.data.write({ shown_sentence_type: showOriginal ? 'original' : 'target' });
       return `
         <div style="text-align: left; max-width: 800px; margin: 0 auto;">
           <div class="context-block" style="margin-bottom: 96px;">
             <p>${jsPsych.timelineVariable('context')}</p>
           </div>
           <div class="sentence-block">
-            <p><strong>A:</strong>${jsPsych.timelineVariable('original')}</p>
-            <p><strong>B:</strong> ${jsPsych.timelineVariable('target')}</p>
+            <p>${sentence}</p>
           </div>
         </div>
       `;
     },
-    prompt: 'Which sentence is a better continuation/makes more sense?',
-    labels: ['A', 'B'],
+    prompt: 'Does this sentence make sense?',
+    labels: ['0', '100'],
     require_movement: true,
     button_label: 'Continue',
     data: {
