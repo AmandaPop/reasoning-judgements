@@ -66,11 +66,11 @@ function startExperiment() {
     type: jsPsychHtmlSliderResponse,
     stimulus: function() {
       return `
-        <div style="text-align: left; max-width: 800px; margin: 0 auto;">
+        <div style="text-align: center;">
           <div class="context-block" style="margin-bottom: 96px;">
             <p>${jsPsych.timelineVariable('context')}</p>
           </div>
-          <div class="sentence-block">
+          <div style="text-align: center;">
             <p><strong>A:</strong>${jsPsych.timelineVariable('original')}</p>
             <p><strong>B:</strong> ${jsPsych.timelineVariable('target')}</p>
           </div>
