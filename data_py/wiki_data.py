@@ -13,7 +13,7 @@ ds = load_dataset("wikimedia/wikipedia", "20231101.en")
 start_time = time.time()
 
 def get_corpus(ds, max_sentences=10):
-    full_corpus = ds['train'].select(range(1000000))
+    full_corpus = ds['train'].select(range(10000))
     believe_corpus = []
 
     for entry in full_corpus:
@@ -79,6 +79,6 @@ def write_csv(filename, sentences):
 corpus = get_corpus(ds)
 sentences = get_sentences(corpus, 'believe')
 final_sentences = remove_believe_in(sentences)
-write_csv('think_wiki.csv', final_sentences)
+write_csv('filler.csv', final_sentences)
 end_time = time.time()
 print("Total Time to get through all entries:", end_time - start_time)
