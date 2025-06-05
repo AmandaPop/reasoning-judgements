@@ -71,6 +71,55 @@ function startExperiment() {
     choices: [' '],
   };
 
+    const instructions= {
+    type: jsPsychHtmlKeyboardResponse,
+    stimulus: `
+      <h1>Instructions</h1> 
+      <p>Here are the instructions. On the next page we will show you an example.</p>
+      <p>Press SPACE to continue to example.</p>
+    `,
+    choices: [' '],
+  };
+
+    const example_noSI = {
+      type: jsPsychHtmlSliderResponse,
+      stimulus: `
+        <div style="text-align: center;">
+          <div class="context-block" style="margin-bottom: 96px;">
+            <p>John has been working on the company’s payroll system for over five years. He personally ran the final checks this morning before the direct deposits were triggered. He also received confirmation emails from both the payroll software and the bank. At lunch, several coworkers mentioned already seeing the deposit in their accounts. Everything about the process went exactly as it always does.</p>
+          </div>
+          <div>
+            <p><strong>A:</strong>John believes and possibly knows that everyone has been paid now</p>
+            <p><strong>B:</strong>John believes but doesn't know that everyone has been paid</p>
+          </div>
+        </div>
+      `,
+        prompt: 'Which sentence is a better continuation/makes more sense/is more likely to be true?<br>',
+        labels: ['<strong>A</strong>', '<strong>B</strong>'],
+        require_movement: true,
+        button_label: 'Continue',
+    }
+
+        const example_SI = {
+      type: jsPsychHtmlSliderResponse,
+      stimulus: `
+        <div style="text-align: center;">
+          <div class="context-block" style="margin-bottom: 96px;">
+            <p>Much of Northern Canada is covered by ice and permafrost. The future of the permafrost is uncertain because the Arctic has been warming at three times the global average as a result of climate change in Canada. Canada's annual average temperature over land has risen by 1.7 °C (3.1 °F), with changes ranging from 1.1 to 2.3 °C (2.0 to 4.1 °F) in various regions, since 1948. 
+            </p>
+          </div>
+          <div>
+            <p><strong>A:</strong>It is believed and possibly known the permafrost could melt substantially in the next 5 years.</p>
+            <p><strong>B:</strong>It is believed but not known the permafrost could melt substantially in the next 5 years.</p>
+          </div>
+        </div>
+      `,
+        prompt: 'Which sentence is a better continuation/makes more sense/is more likely to be true?<br>',
+        labels: ['<strong>A</strong>', '<strong>B</strong>'],
+        require_movement: true,
+        button_label: 'Continue',
+    }
+
   const trial_template = {
     type: jsPsychHtmlSliderResponse,
     stimulus: function () {
@@ -147,5 +196,5 @@ function startExperiment() {
     choices: ['NO_KEYS'],
   };
 
-  jsPsych.run([welcome, trial_procedure, save_data, finish]);
+  jsPsych.run([welcome, instructions, example_SI, example_noSI, trial_procedure, save_data, finish]);
 }
