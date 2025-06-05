@@ -10,25 +10,6 @@ function maybeStartExperiment() {
   }
 }
 
-//loads the csv fillers//
-Papa.parse('data_csv/fillers.csv', {
-download: true,
-header: true,
-complete: function(results) {
-    const fillers = results.data.map(row => ({
-    original: row.original,
-    target: `${row.target}`,
-    context: `${row.context}`,
-    tense: row.tense,
-    form: row.form,
-    person: row.person
-    }));
-    
-    //print to console to see whats going on//
-    console.log('Fillers loaded:', fillers);
-}
-});
-
 //loads the csv data//
 Papa.parse('data_csv/test_stimuli.csv', {
   download: true,
@@ -48,6 +29,7 @@ Papa.parse('data_csv/test_stimuli.csv', {
   }
 });
 
+//load the filler csv
 Papa.parse('data_csv/fillers.csv', {
   download: true,
   header: true,
@@ -76,8 +58,6 @@ function startExperiment() {
 
   const participantID = jsPsych.randomization.randomID(10);
   jsPsych.data.addProperties({ participant_id: participantID });
-
-  const expID = 'cmnR4NDGseyo';
 
   const welcome = {
     type: jsPsychHtmlKeyboardResponse,
@@ -138,7 +118,7 @@ function startExperiment() {
   const save_data = {
     type: jsPsychPipe,
     action: "save",
-    experiment_id: expID,
+    experiment_id: 'cmnR4NDGseyo',
     filename: `${participantID}.csv`,
     data_string: () =>
       jsPsych.data
