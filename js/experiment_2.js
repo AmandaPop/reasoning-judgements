@@ -17,36 +17,68 @@ Papa.parse('data_csv/test_stimulus_ready.csv', {
   download: true,
   header: true,
   complete: function(results) {
-    stimuli = results.data.map(row => ({
-      original: row.original,
-      target: `${row.target}`,
-      context: `${row.context}`,
-      tense: row.tense,
-      form: row.form,
-      person: row.person
-    }));
+    stimuli = [];
+
+    results.data.forEach(row => {
+      try {
+        // Convert context string to valid JSON array
+        const parsedContext = JSON.parse(row.context.replace(/'/g, '"'));
+
+        // Only push to stimuli if parsing was successful
+        stimuli.push({
+          original: row.original,
+          target: row.target,
+          context: parsedContext,
+          tense: row.tense,
+          form: row.form,
+          person: row.person
+        });
+        //for incase any lines break this during loading, just skip that line
+      } catch (e) {
+        console.warn('Skipping row due to context parse error:', row.context);
+        // Do nothing – skip the row
+      }
+    });
+
     console.log('Stimuli loaded:', stimuli);
     stimuliLoaded = true;
     maybeStartExperiment(); 
   }
 });
 
+
+
 //load the filler csv
 Papa.parse('data_csv/fillers_think.csv', {
   download: true,
   header: true,
   complete: function(results) {
-    fillers = results.data.map(row => ({
-      original: row.original,
-      target: `${row.target}`,
-      context: `${row.context}`,
-      tense: row.tense,
-      form: row.form,
-      person: row.person
-    }));
-    console.log('Fillers loaded:', fillers);
+    stimuli = [];
+
+    results.data.forEach(row => {
+      try {
+        // Convert context string to valid JSON array
+        const parsedContext = JSON.parse(row.context.replace(/'/g, '"'));
+
+        // Only push to stimuli if parsing was successful
+        stimuli.push({
+          original: row.original,
+          target: row.target,
+          context: parsedContext,
+          tense: row.tense,
+          form: row.form,
+          person: row.person
+        });
+        //for incase any lines break this during loading, just skip that line
+      } catch (e) {
+        console.warn('Skipping row due to context parse error:', row.context);
+        // Do nothing – skip the row
+      }
+    });
+
+    console.log('Stimuli loaded:', stimuli);
     fillersLoaded = true;
-    maybeStartExperiment();
+    maybeStartExperiment(); 
   }
 });
 
@@ -109,8 +141,8 @@ function startExperiment() {
             </p>
           </div>
           <div>
-            <p><strong>A:</strong>It is thought and possibly known the permafrost could melt substantially in the next 5 years.</p>
-            <p><strong>B:</strong>It is thought but not known the permafrost could melt substantially in the next 5 years.</p>
+            <p><strong>A:</strong>It is thought and possibly known the permafrost definitely will melt substantially in the next 5 years.</p>
+            <p><strong>B:</strong>It is thought but not known the permafrost definitely will melt substantially in the next 5 years.</p>
           </div>
         </div>
       `,
@@ -119,6 +151,15 @@ function startExperiment() {
         require_movement: true,
         button_label: 'Continue',
     }
+
+    const readt_to_begin = {
+    type: jsPsychHtmlKeyboardResponse,
+    stimulus: `
+      <p>Now you are ready to begin.</p>
+      <p>Press SPACE to start.</p>
+    `,
+    choices: [' '],
+  };
 
   const trial_template = {
     type: jsPsychHtmlSliderResponse,
