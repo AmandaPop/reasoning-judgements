@@ -1,7 +1,0 @@
-original,target,context,tense,form,person
-I think and possibly know .,I think but don't know .,['aaa'],pres,fin,1
-He thinks and possibly knows .,He thinks but doesn't know .,['bbb'],pres,fin,3
-I will think and possibly know .,I will think but don't know .,['ccc'],none,inf,none
-I have thought and possibly known .,I have thought but not known .,['ddd'],past,fin,none
-I am thinking and possibly knowing .,I am thinking but not knowing .,['eee'],pres,part,none
-I thought and possibly knew .,I thought but not knew .,['fff'],past,fin,none

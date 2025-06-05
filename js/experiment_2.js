@@ -13,7 +13,7 @@ function maybeStartExperiment() {
 }
 
 //loads the csv data//
-Papa.parse('data_csv/test_stimuli.csv', {
+Papa.parse('data_csv/test_stimulus_ready.csv', {
   download: true,
   header: true,
   complete: function(results) {
@@ -89,8 +89,8 @@ function startExperiment() {
             <p>John has been working on the company’s payroll system for over five years. He personally ran the final checks this morning before the direct deposits were triggered. He also received confirmation emails from both the payroll software and the bank. At lunch, several coworkers mentioned already seeing the deposit in their accounts. Everything about the process went exactly as it always does.</p>
           </div>
           <div>
-            <p><strong>A:</strong>John believes and possibly knows that everyone has been paid now</p>
-            <p><strong>B:</strong>John believes but doesn't know that everyone has been paid</p>
+            <p><strong>A:</strong>John thinks and possibly knows that everyone has been paid now</p>
+            <p><strong>B:</strong>John thinks but doesn't know that everyone has been paid</p>
           </div>
         </div>
       `,
@@ -109,8 +109,8 @@ function startExperiment() {
             </p>
           </div>
           <div>
-            <p><strong>A:</strong>It is believed and possibly known the permafrost could melt substantially in the next 5 years.</p>
-            <p><strong>B:</strong>It is believed but not known the permafrost could melt substantially in the next 5 years.</p>
+            <p><strong>A:</strong>It is thought and possibly known the permafrost could melt substantially in the next 5 years.</p>
+            <p><strong>B:</strong>It is thought but not known the permafrost could melt substantially in the next 5 years.</p>
           </div>
         </div>
       `,

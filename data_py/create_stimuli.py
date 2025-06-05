@@ -4,11 +4,6 @@ import itertools
 import stanza 
 
 
-"""
-NEED TO EDIT THIS SO THE CONTEXT SAVES AS ONE LONG STRING
-"""
-
-
 nlp = stanza.Pipeline(lang='en', processors='tokenize,mwt,pos,lemma,depparse')
 
 file = sys.argv[1]
@@ -28,7 +23,6 @@ with open(file, 'r') as f:
     
     for line in data:
         context = line[1]
-        print(context)
         line = str(line[0])
         
         doc = nlp(line)
