@@ -1,3 +1,5 @@
+//THIS IS THE THINK VERSION OF THE EXPERIMENT//
+
 var stimuli = [];
 var fillers = [];
 var stimuliLoaded = false; //tracking to make sure experiment doesn't start without loading
@@ -30,7 +32,7 @@ Papa.parse('data_csv/test_stimuli.csv', {
 });
 
 //load the filler csv
-Papa.parse('data_csv/fillers.csv', {
+Papa.parse('data_csv/fillers_think.csv', {
   download: true,
   header: true,
   complete: function(results) {
