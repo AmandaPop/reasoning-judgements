@@ -21,10 +21,10 @@ Papa.parse('data_csv/test_stimulus_ready.csv', {
 
     results.data.forEach(row => {
       try {
-        // Convert context string to valid JSON array
+        //convert context string to valid array
         const parsedContext = JSON.parse(row.context.replace(/'/g, '"'));
 
-        // Only push to stimuli if parsing was successful
+        //only add to stimuli if parsing was successful
         stimuli.push({
           original: row.original,
           target: row.target,
@@ -36,7 +36,7 @@ Papa.parse('data_csv/test_stimulus_ready.csv', {
         //for incase any lines break this during loading, just skip that line
       } catch (e) {
         console.warn('Skipping row due to context parse error:', row.context);
-        // Do nothing – skip the row
+        //skip the row
       }
     });
 
@@ -54,13 +54,10 @@ Papa.parse('data_csv/fillers_think.csv', {
   header: true,
   complete: function(results) {
     stimuli = [];
-
     results.data.forEach(row => {
       try {
-        // Convert context string to valid JSON array
         const parsedContext = JSON.parse(row.context.replace(/'/g, '"'));
 
-        // Only push to stimuli if parsing was successful
         stimuli.push({
           original: row.original,
           target: row.target,
@@ -69,10 +66,8 @@ Papa.parse('data_csv/fillers_think.csv', {
           form: row.form,
           person: row.person
         });
-        //for incase any lines break this during loading, just skip that line
       } catch (e) {
         console.warn('Skipping row due to context parse error:', row.context);
-        // Do nothing – skip the row
       }
     });
 
@@ -152,7 +147,7 @@ function startExperiment() {
         button_label: 'Continue',
     }
 
-    const readt_to_begin = {
+    const ready_to_begin = {
     type: jsPsychHtmlKeyboardResponse,
     stimulus: `
       <p>Now you are ready to begin.</p>
@@ -164,10 +159,12 @@ function startExperiment() {
   const trial_template = {
     type: jsPsychHtmlSliderResponse,
     stimulus: function () {
+      const contextArray = jsPsych.timelineVariable('context');
+      const contextText = contextArray.join(' ')
       return `
         <div style="text-align: center;">
           <div class="context-block" style="margin-bottom: 96px;">
-            <p>${jsPsych.timelineVariable('context')}</p>
+            <p>${contextText}</p>
           </div>
           <div>
             <p><strong>A:</strong> ${jsPsych.timelineVariable('original')}</p>
@@ -237,5 +234,12 @@ function startExperiment() {
     choices: ['NO_KEYS'],
   };
 
-  jsPsych.run([welcome, instructions, example_SI, example_noSI, trial_procedure, save_data, finish]);
+  jsPsych.run([welcome, 
+    instructions, 
+    example_SI, 
+    example_noSI, 
+    ready_to_begin, 
+    trial_procedure, 
+    save_data, 
+    finish]);
 }
