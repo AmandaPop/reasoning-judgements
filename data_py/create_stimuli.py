@@ -28,7 +28,7 @@ with open(file, 'r') as f:
     #data = list(itertools.islice(data, 0, 2)) #just want to only do 2 sentences for now
     for line in data:
         context = line[1]
-        
+        print(context)
         line = str(line[0])
         
         doc = nlp(line)
