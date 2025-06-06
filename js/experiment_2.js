@@ -188,11 +188,11 @@ function startExperiment() {
     },
   };
 
-  //choose randomly sampled stimuli and random order of fillers
+  //choose randomly sampled stimuli and random order of fillers - total 15
   const testTrials = jsPsych.randomization
     .sampleWithoutReplacement(stimuli, 12)
     .map(stim => ({ ...stim, type: 'test' }));
-  const fillerTrials = fillers.randomization
+  const fillerTrials = jsPsych.randomization
     .sampleWithoutReplacement(fillers, 3)
     .map(filler => ({ ...filler, type: 'filler' }));
   //combine and shuffle all trials
