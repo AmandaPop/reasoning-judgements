@@ -71,7 +71,7 @@ Papa.parse('data_csv/think_fillers.csv', {
       }
     });
 
-    console.log('Stimuli loaded:', stimuli);
+    console.log('Fillers loaded:', stimuli);
     fillersLoaded = true;
     maybeStartExperiment(); 
   }
@@ -196,7 +196,9 @@ function startExperiment() {
   const testTrials = jsPsych.randomization
     .sampleWithoutReplacement(stimuli, 12)
     .map(stim => ({ ...stim, type: 'test' }));
-  const fillerTrials = fillers.map(filler => ({ ...filler, type: 'filler' }));
+  const fillerTrials = fillers
+    .sampleWithoutReplacement(fillers, 3)
+    .map(filler => ({ ...filler, type: 'filler' }));
 
   //combine and shuffle all trials
   const combinedTrials = jsPsych.randomization.shuffle(testTrials.concat(fillerTrials));
