@@ -2,10 +2,10 @@
 
 var stimuli = [];
 var fillers = [];
-var stimuliLoaded = false; //tracking to make sure experiment doesn't start without loading
+var stimuliLoaded = false; //tracking to make sure experiment doesn't start without loading//
 var fillersLoaded = false;
 
-//function for tracking whether data is loaded before starting
+//function for tracking whether data is loaded before starting//
 function maybeStartExperiment() {
   if (stimuliLoaded && fillersLoaded) {
     startExperiment();
@@ -13,10 +13,11 @@ function maybeStartExperiment() {
 }
 
 //loads the csv data//
-Papa.parse('think_clean.csv', {
+Papa.parse('think_clean_filtered.csv', {
   download: true,
   header: true,
   complete: function(results) {
+
     stimuli = [];
 
     results.data.forEach(row => {
