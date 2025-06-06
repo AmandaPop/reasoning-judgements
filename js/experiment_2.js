@@ -192,7 +192,7 @@ function startExperiment() {
   const testTrials = jsPsych.randomization
     .sampleWithoutReplacement(stimuli, 12)
     .map(stim => ({ ...stim, type: 'test' }));
-  const fillerTrials = fillers
+  const fillerTrials = fillers.randomization
     .sampleWithoutReplacement(fillers, 3)
     .map(filler => ({ ...filler, type: 'filler' }));
   //combine and shuffle all trials
