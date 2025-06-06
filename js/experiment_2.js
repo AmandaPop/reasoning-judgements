@@ -46,10 +46,8 @@ Papa.parse('data_csv/think.csv', {
   }
 });
 
-
-
 //load the filler csv
-Papa.parse('data_csv/think_fillers.csv', {
+Papa.parse('data_csv/fillers_think.csv', {
   download: true,
   header: true,
   complete: function(results) {
@@ -67,7 +65,7 @@ Papa.parse('data_csv/think_fillers.csv', {
           person: row.person
         });
       } catch (e) {
-        console.warn('Skipping row due to context parse error:', row.context);
+        //skip row
       }
     });
 
@@ -76,8 +74,6 @@ Papa.parse('data_csv/think_fillers.csv', {
     maybeStartExperiment(); 
   }
 });
-
-
 
 //run experiment//
 function startExperiment() {
@@ -199,7 +195,6 @@ function startExperiment() {
   const fillerTrials = fillers
     .sampleWithoutReplacement(fillers, 3)
     .map(filler => ({ ...filler, type: 'filler' }));
-
   //combine and shuffle all trials
   const combinedTrials = jsPsych.randomization.shuffle(testTrials.concat(fillerTrials));
 
