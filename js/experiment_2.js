@@ -13,7 +13,7 @@ function maybeStartExperiment() {
 }
 
 //loads the csv data//
-Papa.parse('think_clean.csv', {
+Papa.parse('data_csv/think.csv', {
   download: true,
   header: true,
   complete: function(results) {
@@ -49,7 +49,7 @@ Papa.parse('think_clean.csv', {
 
 
 //load the filler csv
-Papa.parse('data_csv/fillers_think.csv', {
+Papa.parse('data_csv/think_fillers.csv', {
   download: true,
   header: true,
   complete: function(results) {
