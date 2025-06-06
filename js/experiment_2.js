@@ -13,7 +13,7 @@ function maybeStartExperiment() {
 }
 
 //loads the csv data//
-Papa.parse('think_clean_filtered.csv', {
+Papa.parse('think_clean.csv', {
   download: true,
   header: true,
   complete: function(results) {
@@ -36,7 +36,6 @@ Papa.parse('think_clean_filtered.csv', {
         });
         //for incase any lines break this during loading, just skip that line
       } catch (e) {
-        console.warn('Skipping row due to context parse error:', row.context);
         //skip the row
       }
     });
@@ -50,7 +49,7 @@ Papa.parse('think_clean_filtered.csv', {
 
 
 //load the filler csv
-Papa.parse('fillers_think_clean.csv', {
+Papa.parse('data_csv/fillers_think.csv', {
   download: true,
   header: true,
   complete: function(results) {
