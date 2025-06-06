@@ -13,7 +13,7 @@ function maybeStartExperiment() {
 }
 
 //loads the csv data//
-Papa.parse('test_think_clean.csv', {
+Papa.parse('think_clean.csv', {
   download: true,
   header: true,
   complete: function(results) {
@@ -102,8 +102,11 @@ function startExperiment() {
     type: jsPsychHtmlKeyboardResponse,
     stimulus: `
       <h1>Instructions</h1> 
-      <p>Here are the instructions. On the next page we will show you an example.</p>
-      <p>Press SPACE to continue to example.</p>
+      <p>We are interested in your thoughts on how likely certain sentences are to be a continuation of the last. 
+      We will show you a set of sentences, each taken from a wikipedia article, and ask that you select which sentence is more of less likely to be said.
+      The slider is used by placing the nob somewhere between the sentences according to which sentence you prefer.  
+      The next two pages will show you examples.</p>
+      <p>Press SPACE to continue.</p>
     `,
     choices: [' '],
   };
@@ -136,8 +139,8 @@ function startExperiment() {
             </p>
           </div>
           <div>
-            <p><strong>A:</strong>It is thought and possibly known the permafrost definitely will melt substantially in the next 5 years.</p>
-            <p><strong>B:</strong>It is thought but not known the permafrost definitely will melt substantially in the next 5 years.</p>
+            <p><strong>A:</strong>It is thought and possibly known that the permafrost definitely will melt substantially in the next 5 years.</p>
+            <p><strong>B:</strong>It is thought but not known that the permafrost definitely will melt substantially in the next 5 years.</p>
           </div>
         </div>
       `,

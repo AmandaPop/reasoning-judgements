@@ -27,20 +27,15 @@ with open(file, 'r') as f:
         
         doc = nlp(line)
         for sentence in doc.sentences:
-            
             new_sentence = []
             updated_original = []
             person = None
             tense = None
             form = None
-            #find which replacement you want by checking morphological features on the verb
+            skip_sentence = False  #flag to skip the whole sentence
+
             for word in sentence.words:
-                #first find the verb
                 if word.lemma == verb:
-                   
-                    #get the index of this verb, needed for replacement
-                    verb_id = word.id
-                    #check features of the verb and insert new statement accordingly
                     if 'Tense=Past|VerbForm=Fin' in word.feats:
                         tense = 'past'
                         form = 'fin'
@@ -74,30 +69,26 @@ with open(file, 'r') as f:
                         updated_original.append(f'{word.text} and possibly knowing')
                     else:
                         print("This sentence is odd:", sentence.text)
-                #if its not the verb just re-add it 
+                        skip_sentence = True
+                        break  #break out of word loop
                 else:
                     new_sentence.append(word.text)
                     updated_original.append(word.text)
-        
+
+            if skip_sentence:
+                continue  #skip the rest of this sentence block
+
             target_sentence = ' '.join(new_sentence)
-            
             original_sentence = ' '.join(updated_original)
-            stimulus = {'original': original_sentence, 
-                        'target': target_sentence, 
-                        'context': context,
-                        'tense': tense if tense else 'none',
-                        'form': form if form else 'none',
-                        'person': person if person else 'none'}
-            
+
+            stimulus = {
+                'original': original_sentence, 
+                'target': target_sentence, 
+                'context': context,
+                'tense': tense if tense else 'none',
+                'form': form if form else 'none',
+                'person': person if person else 'none'
+            }
             stimuli.append(stimulus)
 
 write_csv(out_file, stimuli)
-
-
-
-                    
-            
-        
-        
-
-
