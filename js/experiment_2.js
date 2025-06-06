@@ -51,12 +51,12 @@ Papa.parse('data_csv/fillers_think.csv', {
   download: true,
   header: true,
   complete: function(results) {
-    stimuli = [];
+    fillers = [];
     results.data.forEach(row => {
       try {
         const parsedContext = JSON.parse(row.context.replace(/'/g, '"'));
 
-        stimuli.push({
+        fillers.push({
           original: row.original,
           target: row.target,
           context: parsedContext,
@@ -69,7 +69,7 @@ Papa.parse('data_csv/fillers_think.csv', {
       }
     });
 
-    console.log('Fillers loaded:', stimuli);
+    console.log('Fillers loaded:', fillers);
     fillersLoaded = true;
     maybeStartExperiment(); 
   }
