@@ -99,7 +99,7 @@ function startExperiment() {
     stimulus: `
       <h1>Instructions</h1> 
       <p>We are interested in your thoughts on how likely certain sentences are to be a continuation of the last. 
-      We will show you a set of sentences, each taken from a wikipedia article, and ask that you select which sentence is more of less likely to be said.
+      We will show you a set of sentences, each taken from a wikipedia article, and ask that you select which sentence is more or less likely to be said next.
       The slider is used by placing the nob somewhere between the sentences according to which sentence you prefer.  
       The next two pages will show you examples.</p>
       <p>Press SPACE to continue.</p>
