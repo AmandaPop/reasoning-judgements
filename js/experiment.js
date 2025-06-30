@@ -1,4 +1,4 @@
-//THIS IS THE THINK VERSION OF THE EXPERIMENT//
+//NEED TO CHANGE FILES TO CHANGE VERB//
 
 var stimuli = [];
 var fillers = [];
@@ -40,7 +40,7 @@ Papa.parse('data_csv/believe.csv', {
       }
     });
 
-    //console.log('Stimuli loaded:', stimuli);
+    console.log('Stimuli loaded:', stimuli);
     stimuliLoaded = true;
     maybeStartExperiment(); 
   }
@@ -69,7 +69,7 @@ Papa.parse('data_csv/fillers_believe.csv', {
       }
     });
 
-    //console.log('Fillers loaded:', fillers);
+    console.log('Fillers loaded:', fillers);
     fillersLoaded = true;
     maybeStartExperiment(); 
   }
@@ -213,16 +213,6 @@ function startExperiment() {
     data_string: () =>
       jsPsych.data
         .get()
-        .filter({ collect: true })
-        .ignore([
-          'trial_type',
-          'trial_index',
-          'plugin_version',
-          'collect',
-          'internal_node_id',
-          'slider_start',
-          'stimulus'
-        ])
         .csv()
   };
 
