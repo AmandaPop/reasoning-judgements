@@ -216,7 +216,6 @@ function startExperiment() {
         .get()
         .filter({ collect: true })
         .ignore([
-          'trial_type',
           'trial_index',
           'plugin_version',
           'collect',
