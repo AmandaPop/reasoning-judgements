@@ -2,8 +2,8 @@ import csv
 import json
 import ast
 
-input_filename = '../data_csv/think_feats.csv'        # your input file
-output_filename = 'think.csv' # cleaned output file
+input_filename = '../data_csv/believe_feats.csv'        # your input file
+output_filename = 'believe.csv' # cleaned output file
 
 def clean_context(context_str):
     try:
