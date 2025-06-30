@@ -13,7 +13,7 @@ function maybeStartExperiment() {
 }
 
 //loads the csv data//
-Papa.parse('data_csv/think.csv', {
+Papa.parse('data_csv/believe.csv', {
   download: true,
   header: true,
   complete: function(results) {
@@ -47,7 +47,7 @@ Papa.parse('data_csv/think.csv', {
 });
 
 //load the filler csv
-Papa.parse('data_csv/fillers_think.csv', {
+Papa.parse('data_csv/fillers_believe.csv', {
   download: true,
   header: true,
   complete: function(results) {
@@ -197,6 +197,7 @@ function startExperiment() {
     .map(filler => ({ ...filler, type: 'filler' }));
   //combine and shuffle all trials
   const combinedTrials = jsPsych.randomization.shuffle(testTrials.concat(fillerTrials));
+  console.log(combinedTrials); //testing to find whats in my trial data
 
   const trial_procedure = {
     timeline: [trial_template],
