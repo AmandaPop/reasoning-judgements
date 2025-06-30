@@ -78,8 +78,12 @@ Papa.parse('data_csv/fillers_believe.csv', {
 //run experiment//
 function startExperiment() {
   const jsPsych = initJsPsych({
-    display_element: 'jspsych-target',
-  });
+    on_finish: function() {
+      jsPsych.data.displayData('csv');
+    }},
+    {display_element: 'jspsych-target',
+  }
+    );
 
   const participantID = jsPsych.randomization.randomID(10);
   jsPsych.data.addProperties({ participant_id: participantID });
