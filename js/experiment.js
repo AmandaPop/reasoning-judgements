@@ -40,7 +40,7 @@ Papa.parse('data_csv/believe.csv', {
       }
     });
 
-    console.log('Stimuli loaded:', stimuli);
+    //console.log('Stimuli loaded:', stimuli);
     stimuliLoaded = true;
     maybeStartExperiment(); 
   }
@@ -69,7 +69,7 @@ Papa.parse('data_csv/fillers_believe.csv', {
       }
     });
 
-    console.log('Fillers loaded:', fillers);
+    //console.log('Fillers loaded:', fillers);
     fillersLoaded = true;
     maybeStartExperiment(); 
   }
