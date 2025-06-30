@@ -40,7 +40,7 @@ Papa.parse('data_csv/believe.csv', {
       }
     });
 
-    console.log('Stimuli loaded:', stimuli);
+    //console.log('Stimuli loaded:', stimuli);
     stimuliLoaded = true;
     maybeStartExperiment(); 
   }
@@ -69,7 +69,7 @@ Papa.parse('data_csv/fillers_believe.csv', {
       }
     });
 
-    console.log('Fillers loaded:', fillers);
+    //console.log('Fillers loaded:', fillers);
     fillersLoaded = true;
     maybeStartExperiment(); 
   }
@@ -78,10 +78,7 @@ Papa.parse('data_csv/fillers_believe.csv', {
 //run experiment//
 function startExperiment() {
   const jsPsych = initJsPsych({
-    on_finish: function() {
-      jsPsych.data.displayData('csv');
-    }},
-    {display_element: 'jspsych-target',
+    display_element: 'jspsych-target',
   }
     );
 
