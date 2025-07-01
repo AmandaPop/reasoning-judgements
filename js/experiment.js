@@ -4,12 +4,7 @@ var stimuli = [];
 var fillers = [];
 var stimuliLoaded = false; //tracking to make sure experiment doesn't start without loading//
 var fillersLoaded = false;
-const random_int = jsPsych.randomization.randomInt(0,1)
-if (random_int == 0){
-  var experiment_condition = 'target'
-} else {
-  var experiment_condition = 'original'
-}
+
 
 //function for tracking whether data is loaded before starting//
 function maybeStartExperiment() {
@@ -85,11 +80,18 @@ Papa.parse('data_csv/fillers_believe.csv', {
 function startExperiment() {
   const jsPsych = initJsPsych({
     display_element: 'jspsych-target',
+    show_progress_bar: true
   }
     );
 
   const participantID = jsPsych.randomization.randomID(10);
   jsPsych.data.addProperties({ participant_id: participantID });
+  const random_int = jsPsych.randomization.randomInt(0,1)
+  if (random_int == 0){
+    var experiment_condition = 'target'
+  } else {
+    var experiment_condition = 'original'
+  }
 
   const welcome = {
     type: jsPsychHtmlKeyboardResponse,
