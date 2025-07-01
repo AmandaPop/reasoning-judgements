@@ -4,6 +4,12 @@ var stimuli = [];
 var fillers = [];
 var stimuliLoaded = false; //tracking to make sure experiment doesn't start without loading//
 var fillersLoaded = false;
+const random_int = jsPsych.randomization.randomInt(0,1)
+if (random_int == 0){
+  var experiment_condition = 'target'
+} else {
+  var experiment_condition = 'original'
+}
 
 //function for tracking whether data is loaded before starting//
 function maybeStartExperiment() {
@@ -100,8 +106,8 @@ function startExperiment() {
     stimulus: `
       <h1>Instructions</h1> 
       <p>We are interested in your thoughts on how likely certain sentences are to be a continuation of the last. 
-      We will show you a set of sentences, each taken from a wikipedia article, and ask that you select which sentence is more or less likely to be said next.
-      The slider is used by placing the nob somewhere between the sentences according to which sentence you prefer.  
+      We will show you a set of sentences, each taken from a wikipedia article, and ask that you select whether the sentence shown is an acceptable continuation of the previous sentences.
+      Use the slider by placing the nob somewhere on the scale depending on how much you agree that the sentence is acceptable.  
       The next two pages will show you examples.</p>
       <p>Press SPACE to continue.</p>
     `,
@@ -116,13 +122,12 @@ function startExperiment() {
             <p>John has been working on the company’s payroll system for over five years. He personally ran the final checks this morning before the direct deposits were triggered. He also received confirmation emails from both the payroll software and the bank. At lunch, several coworkers mentioned already seeing the deposit in their accounts. Everything about the process went exactly as it always does.</p>
           </div>
           <div>
-            <p><strong>A:</strong>John thinks and possibly knows that everyone has been paid now</p>
-            <p><strong>B:</strong>John thinks but doesn't know that everyone has been paid</p>
+            <p><strong>John thinks and possibly knows that everyone has been paid now</strong></p>
           </div>
         </div>
       `,
-        prompt: 'Which sentence is a better continuation/makes more sense/is more likely to be true?<br>',
-        labels: ['<strong>A</strong>', '<strong>B</strong>'],
+        prompt: 'How acceptable is this sentence?<br>',
+        labels: ['Completely unacceptable', 'Completely acceptable'],
         require_movement: true,
         button_label: 'Continue',
     }
@@ -136,13 +141,12 @@ function startExperiment() {
             </p>
           </div>
           <div>
-            <p><strong>A:</strong>It is thought and possibly known that the permafrost definitely will melt substantially in the next 5 years.</p>
-            <p><strong>B:</strong>It is thought but not known that the permafrost definitely will melt substantially in the next 5 years.</p>
+            <p><strong>It is thought but not known that the permafrost definitely will melt substantially in the next 5 years.</strong></p>
           </div>
         </div>
       `,
-        prompt: 'Which sentence is a better continuation/makes more sense/is more likely to be true?<br>',
-        labels: ['<strong>A</strong>', '<strong>B</strong>'],
+        prompt: 'How acceptable is this sentence?<br>',
+        labels: ['Completely unacceptable', 'Completely acceptable'],
         require_movement: true,
         button_label: 'Continue',
     }
@@ -167,14 +171,13 @@ function startExperiment() {
             <p>${contextText}</p>
           </div>
           <div>
-            <p><strong>A:</strong> ${jsPsych.timelineVariable('original')}</p>
-            <p><strong>B:</strong> ${jsPsych.timelineVariable('target')}</p>
+            <p><strong>${jsPsych.timelineVariable(experiment_condition)}</strong></p>
           </div>
         </div>
       `;
     },
-    prompt: 'Which sentence is a better continuation/makes more sense/is more likely to be true?<br>',
-    labels: ['<strong>A</strong>', '<strong>B</strong>'],
+    prompt: 'How acceptable is this sentence?<br>',
+    labels: ['Completely unacceptable', 'Completely acceptable'],
     require_movement: true,
     button_label: 'Continue',
     data: {
