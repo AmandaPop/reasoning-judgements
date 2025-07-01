@@ -93,15 +93,23 @@ function startExperiment() {
     var condition = 'original'
   }
 
-  const welcome = {
-    type: jsPsychHtmlKeyboardResponse,
-    stimulus: `
+const welcome = {
+  type: jsPsychHtmlKeyboardResponse,
+  stimulus: `
+    <div style="
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    ">
       <h3>Welcome to the experiment!</h3> 
-      <p>Instructions here.</p>
       <p>Press SPACE to begin.</p>
-    `,
-    choices: [' '],
-  };
+    </div>
+  `,
+  choices: [' '],
+};
 
     const instructions= {
     type: jsPsychHtmlKeyboardResponse,
@@ -124,7 +132,7 @@ function startExperiment() {
             <p>John has been working on the company’s payroll system for over five years. He personally ran the final checks this morning before the direct deposits were triggered. He also received confirmation emails from both the payroll software and the bank. At lunch, several coworkers mentioned already seeing the deposit in their accounts. Everything about the process went exactly as it always does.</p>
           </div>
           <div>
-            <p><strong>John thinks and possibly knows that everyone has been paid now</strong></p>
+            <p><strong>John thinks and possibly knows that everyone has been paid now.</strong></p>
           </div>
         </div>
       `,
@@ -156,7 +164,7 @@ function startExperiment() {
           '<div style="text-align: center;"><span>Completely</span><br><span>unacceptable</span></div>',
           '<div style="text-align: center;"><span>Completely</span><br><span>acceptable</span></div>'
           ],
-        slider_width: 800,
+        slider_width: 700,
         require_movement: true,
         button_label: 'Continue',
     }
