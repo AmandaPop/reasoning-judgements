@@ -129,7 +129,11 @@ function startExperiment() {
         </div>
       `,
         prompt: 'How acceptable is this sentence?<br>',
-        labels: ['Completely unacceptable', 'Completely acceptable'],
+        labels: [
+          '<div style="text-align: center;"><span>Completely</span><br><span>unacceptable</span></div>',
+          '<div style="text-align: center;"><span>Completely</span><br><span>acceptable</span></div>'
+        ],
+        slider_width: 800,
         require_movement: true,
         button_label: 'Continue',
     }
@@ -148,7 +152,11 @@ function startExperiment() {
         </div>
       `,
         prompt: 'How acceptable is this sentence?<br>',
-        labels: ['Completely unacceptable', 'Completely acceptable'],
+        labels: [
+          '<div style="text-align: center;"><span>Completely</span><br><span>unacceptable</span></div>',
+          '<div style="text-align: center;"><span>Completely</span><br><span>acceptable</span></div>'
+          ],
+        slider_width: 800,
         require_movement: true,
         button_label: 'Continue',
     }
@@ -183,7 +191,7 @@ function startExperiment() {
   '<div style="text-align: center;"><span>Completely</span><br><span>unacceptable</span></div>',
   '<div style="text-align: center;"><span>Completely</span><br><span>acceptable</span></div>'
     ],
-    slider_width: 300,
+    slider_width: 800,
     require_movement: true,
     button_label: 'Continue',
     data: {
