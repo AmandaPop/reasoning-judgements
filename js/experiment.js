@@ -5,7 +5,7 @@ var fillers = [];
 var stimuliLoaded = false; //tracking to make sure experiment doesn't start without loading//
 var fillersLoaded = false;
 
-console.log('This is the most recent version')
+//console.log('This is the most recent version')
 
 //function for tracking whether data is loaded before starting//
 function maybeStartExperiment() {
@@ -179,7 +179,10 @@ function startExperiment() {
       `;
     },
     prompt: 'How acceptable is this sentence?<br>',
-    labels: ['<p>Completely</p> <p>unacceptable</p>', '<p>Completely</p> <p>acceptable</p>'],
+    labels: [
+  '<div style="text-align: center;"><span>Completely</span><br><span>unacceptable</span></div>',
+  '<div style="text-align: center;"><span>Completely</span><br><span>acceptable</span></div>'
+    ],
     require_movement: true,
     button_label: 'Continue',
     data: {
