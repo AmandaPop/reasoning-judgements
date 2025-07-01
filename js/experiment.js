@@ -5,6 +5,7 @@ var fillers = [];
 var stimuliLoaded = false; //tracking to make sure experiment doesn't start without loading//
 var fillersLoaded = false;
 
+console.log('This is the most recent version')
 
 //function for tracking whether data is loaded before starting//
 function maybeStartExperiment() {
@@ -88,9 +89,9 @@ function startExperiment() {
   jsPsych.data.addProperties({ participant_id: participantID });
   const random_int = jsPsych.randomization.randomInt(0,1)
   if (random_int == 0){
-    var experiment_condition = 'target'
+    var condition = 'target'
   } else {
-    var experiment_condition = 'original'
+    var condition = 'original'
   }
 
   const welcome = {
@@ -173,7 +174,7 @@ function startExperiment() {
             <p>${contextText}</p>
           </div>
           <div>
-            <p><strong>${jsPsych.timelineVariable(experiment_condition)}</strong></p>
+            <p><strong>${jsPsych.timelineVariable(condition)}</strong></p>
           </div>
         </div>
       `;
