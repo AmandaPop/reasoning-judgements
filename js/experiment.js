@@ -81,7 +81,6 @@ Papa.parse('data_csv/fillers_believe.csv', {
 function startExperiment() {
   const jsPsych = initJsPsych({
     display_element: 'jspsych-target',
-    show_progress_bar: true
   }
     );
 
@@ -180,7 +179,7 @@ function startExperiment() {
       `;
     },
     prompt: 'How acceptable is this sentence?<br>',
-    labels: ['Completely unacceptable', 'Completely acceptable'],
+    labels: ['<p>Completely</p> <p>unacceptable</p>', '<p>Completely</p> <p>acceptable</p>'],
     require_movement: true,
     button_label: 'Continue',
     data: {
