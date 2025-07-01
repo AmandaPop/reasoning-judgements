@@ -183,7 +183,7 @@ function startExperiment() {
   '<div style="text-align: center;"><span>Completely</span><br><span>unacceptable</span></div>',
   '<div style="text-align: center;"><span>Completely</span><br><span>acceptable</span></div>'
     ],
-    slider_width: 300
+    slider_width: 300,
     require_movement: true,
     button_label: 'Continue',
     data: {
