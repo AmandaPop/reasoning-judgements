@@ -5,7 +5,7 @@ var fillers = [];
 var stimuliLoaded = false; //tracking to make sure experiment doesn't start without loading//
 var fillersLoaded = false;
 
-//console.log('This is the most recent version')
+console.log('This is the most recent version')
 
 //function for tracking whether data is loaded before starting//
 function maybeStartExperiment() {
