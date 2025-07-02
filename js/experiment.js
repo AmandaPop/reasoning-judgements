@@ -42,7 +42,7 @@ Papa.parse('data_csv/think_feats.csv', {
       }
     });
 
-    //console.log('Stimuli loaded:', stimuli);
+    console.log('Stimuli loaded:', stimuli);
     stimuliLoaded = true;
     maybeStartExperiment(); 
   }

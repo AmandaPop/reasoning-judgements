@@ -33,14 +33,19 @@ with open(file, 'r') as f:
             tense = None
             form = None
             skip_sentence = False  #flag to skip the whole sentence
-
+            #verb = next((w for w in sentence.words if w.deprel == 'root'), None) #finding the root verb
             for word in sentence.words:
+                if word.deprel == 'root':
+                    #needed later for checking for plurals
+                    root = word
+                if word.deprel == 'nsubj' and 'Number=Sing' in word.feats:
+                    num = 'sg'
                 if word.lemma == verb:
                     if 'Tense=Past|VerbForm=Fin' in word.feats:
                         tense = 'past'
                         form = 'fin'
-                        new_sentence.append(f'{word.text} but not knew')
-                        updated_original.append(f'{word.text} and possibly knew')
+                        new_sentence.append(f"{word.text} but didn't know")
+                        updated_original.append(f"{word.text} and possibly knew")
                     elif 'Tense=Past|VerbForm=Part' in word.feats:
                         tense = 'past'
                         form = 'fin'
@@ -56,8 +61,12 @@ with open(file, 'r') as f:
                         tense = 'pres'
                         form = 'fin'
                         person = '3'
-                        new_sentence.append(f"{word.text} but doesn't know")
-                        updated_original.append(f'{word.text} and possibly knows')
+                        if num == 'sg':
+                            new_sentence.append(f"{word.text} but doesn't know")
+                            updated_original.append(f'{word.text} and possibly knows')
+                        else:
+                            new_sentence.append(f"{word.text} but don't know")
+                            updated_original.append(f'{word.text} and possibly knows')
                     elif 'VerbForm=Inf' in word.feats:
                         form = 'inf'
                         new_sentence.append(f"{word.text} but don't know")
