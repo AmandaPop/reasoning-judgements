@@ -15,7 +15,7 @@ function maybeStartExperiment() {
 }
 
 //loads the csv data//
-Papa.parse('data_csv/believe.csv', {
+Papa.parse('data_csv/think_feats.csv', {
   download: true,
   header: true,
   complete: function(results) {
@@ -49,7 +49,7 @@ Papa.parse('data_csv/believe.csv', {
 });
 
 //load the filler csv
-Papa.parse('data_csv/fillers_believe.csv', {
+Papa.parse('data_csv/fillers_think.csv', {
   download: true,
   header: true,
   complete: function(results) {
@@ -123,6 +123,13 @@ const welcome = {
     `,
     choices: [' '],
   };
+    //placeholder if consent form is necessary
+    const consent_form = {
+        type: jsPsychImageButtonResponse,
+        stimulus: './consent_placeholder.png',
+        choices: ['Decline', 'Accept'],
+        prompt: "<p>Do you wish to participate?</p>"
+    };
 
     const example_noSI = {
       type: jsPsychHtmlSliderResponse,
