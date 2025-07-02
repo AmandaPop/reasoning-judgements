@@ -5,7 +5,7 @@ var fillers = [];
 var stimuliLoaded = false; //tracking to make sure experiment doesn't start without loading//
 var fillersLoaded = false;
 
-console.log('This is the most recent version')
+//console.log('This is the most recent version')
 
 //function for tracking whether data is loaded before starting//
 function maybeStartExperiment() {
@@ -15,7 +15,7 @@ function maybeStartExperiment() {
 }
 
 //loads the csv data//
-Papa.parse('data_csv/think_feats.csv', {
+Papa.parse('data_csv/think.csv', {
   download: true,
   header: true,
   complete: function(results) {
@@ -148,7 +148,7 @@ const welcome = {
           '<div style="text-align: center;"><span>Completely</span><br><span>unacceptable</span></div>',
           '<div style="text-align: center;"><span>Completely</span><br><span>acceptable</span></div>'
         ],
-        slider_width: 800,
+        slider_width: 700,
         require_movement: true,
         button_label: 'Continue',
     }
