@@ -32,6 +32,7 @@ with open(file, 'r') as f:
             person = None
             tense = None
             form = None
+            num = None
             skip_sentence = False  #flag to skip the whole sentence
             #verb = next((w for w in sentence.words if w.deprel == 'root'), None) #finding the root verb
             for word in sentence.words:
