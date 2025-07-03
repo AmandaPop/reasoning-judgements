@@ -5,8 +5,6 @@ var fillers = [];
 var stimuliLoaded = false; //tracking to make sure experiment doesn't start without loading//
 var fillersLoaded = false;
 
-//console.log('This is the most recent version')
-
 //function for tracking whether data is loaded before starting//
 function maybeStartExperiment() {
   if (stimuliLoaded && fillersLoaded) {
@@ -14,8 +12,11 @@ function maybeStartExperiment() {
   }
 }
 
+var stimuli_csv = 'data_csv/think.csv'
+var verb_csv = stimuli_csv.split('/')[1]; 
+var stimuli_verb = verb_csv.split('.')[0]
 //loads the csv data//
-Papa.parse('data_csv/think.csv', {
+Papa.parse(stimuli_csv, {
   download: true,
   header: true,
   complete: function(results) {
@@ -42,7 +43,7 @@ Papa.parse('data_csv/think.csv', {
       }
     });
 
-    console.log('Stimuli loaded:', stimuli);
+    //console.log('Stimuli loaded:', stimuli);
     stimuliLoaded = true;
     maybeStartExperiment(); 
   }
@@ -86,30 +87,16 @@ function startExperiment() {
 
   const participantID = jsPsych.randomization.randomID(10);
   jsPsych.data.addProperties({ participant_id: participantID });
-  const random_int = jsPsych.randomization.randomInt(0,1)
-  if (random_int == 0){
-    var condition = 'target'
-  } else {
-    var condition = 'original'
-  }
+  jsPsych.data.addProperties({ verb: stimuli_verb })
 
-const welcome = {
-  type: jsPsychHtmlKeyboardResponse,
-  stimulus: `
-    <div style="
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      text-align: center;
-    ">
+  const welcome = {
+    type: jsPsychHtmlKeyboardResponse,
+    stimulus: `
       <h3>Welcome to the experiment!</h3> 
       <p>Press SPACE to begin.</p>
-    </div>
-  `,
-  choices: [' '],
-};
+    `,
+    choices: [' '],
+  };
 
     const instructions= {
     type: jsPsychHtmlKeyboardResponse,
@@ -121,13 +108,6 @@ const welcome = {
     `,
     choices: [' '],
   };
-    //placeholder if consent form is necessary
-    const consent_form = {
-        type: jsPsychImageButtonResponse,
-        stimulus: './consent_placeholder.png',
-        choices: ['Decline', 'Accept'],
-        prompt: "<p>Do you wish to participate?</p>"
-    };
 
     const example_noSI = {
       type: jsPsychHtmlSliderResponse,
@@ -137,15 +117,13 @@ const welcome = {
             <p>John has been working on the company’s payroll system for over five years. He personally ran the final checks this morning before the direct deposits were triggered. He also received confirmation emails from both the payroll software and the bank. At lunch, several coworkers mentioned already seeing the deposit in their accounts. Everything about the process went exactly as it always does.</p>
           </div>
           <div>
-            <p><strong>John thinks and possibly knows that everyone has been paid now.</strong></p>
+            <p><strong>A:</strong>John thinks and possibly knows that everyone has been paid now</p>
+            <p><strong>B:</strong>John thinks but doesn't know that everyone has been paid</p>
           </div>
         </div>
       `,
-        prompt: 'How acceptable is this sentence?<br>',
-        labels: [
-          '<div style="text-align: center;"><span>Completely</span><br><span>unacceptable</span></div>',
-          '<div style="text-align: center;"><span>Completely</span><br><span>acceptable</span></div>'
-        ],
+        prompt: 'Which sentence is more acceptable in this context?<br>',
+        labels: ['<strong>A</strong>', '<strong>B</strong>'],
         slider_width: 700,
         require_movement: true,
         button_label: 'Continue',
@@ -160,15 +138,13 @@ const welcome = {
             </p>
           </div>
           <div>
-            <p><strong>It is thought but not known that the permafrost definitely will melt substantially in the next 5 years.</strong></p>
+            <p><strong>A:</strong>It is thought and possibly known that the permafrost definitely will melt substantially in the next 5 years.</p>
+            <p><strong>B:</strong>It is thought but not known that the permafrost definitely will melt substantially in the next 5 years.</p>
           </div>
         </div>
       `,
-        prompt: 'How acceptable is this sentence?<br>',
-        labels: [
-          '<div style="text-align: center;"><span>Completely</span><br><span>unacceptable</span></div>',
-          '<div style="text-align: center;"><span>Completely</span><br><span>acceptable</span></div>'
-          ],
+        prompt: 'Which sentence is more acceptable in this context?<br>',
+        labels: ['<strong>A</strong>', '<strong>B</strong>'],
         slider_width: 700,
         require_movement: true,
         button_label: 'Continue',
@@ -178,8 +154,8 @@ const welcome = {
     type: jsPsychHtmlKeyboardResponse,
     stimulus: `
       <p>Now you are ready to begin.</p>
-      <p> The instructions are repreated below for a reminder.</p>
-        <p>This experiment is seeking your feedback on different sentences containing the word think. All the sentences have been taken from Wikipedia articles. What we want to know is whether the way the sentence is phrased could make sense given the rest of the context of the article that is shown. If it is an acceptable sentence for that context, use the slider to place the nob on the scale depending on how acceptable you feel the sentence is. </p>
+      <p>The instructions are repeated here as a reminder</p>
+      <p>This experiment is seeking your feedback on different sentences containing the word think. All the sentences have been taken from Wikipedia articles. What we want to know is whether the way the sentence is phrased could make sense given the rest of the context of the article that is shown. If it is an acceptable sentence for that context, use the slider to place the nob on the scale depending on how acceptable you feel the sentence is. </p>
       <p>Press SPACE to start.</p>
     `,
     choices: [' '],
@@ -196,17 +172,15 @@ const welcome = {
             <p>${contextText}</p>
           </div>
           <div>
-            <p><strong>${jsPsych.timelineVariable(condition)}</strong></p>
+            <p><strong>A:</strong> ${jsPsych.timelineVariable('original')}</p>
+            <p><strong>B:</strong> ${jsPsych.timelineVariable('target')}</p>
           </div>
         </div>
       `;
     },
-    prompt: 'How acceptable is this sentence?<br>',
-    labels: [
-  '<div style="text-align: center;"><span>Completely</span><br><span>unacceptable</span></div>',
-  '<div style="text-align: center;"><span>Completely</span><br><span>acceptable</span></div>'
-    ],
-    slider_width: 800,
+    prompt: 'Which sentence is more acceptable in this context?<br>',
+    labels: ['<strong>A</strong>', '<strong>B</strong>'],
+    slider_width: 700,
     require_movement: true,
     button_label: 'Continue',
     data: {
