@@ -158,7 +158,10 @@ function startExperiment() {
     stimulus: `
       <p>Now you are ready to begin.</p>
       <p>The instructions are repeated here as a reminder.</p>
-      <p>This experiment is seeking your feedback on different sentences containing the word think. All the sentences have been taken from Wikipedia articles. What we want to know is whether the way the sentence is phrased could make sense given the rest of the context of the article that is shown. If it is an acceptable sentence for that context, use the slider to place the nob on the scale depending on how acceptable you feel the sentence is. </p>
+     <p>This experiment is seeking your feedback on different sentences containing the word 'think'. All the sentences have been taken from Wikipedia articles. 
+      What we want to know is whether the way the sentence is phrased could make sense given the rest of the context of the article that is shown. 
+      We are not interested in whether the sentence contains factually correct information or is truthful of reality, only whether the sentences feel like they could be coherent in their context. </p>
+      <p>On each trial you are shown two sentences, place the nod on the slider towards the direction of the sentence which you feel is more acceptable depending on how much more you accept it. </p>
       <p>Press SPACE to start.</p>
     `,
     choices: [' '],
