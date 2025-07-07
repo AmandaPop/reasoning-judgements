@@ -105,7 +105,7 @@ function startExperiment() {
       <p>This experiment is seeking your feedback on different sentences containing the word 'think'. All the sentences have been taken from Wikipedia articles. 
       What we want to know is whether the way the sentence is phrased could make sense given the rest of the context of the article that is shown. 
       We are not interested in whether the sentence contains factually correct information or is truthful of reality, only whether the sentences feel like they could be coherent in their context. </p>
-      <p>On each trial you are shown two sentences, place the nod on the slider towards the direction of the sentence which you feel is more acceptable depending on how much more you accept it. </p>
+      <p>On each trial you are shown two sentences, place the nob on the slider towards the direction of the sentence which you feel is more acceptable depending on how much more coherent it is. </p>
       <p>Once you go forward in the experiment you are unable to go backwards so only click continue when you are ready. There will be one test trials to give you an understanding of what each one will look like. Afterward, there will be 15 test trials.  </p>
       <p>Press SPACE to continue.</p>
     `,
@@ -161,7 +161,7 @@ function startExperiment() {
      <p>This experiment is seeking your feedback on different sentences containing the word 'think'. All the sentences have been taken from Wikipedia articles. 
       What we want to know is whether the way the sentence is phrased could make sense given the rest of the context of the article that is shown. 
       We are not interested in whether the sentence contains factually correct information or is truthful of reality, only whether the sentences feel like they could be coherent in their context. </p>
-      <p>On each trial you are shown two sentences, place the nod on the slider towards the direction of the sentence which you feel is more acceptable depending on how much more you accept it. </p>
+      <p>On each trial you are shown two sentences, place the nob on the slider towards the direction of the sentence which you feel is more acceptable depending on how much more coherent it is. </p>
       <p>Press SPACE to start.</p>
     `,
     choices: [' '],
