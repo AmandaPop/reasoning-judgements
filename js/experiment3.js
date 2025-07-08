@@ -48,7 +48,7 @@ Papa.parse('data_csv/data.csv', {
     maybeStartExperiment(); 
   }
 });
-/* fillers here
+
 //load the filler csv
 Papa.parse('data_csv/fillers_think.csv', {
   download: true,
@@ -77,7 +77,7 @@ Papa.parse('data_csv/fillers_think.csv', {
     maybeStartExperiment(); 
   }
 });
-*/
+
 
 //run experiment//
 function startExperiment() {
