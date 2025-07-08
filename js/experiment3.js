@@ -14,40 +14,32 @@ function maybeStartExperiment() {
   }
 }
 
-//loads the csv data//
 Papa.parse('data_csv/data.csv', {
   download: true,
   header: true,
   complete: function(results) {
-
     stimuli = [];
 
     results.data.forEach(row => {
-      try {
-        //convert context string to valid array
-        const parsedContext = JSON.parse(row.context.replace(/'/g, '"'));
-
-        //only add to stimuli if parsing was successful
+      if (row.sentence && row.context) {
         stimuli.push({
           sentence: row.sentence,
-          context: row.context,
+          context: row.context,  
           verb: row.verb,
           factP: row.factP,
           modal: row.modal,
           person: row.person,
           conditional: row.conditional
         });
-        //for incase any lines break this during loading, just skip that line
-      } catch (e) {
-        //skip the row
       }
     });
 
     console.log('Stimuli loaded:', stimuli);
     stimuliLoaded = true;
-    maybeStartExperiment(); 
+    maybeStartExperiment();
   }
 });
+
 
 //load the filler csv
 Papa.parse('data_csv/fillers_think.csv', {
