@@ -186,6 +186,7 @@ const No_context_template = {
 
 
   //create combined trials with random SI/No_SI selection
+  /*
   const testTrials = jsPsych.randomization
     .sampleWithoutReplacement(stimuli, 12)
     .map(stim => ({ ...stim, type: 'test' }));
@@ -199,8 +200,39 @@ const No_context_template = {
   ).map(trial => {
     const sentenceKey = jsPsych.randomization.sampleWithoutReplacement(['SI', 'No_SI'], 1)[0];
     return { ...trial, sentenceKey };
-  });
+  }); */
 
+  //separate stimuli into four groups based on modal and SI status
+  const modalTrials = stimuli.filter(stim => stim.modal && stim.modal.trim() !== '');
+  const nonModalTrials = stimuli.filter(stim => !stim.modal || stim.modal.trim() === '');
+
+  const modal_SI = jsPsych.randomization.shuffle(modalTrials).slice(0, 6).map(stim => ({ ...stim, sentenceKey: 'SI' }));
+  const modal_No_SI = jsPsych.randomization.shuffle(modalTrials).slice(6, 12).map(stim => ({ ...stim, sentenceKey: 'No_SI' }));
+
+  const nonModal_SI = jsPsych.randomization.shuffle(nonModalTrials).slice(0, 6).map(stim => ({ ...stim, sentenceKey: 'SI' }));
+  const nonModal_No_SI = jsPsych.randomization.shuffle(nonModalTrials).slice(6, 12).map(stim => ({ ...stim, sentenceKey: 'No_SI' }));
+
+  //sample 3 from each group
+  const selectedModalSI = jsPsych.randomization.sampleWithoutReplacement(modal_SI, 3);
+  const selectedModalNoSI = jsPsych.randomization.sampleWithoutReplacement(modal_No_SI, 3);
+  const selectedNonModalSI = jsPsych.randomization.sampleWithoutReplacement(nonModal_SI, 3);
+  const selectedNonModalNoSI = jsPsych.randomization.sampleWithoutReplacement(nonModal_No_SI, 3);
+
+  //combine and shuffle
+  const testTrials = jsPsych.randomization.shuffle([
+    ...selectedModalSI,
+    ...selectedModalNoSI,
+    ...selectedNonModalSI,
+    ...selectedNonModalNoSI
+  ]);
+
+    const fillerTrials = jsPsych.randomization
+    .sampleWithoutReplacement(fillers, 3)
+    .map(filler => ({ ...filler, type: 'filler' }));
+
+    const combinedTrials = jsPsych.randomization.shuffle(
+      testTrials.concat(fillerTrials)
+    );
   console.log(combinedTrials); //to debug the trial list
 
   const trial_procedure = {
