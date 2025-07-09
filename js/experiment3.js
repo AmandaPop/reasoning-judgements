@@ -5,8 +5,6 @@ var fillers = [];
 var stimuliLoaded = false; //tracking to make sure experiment doesn't start without loading//
 var fillersLoaded = false;
 
-//console.log('This is the most recent version')
-
 //function for tracking whether data is loaded before starting//
 function maybeStartExperiment() {
   if (stimuliLoaded && fillersLoaded) {
@@ -24,6 +22,8 @@ Papa.parse('data_csv/data.csv', {
       if (row.sentence && row.context) {
         stimuli.push({
           sentence: row.sentence,
+          SI: row.SI,
+          no_SI: row.No_SI,
           context: row.context,  
           verb: row.verb,
           factP: row.factP,
@@ -40,7 +40,6 @@ Papa.parse('data_csv/data.csv', {
   }
 });
 
-
 //load the filler csv
 Papa.parse('data_csv/fillers.csv', {
   download: true,
@@ -52,6 +51,8 @@ Papa.parse('data_csv/fillers.csv', {
       if (row.sentence && row.context) {
         fillers.push({
           sentence: row.sentence,
+          SI: row.SI,
+          no_SI: row.No_SI,
           context: row.context,  
           verb: row.verb,
           factP: row.factP,
@@ -107,72 +108,90 @@ function startExperiment() {
     type: jsPsychHtmlKeyboardResponse,
     stimulus: `
       <h1>Instructions</h1> 
-      <p>This experiment is seeking your feedback on different sentences containing the word think. All the sentences have been taken from Wikipedia articles. What we want to know is whether the way the sentence is phrased could make sense given the rest of the context of the article that is shown. If it is an acceptable sentence for that context, use the slider to place the nob on the scale depending on how acceptable you feel the sentence is. </p>
+      <p>This is the instructions </p>
       <p>Once you go forward in the experiment you are unable to go backwards so only click continue when you are ready. There will be two test trials where we describe the question in more detail to give you a hang of it. Afterward, there will be 15 test trials.  </p>
       <p>Press SPACE to continue.</p>
     `,
     choices: [' '],
   };
 
-  const context_template = {
-    type: jsPsychHtmlSliderResponse,
-    stimulus: function () {
-      return `
-        <div style="text-align: center;">
-          <div class="context-block" style="margin-bottom: 96px;">
-            <p>${jsPsych.timelineVariable('context')}</p>
-          </div>
-          <div>
-            <p><strong>${jsPsych.timelineVariable('sentence')}</strong></p>
-          </div>
+const context_template = {
+  type: jsPsychHtmlSliderResponse,
+  stimulus: function () {
+    const i = jsPsych.randomization.randomInt(0,1);
+    const sentenceKey = i === 0 ? 'SI' : 'No_SI';
+    const sentence = jsPsych.timelineVariable(sentenceKey);
+
+    return `
+      <div style="text-align: center;">
+        <div class="context-block" style="margin-bottom: 96px;">
+          <p>${jsPsych.timelineVariable('context')}</p>
         </div>
-      `;
-    },
-    prompt: "Does the speaker mean that they don't know?",
-    labels: ['Yes', 'No'
-
-    ],
-    slider_width: 800,
-    require_movement: true,
-    button_label: 'Continue',
-    data: {
+        <div>
+          <p><strong>${sentence}</strong></p>
+        </div>
+      </div>
+    `;
+  },
+  prompt: "Does the speaker mean that they don't know?",
+  labels: ['Yes', 'No'],
+  slider_width: 800,
+  require_movement: true,
+  button_label: 'Continue',
+  data: function() {
+    const i = jsPsych.randomization.randomInt(0,1);
+    const sentenceKey = i === 0 ? 'SI' : 'No_SI';
+    return {
       collect: true,
       trial_type: jsPsych.timelineVariable('type'),
-      sentence: jsPsych.timelineVariable('sentence'),
+      sentence: jsPsych.timelineVariable(sentenceKey),
+      sentence_type: sentenceKey,
       context: jsPsych.timelineVariable('context'),
       verb: jsPsych.timelineVariable('verb'),
       factP: jsPsych.timelineVariable('factP'),
       modal: jsPsych.timelineVariable('modal'),
       person: jsPsych.timelineVariable('person'),
       conditional: jsPsych.timelineVariable('conditional')
-    },
-  };
+    };
+  }
+};
 
-    const No_context_template = {
-    type: jsPsychHtmlSliderResponse,
-    stimulus: function () {
-      return `
-            <p><strong>${jsPsych.timelineVariable('sentence')}</strong></p>
-      `;
-    },
-    prompt: "Does the speaker mean that they don't know?",
-    labels: ['Yes', 'No'
-    ],
-    slider_width: 800,
-    require_movement: true,
-    button_label: 'Continue',
-    data: {
+const No_context_template = {
+  type: jsPsychHtmlSliderResponse,
+  stimulus: function () {
+    const i = jsPsych.randomization.randomInt(0,1);
+    const sentenceKey = i === 0 ? 'SI' : 'No_SI';
+    const sentence = jsPsych.timelineVariable(sentenceKey);
+
+    return `
+      <div style="text-align: center;">
+        <p><strong>${sentence}</strong></p>
+      </div>
+    `;
+  },
+  prompt: "Does the speaker mean that they don't know?",
+  labels: ['Yes', 'No'],
+  slider_width: 800,
+  require_movement: true,
+  button_label: 'Continue',
+  data: function() {
+    const i = jsPsych.randomization.randomInt(0,1);
+    const sentenceKey = i === 0 ? 'SI' : 'No_SI';
+    return {
       collect: true,
       trial_type: jsPsych.timelineVariable('type'),
-      sentence: jsPsych.timelineVariable('sentence'),
-      context: jsPsych.timelineVariable('context'),
+      sentence: jsPsych.timelineVariable(sentenceKey),
+      sentence_type: sentenceKey,
+      context: 'None',
       verb: jsPsych.timelineVariable('verb'),
       factP: jsPsych.timelineVariable('factP'),
       modal: jsPsych.timelineVariable('modal'),
       person: jsPsych.timelineVariable('person'),
       conditional: jsPsych.timelineVariable('conditional')
-    },
-  };
+    };
+  }
+};
+
 
   //choose randomly sampled stimuli and random order of fillers - total 15
   const testTrials = jsPsych.randomization
