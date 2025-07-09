@@ -110,78 +110,88 @@ function startExperiment() {
     choices: [' '],
   };
 
-  const context_template = {
-    type: jsPsychHtmlSliderResponse,
-    stimulus: function () {
-      const sentenceKey = jsPsych.timelineVariable('sentenceKey');
-      const sentence = jsPsych.timelineVariable(sentenceKey);
+const context_template = {
+  type: jsPsychHtmlSliderResponse,
+  stimulus: function () {
+    const sentenceKey = jsPsych.timelineVariable('sentenceKey');
+    const sentence = jsPsych.timelineVariable(sentenceKey);
 
-      return `
-        <div style="text-align: center;">
-          <div class="context-block" style="margin-bottom: 96px;">
-            <p>${jsPsych.timelineVariable('context')}</p>
-          </div>
-          <div>
-            <p><strong>${sentence}</strong></p>
-          </div>
+    return `
+      <div style="text-align: center;">
+        <div class="context-block" style="margin-bottom: 96px;">
+          <p>${jsPsych.timelineVariable('context')}</p>
         </div>
-      `;
-    },
-    prompt: "<p>Does the speaker mean that they don't know?</p>",
-    labels: ['Yes', 'No'],
-    slider_width: 800,
-    require_movement: true,
-    button_label: 'Continue',
-    data: function () {
-      const sentenceKey = jsPsych.timelineVariable('sentenceKey');
-      return {
-        collect: true,
-        trial_type: jsPsych.timelineVariable('type'),
-        sentence: jsPsych.timelineVariable(sentenceKey),
-        sentence_type: sentenceKey,
-        context: jsPsych.timelineVariable('context'),
-        verb: jsPsych.timelineVariable('verb'),
-        factP: jsPsych.timelineVariable('factP'),
-        modal: jsPsych.timelineVariable('modal'),
-        person: jsPsych.timelineVariable('person'),
-        conditional: jsPsych.timelineVariable('conditional')
-      };
-    }
-  };
-
-  const No_context_template = {
-    type: jsPsychHtmlSliderResponse,
-    stimulus: function () {
-      const sentenceKey = jsPsych.timelineVariable('sentenceKey');
-      const sentence = jsPsych.timelineVariable(sentenceKey);
-
-      return `
-        <div style="text-align: center;">
+        <div>
           <p><strong>${sentence}</strong></p>
         </div>
-      `;
-    },
-    prompt: "Does the speaker mean that they don't know?",
-    labels: ['Yes', 'No'],
-    slider_width: 800,
-    require_movement: true,
-    button_label: 'Continue',
-    data: function () {
-      const sentenceKey = jsPsych.timelineVariable('sentenceKey');
-      return {
-        collect: true,
-        trial_type: jsPsych.timelineVariable('type'),
-        sentence: jsPsych.timelineVariable(sentenceKey),
-        sentence_type: sentenceKey,
-        context: 'None',
-        verb: jsPsych.timelineVariable('verb'),
-        factP: jsPsych.timelineVariable('factP'),
-        modal: jsPsych.timelineVariable('modal'),
-        person: jsPsych.timelineVariable('person'),
-        conditional: jsPsych.timelineVariable('conditional')
-      };
-    }
-  };
+        <div style="margin-top: 50px;">
+          <p><strong>Does the speaker mean that they don't know?</strong></p>
+        </div>
+      </div>
+    `;
+  },
+  labels: ['Yes', 'No'],
+  slider_width: 800,
+  require_movement: true,
+  button_label: 'Continue',
+  data: function () {
+    const sentenceKey = jsPsych.timelineVariable('sentenceKey');
+    return {
+      collect: true,
+      trial_type: jsPsych.timelineVariable('type'),
+      sentence: jsPsych.timelineVariable(sentenceKey),
+      sentence_type: sentenceKey,
+      context: jsPsych.timelineVariable('context'),
+      verb: jsPsych.timelineVariable('verb'),
+      factP: jsPsych.timelineVariable('factP'),
+      modal: jsPsych.timelineVariable('modal'),
+      person: jsPsych.timelineVariable('person'),
+      conditional: jsPsych.timelineVariable('conditional')
+    };
+  }
+};
+
+const No_context_template = {
+  type: jsPsychHtmlSliderResponse,
+  stimulus: function () {
+    const sentenceKey = jsPsych.timelineVariable('sentenceKey');
+    const sentence = jsPsych.timelineVariable(sentenceKey);
+
+    return `
+      <div style="text-align: center;">
+        <div class="context-block" style="margin-bottom: 96px;">
+        </div>
+        <div>
+          <p><strong>${sentence}</strong></p>
+        </div>
+        <div style="margin-top: 50px;">
+          <p><strong>Does the speaker mean that they don't know?</strong></p>
+        </div>
+      </div>
+    `;
+  },
+  // Remove the prompt here
+  labels: ['Yes', 'No'],
+  slider_width: 800,
+  require_movement: true,
+  button_label: 'Continue',
+  data: function () {
+    const sentenceKey = jsPsych.timelineVariable('sentenceKey');
+    return {
+      collect: true,
+      trial_type: jsPsych.timelineVariable('type'),
+      sentence: jsPsych.timelineVariable(sentenceKey),
+      sentence_type: sentenceKey,
+      context: 'None',
+      verb: jsPsych.timelineVariable('verb'),
+      factP: jsPsych.timelineVariable('factP'),
+      modal: jsPsych.timelineVariable('modal'),
+      person: jsPsych.timelineVariable('person'),
+      conditional: jsPsych.timelineVariable('conditional')
+    };
+  }
+};
+
 
   //create combined trials with random SI/No_SI selection
   const testTrials = jsPsych.randomization
