@@ -127,7 +127,7 @@ const context_template = {
       </div>
     `;
   },
-  labels: ['<p>Completely\n Acceptable<\p>', '<p>Completely\n Unacceptable<\p>'],
+  labels: ['<p>Completely\n Acceptable</p>', '<p>Completely\n Unacceptable</p>'],
   slider_width: 700,
   require_movement: true,
   button_label: 'Continue',
@@ -164,7 +164,7 @@ const No_context_template = {
       </div>
     `;
   },
-  labels: ['<p>Completely\n Acceptable<\p>', '<p>Completely\n Unacceptable<\p>'],
+  labels: ['<p>Completely\n Acceptable</p>', '<p>Completely\n Unacceptable</p>'],
   slider_width: 700,
   require_movement: true,
   button_label: 'Continue',
@@ -226,9 +226,13 @@ const No_context_template = {
     ...selectedNonModalNoSI
   ]);
 
-    const fillerTrials = jsPsych.randomization
+  const fillerTrials = jsPsych.randomization
     .sampleWithoutReplacement(fillers, 3)
-    .map(filler => ({ ...filler, type: 'filler' }));
+    .map(filler => {
+      const sentenceKey = jsPsych.randomization.sampleWithoutReplacement(['SI', 'No_SI'], 1)[0];
+      return { ...filler, sentenceKey };
+    });
+
 
     const combinedTrials = jsPsych.randomization.shuffle(
       testTrials.concat(fillerTrials)
