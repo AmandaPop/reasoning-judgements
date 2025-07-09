@@ -74,134 +74,124 @@ Papa.parse('data_csv/fillers.csv', {
 function startExperiment() {
   const jsPsych = initJsPsych({
     display_element: 'jspsych-target',
-  }
-    );
+  });
 
   const participantID = jsPsych.randomization.randomID(10);
   jsPsych.data.addProperties({ participant_id: participantID });
-    const random_int = jsPsych.randomization.randomInt(0,1)
-  let condition;
-  if (random_int == 0){
-    condition = 'context'
-  } else {
-    condition = 'no_context'
-  }
+
+  const condition = jsPsych.randomization.randomInt(0, 1) === 0 ? 'context' : 'no_context';
 
   const welcome = {
-  type: jsPsychHtmlKeyboardResponse,
-  stimulus: `
-    <div style="
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      text-align: center;
-    ">
-      <h3>Welcome to the experiment!</h3> 
-      <p>Press SPACE to begin.</p>
-    </div>
-  `,
-  choices: [' '],
-    };
+    type: jsPsychHtmlKeyboardResponse,
+    stimulus: `
+      <div style="
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        text-align: center;
+      ">
+        <h3>Welcome to the experiment!</h3> 
+        <p>Press SPACE to begin.</p>
+      </div>
+    `,
+    choices: [' '],
+  };
 
-  const instructions= {
+  const instructions = {
     type: jsPsychHtmlKeyboardResponse,
     stimulus: `
       <h1>Instructions</h1> 
-      <p>This is the instructions </p>
-      <p>Once you go forward in the experiment you are unable to go backwards so only click continue when you are ready. There will be two test trials where we describe the question in more detail to give you a hang of it. Afterward, there will be 15 test trials.  </p>
+      <p>This is the instructions</p>
+      <p>Once you go forward in the experiment you are unable to go backwards, so only click continue when you are ready. There will be two test trials where we describe the question in more detail to give you a hang of it. Afterward, there will be 15 test trials.</p>
       <p>Press SPACE to continue.</p>
     `,
     choices: [' '],
   };
 
-const context_template = {
-  type: jsPsychHtmlSliderResponse,
-  stimulus: function () {
-    const i = jsPsych.randomization.randomInt(0,1);
-    const sentenceKey = i === 0 ? 'SI' : 'No_SI';
-    const sentence = jsPsych.timelineVariable(sentenceKey);
+  const context_template = {
+    type: jsPsychHtmlSliderResponse,
+    stimulus: function () {
+      const sentenceKey = jsPsych.timelineVariable('sentenceKey');
+      const sentence = jsPsych.timelineVariable(sentenceKey);
 
-    return `
-      <div style="text-align: center;">
-        <div class="context-block" style="margin-bottom: 96px;">
-          <p>${jsPsych.timelineVariable('context')}</p>
+      return `
+        <div style="text-align: center;">
+          <div class="context-block" style="margin-bottom: 96px;">
+            <p>${jsPsych.timelineVariable('context')}</p>
+          </div>
+          <div>
+            <p><strong>${sentence}</strong></p>
+          </div>
         </div>
-        <div>
+      `;
+    },
+    prompt: "<p>Does the speaker mean that they don't know?</p>",
+    labels: ['Yes', 'No'],
+    slider_width: 800,
+    require_movement: true,
+    button_label: 'Continue',
+    data: function () {
+      const sentenceKey = jsPsych.timelineVariable('sentenceKey');
+      return {
+        collect: true,
+        trial_type: jsPsych.timelineVariable('type'),
+        sentence: jsPsych.timelineVariable(sentenceKey),
+        sentence_type: sentenceKey,
+        context: jsPsych.timelineVariable('context'),
+        verb: jsPsych.timelineVariable('verb'),
+        factP: jsPsych.timelineVariable('factP'),
+        modal: jsPsych.timelineVariable('modal'),
+        person: jsPsych.timelineVariable('person'),
+        conditional: jsPsych.timelineVariable('conditional')
+      };
+    }
+  };
+
+  const No_context_template = {
+    type: jsPsychHtmlSliderResponse,
+    stimulus: function () {
+      const sentenceKey = jsPsych.timelineVariable('sentenceKey');
+      const sentence = jsPsych.timelineVariable(sentenceKey);
+
+      return `
+        <div style="text-align: center;">
           <p><strong>${sentence}</strong></p>
         </div>
-      </div>
-    `;
-  },
-  prompt: "<p>Does the speaker mean that they don't know?<\p>",
-  labels: ['Yes', 'No'],
-  slider_width: 800,
-  require_movement: true,
-  button_label: 'Continue',
-  data: function() {
-    const i = jsPsych.randomization.randomInt(0,1);
-    const sentenceKey = i === 0 ? 'SI' : 'No_SI';
-    return {
-      collect: true,
-      trial_type: jsPsych.timelineVariable('type'),
-      sentence: jsPsych.timelineVariable(sentenceKey),
-      sentence_type: sentenceKey,
-      context: jsPsych.timelineVariable('context'),
-      verb: jsPsych.timelineVariable('verb'),
-      factP: jsPsych.timelineVariable('factP'),
-      modal: jsPsych.timelineVariable('modal'),
-      person: jsPsych.timelineVariable('person'),
-      conditional: jsPsych.timelineVariable('conditional')
-    };
-  }
-};
+      `;
+    },
+    prompt: "Does the speaker mean that they don't know?",
+    labels: ['Yes', 'No'],
+    slider_width: 800,
+    require_movement: true,
+    button_label: 'Continue',
+    data: function () {
+      const sentenceKey = jsPsych.timelineVariable('sentenceKey');
+      return {
+        collect: true,
+        trial_type: jsPsych.timelineVariable('type'),
+        sentence: jsPsych.timelineVariable(sentenceKey),
+        sentence_type: sentenceKey,
+        context: 'None',
+        verb: jsPsych.timelineVariable('verb'),
+        factP: jsPsych.timelineVariable('factP'),
+        modal: jsPsych.timelineVariable('modal'),
+        person: jsPsych.timelineVariable('person'),
+        conditional: jsPsych.timelineVariable('conditional')
+      };
+    }
+  };
 
-const No_context_template = {
-  type: jsPsychHtmlSliderResponse,
-  stimulus: function () {
-    const i = jsPsych.randomization.randomInt(0,1);
-    const sentenceKey = i === 0 ? 'SI' : 'No_SI';
-    const sentence = jsPsych.timelineVariable(sentenceKey);
-
-    return `
-      <div style="text-align: center;">
-        <p><strong>${sentence}</strong></p>
-      </div>
-    `;
-  },
-  prompt: "Does the speaker mean that they don't know?",
-  labels: ['Yes', 'No'],
-  slider_width: 800,
-  require_movement: true,
-  button_label: 'Continue',
-  data: function() {
-    const i = jsPsych.randomization.randomInt(0,1);
-    const sentenceKey = i === 0 ? 'SI' : 'No_SI';
-    return {
-      collect: true,
-      trial_type: jsPsych.timelineVariable('type'),
-      sentence: jsPsych.timelineVariable(sentenceKey),
-      sentence_type: sentenceKey,
-      context: 'None',
-      verb: jsPsych.timelineVariable('verb'),
-      factP: jsPsych.timelineVariable('factP'),
-      modal: jsPsych.timelineVariable('modal'),
-      person: jsPsych.timelineVariable('person'),
-      conditional: jsPsych.timelineVariable('conditional')
-    };
-  }
-};
-
-
-  //choose randomly sampled stimuli and random order of fillers - total 15
+  //create combined trials with random SI/No_SI selection
   const testTrials = jsPsych.randomization
     .sampleWithoutReplacement(stimuli, 12)
     .map(stim => ({ ...stim, type: 'test' }));
+
   const fillerTrials = jsPsych.randomization
     .sampleWithoutReplacement(fillers, 3)
     .map(filler => ({ ...filler, type: 'filler' }));
-  //combine and shuffle all trials
+
   const combinedTrials = jsPsych.randomization.shuffle(
     testTrials.concat(fillerTrials)
   ).map(trial => {
@@ -209,24 +199,15 @@ const No_context_template = {
     return { ...trial, sentenceKey };
   });
 
-  console.log(combinedTrials); //testing to find whats in my trial data
+  console.log(combinedTrials); //to debug the trial list
 
-  //depending on context or no context condition show that type of trial
-  let trial_procedure;
-  if (condition == 'context') {
-      trial_procedure = {
-      timeline: [context_template],
-      timeline_variables: combinedTrials,
-      randomize_order: false //already shuffled
+  const trial_procedure = {
+    timeline: [condition === 'context' ? context_template : No_context_template],
+    timeline_variables: combinedTrials,
+    randomize_order: false
   };
-  } else {
-      trial_procedure = {
-      timeline: [No_context_template],
-      timeline_variables: combinedTrials,
-      randomize_order: false //already shuffled
-  };
-  }
 
+  //save data to osf
   const save_data = {
     type: jsPsychPipe,
     action: "save",
@@ -256,9 +237,12 @@ const No_context_template = {
     choices: ['NO_KEYS'],
   };
 
-  jsPsych.run([welcome, 
-    instructions, 
-    trial_procedure, 
-    save_data, 
-    finish]);
+  //run experiment
+  jsPsych.run([
+    welcome,
+    instructions,
+    trial_procedure,
+    save_data,
+    finish
+  ]);
 }
