@@ -126,7 +126,7 @@ const context_template = {
       </div>
     `;
   },
-  labels: ['<p>Completely<\p> <p>Acceptable<\p>', '<p>Completely<\p> <p>Unacceptable<\p>'],
+  labels: ['<p>Completely<\p><p>Acceptable<\p>', '<p>Completely<\p><p>Unacceptable<\p>'],
   slider_width: 700,
   require_movement: true,
   button_label: 'Continue',
@@ -156,7 +156,7 @@ const No_context_template = {
         <div class="context-block" style="margin-bottom: 96px;">
         </div>
         <div>
-          <p>Speaker:<strong>${sentence}</strong></p>
+          <p>Speaker: <strong>${sentence}</strong></p>
         </div>
         <div style="margin-top: 50px;">
           <p>How acceptable is this sentence?</p>
@@ -164,7 +164,7 @@ const No_context_template = {
       </div>
     `;
   },
-  labels: ['<p>Completely<\p> <p>Acceptable<\p>', '<p>Completely<\p> <p>Unacceptable<\p>'],
+  labels: ['<p>Completely<\p><p>Acceptable<\p>', '<p>Completely<\p><p>Unacceptable<\p>'],
   slider_width: 700,
   require_movement: true,
   button_label: 'Continue',
