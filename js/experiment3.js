@@ -101,8 +101,7 @@ function startExperiment() {
     type: jsPsychHtmlKeyboardResponse,
     stimulus: `
       <h1>Instructions</h1> 
-      <p>This is the instructions</p>
-      <p>Once you go forward in the experiment you are unable to go backwards, so only click continue when you are ready. There will be two test trials where we describe the question in more detail to give you a hang of it. Afterward, there will be 15 test trials.</p>
+      <p>The instructions go here. </p>
       <p>Press SPACE to continue.</p>
     `,
     choices: [' '],
@@ -183,24 +182,6 @@ const No_context_template = {
     };
   }
 };
-
-
-  //create combined trials with random SI/No_SI selection
-  /*
-  const testTrials = jsPsych.randomization
-    .sampleWithoutReplacement(stimuli, 12)
-    .map(stim => ({ ...stim, type: 'test' }));
-
-  const fillerTrials = jsPsych.randomization
-    .sampleWithoutReplacement(fillers, 3)
-    .map(filler => ({ ...filler, type: 'filler' }));
-
-  const combinedTrials = jsPsych.randomization.shuffle(
-    testTrials.concat(fillerTrials)
-  ).map(trial => {
-    const sentenceKey = jsPsych.randomization.sampleWithoutReplacement(['SI', 'No_SI'], 1)[0];
-    return { ...trial, sentenceKey };
-  }); */
 
   //separate stimuli into four groups based on modal and SI status
   const modalTrials = stimuli.filter(stim => stim.modal && stim.modal.trim() !== '');
