@@ -1,4 +1,3 @@
-//NEED TO CHANGE FILES TO CHANGE VERB//
 
 var stimuli = [];
 var fillers = [];
