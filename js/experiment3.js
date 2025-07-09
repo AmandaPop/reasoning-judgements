@@ -22,13 +22,13 @@ Papa.parse('data_csv/data.csv', {
         stimuli.push({
           sentence: row.sentence,
           SI: row.SI,
-          no_SI: row.No_SI,
+          No_SI: row.No_SI,
           context: row.context,  
           verb: row.verb,
           factP: row.factP,
           modal: row.modal,
           person: row.person,
-          type: 'main'
+          type: 'test'
         });
       }
     });
@@ -51,7 +51,7 @@ Papa.parse('data_csv/fillers.csv', {
         fillers.push({
           sentence: row.sentence,
           SI: row.SI,
-          no_SI: row.No_SI,
+          No_SI: row.No_SI,
           context: row.context,  
           verb: row.verb,
           factP: row.factP,
@@ -116,10 +116,9 @@ const context_template = {
     return `
       <div style="text-align: center;">
         <div class="context-block" style="margin-bottom: 96px;">
-          <p>Speaker A:${jsPsych.timelineVariable('context')}</p>
-        </div>
-        <div>
-          <p>Speaker B:<strong>${sentence}</strong></p>
+          <p>Speaker A: ${jsPsych.timelineVariable('context')}</p>
+          <p> <\p>
+          <p>Speaker B: <strong>${sentence}</strong></p>
         </div>
         <div style="margin-top: 50px;">
           <p>How acceptable is this sentence?</p>
@@ -127,8 +126,8 @@ const context_template = {
       </div>
     `;
   },
-  labels: ['Completely Acceptable', 'Completely Unacceptable'],
-  slider_width: 800,
+  labels: ['<p>Completely<\p> <p>Acceptable<\p>', '<p>Completely<\p> <p>Unacceptable<\p>'],
+  slider_width: 700,
   require_movement: true,
   button_label: 'Continue',
   data: function () {
@@ -165,8 +164,8 @@ const No_context_template = {
       </div>
     `;
   },
-  labels: ['Completely Acceptable', 'Completely Unacceptable'],
-  slider_width: 800,
+  labels: ['<p>Completely<\p> <p>Acceptable<\p>', '<p>Completely<\p> <p>Unacceptable<\p>'],
+  slider_width: 700,
   require_movement: true,
   button_label: 'Continue',
   data: function () {
