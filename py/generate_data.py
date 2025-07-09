@@ -48,8 +48,13 @@ for condition in conditions:
         sentence = f'{np} {verb} {p[0]}.'
         si = f"{np} {verb} but don't know {p[0]}."
         no_si = f"{np} {verb} and possibly know {p[0]}."
+    elif person == 3:
+    #Sally can think/believe P
+        sentence = f'{np} {modal} {verb} {p[0]}.'
+        si = f"{np} {modal} {verb} but doesn't know {p[0]}."
+        no_si = f"{np} {modal} {verb} and possibly know {p[0]}."
+    #I/You can think/believe P
     else:
-    #Sally/I/You can think/believe P
         sentence = f'{np} {modal} {verb} {p[0]}.'
         si = f"{np} {modal} {verb} but don't know {p[0]}."
         no_si = f"{np} {modal} {verb} and possibly know {p[0]}."
