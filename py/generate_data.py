@@ -14,7 +14,7 @@ def write_csv(filename, sents):
                                                    'factP', 
                                                    'modal', 
                                                    'person', 
-                                                   'conditional'])
+                                                   ])
         writer.writeheader()
         writer.writerows(sents)
 
@@ -23,15 +23,15 @@ verbs = ['believe', 'think']
 modals = ['can', 'could', 'might', 'will', 'would', 'should', 'shall', 'ought to', '']
 P = [('the sky is red', 0), ('the sky is blue', 1)]
 q = 'went for a run'
-conditional = [True, False]
+#conditional = [True, False]
 contexts = ['QUD_weak', 'QUD_strong']
 
 
-conditions = [i for i in itertools.product(nps, verbs, modals, P, conditional, contexts)]
+conditions = [i for i in itertools.product(nps, verbs, modals, P, contexts)]
 
 data = []
 for condition in conditions:
-    np, verb, modal, p, conditional, context = condition
+    np, verb, modal, p, context = condition
     if np == 'Sally':
         person = 3
     elif np == 'You':
@@ -58,8 +58,8 @@ for condition in conditions:
         sentence = f'{np} {modal} {verb} {p[0]}.'
         si = f"{np} {modal} {verb} but don't know {p[0]}."
         no_si = f"{np} {modal} {verb} and possibly know {p[0]}."
-    if conditional:
-        sentence = f"If {np} {verb} {p[0]}, then {np[0]} {q}."
+    # if conditional:
+    #     sentence = f"If {np} {verb} {p[0]}, then {np[0]} {q}."
     if context == 'QUD_weak':
         if person == 1:
             c = f'Do you {verb} {p[0]}?'
@@ -86,7 +86,7 @@ for condition in conditions:
         'factP' : factP,
         'modal' : modal,
         'person' : person,
-        'conditional' : conditional
+        #'conditional' : conditional
     }
     data.append(stimulus)
 
