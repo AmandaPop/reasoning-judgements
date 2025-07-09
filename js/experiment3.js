@@ -118,18 +118,18 @@ const context_template = {
     return `
       <div style="text-align: center;">
         <div class="context-block" style="margin-bottom: 96px;">
-          <p>${jsPsych.timelineVariable('context')}</p>
+          <p>Speaker A:${jsPsych.timelineVariable('context')}</p>
         </div>
         <div>
-          <p><strong>${sentence}</strong></p>
+          <p>Speaker B:<strong>${sentence}</strong></p>
         </div>
         <div style="margin-top: 50px;">
-          <p>Does the speaker mean that they don't know?</p>
+          <p>How acceptable is this sentence?</p>
         </div>
       </div>
     `;
   },
-  labels: ['Yes', 'No'],
+  labels: ['Completely Acceptable', 'Completely Unacceptable'],
   slider_width: 800,
   require_movement: true,
   button_label: 'Continue',
@@ -160,15 +160,15 @@ const No_context_template = {
         <div class="context-block" style="margin-bottom: 96px;">
         </div>
         <div>
-          <p><strong>${sentence}</strong></p>
+          <p>Speaker:<strong>${sentence}</strong></p>
         </div>
         <div style="margin-top: 50px;">
-          <p>Does the speaker mean that they don't know?</p>
+          <p>How acceptable is this sentence?</p>
         </div>
       </div>
     `;
   },
-  labels: ['Yes', 'No'],
+  labels: ['Completely Acceptable', 'Completely Unacceptable'],
   slider_width: 800,
   require_movement: true,
   button_label: 'Continue',
