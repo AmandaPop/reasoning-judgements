@@ -111,7 +111,8 @@ function startExperiment() {
 const context_template = {
   type: jsPsychHtmlSliderResponse,
   stimulus: function () {
-    const sentence = jsPsych.timelineVariable(jsPsych.timelineVariable('sentenceKey'));
+      const sentenceKey = jsPsych.timelineVariable('sentenceKey');
+      const sentence = jsPsych.timelineVariable(sentenceKey);
 
     return `
       <div style="text-align: center;">
@@ -126,7 +127,7 @@ const context_template = {
       </div>
     `;
   },
-  labels: ['<p>Completely<\p><p>Acceptable<\p>', '<p>Completely<\p><p>Unacceptable<\p>'],
+  labels: ['<p>Completely\n Acceptable<\p>', '<p>Completely\n Unacceptable<\p>'],
   slider_width: 700,
   require_movement: true,
   button_label: 'Continue',
@@ -149,14 +150,13 @@ const context_template = {
 const No_context_template = {
   type: jsPsychHtmlSliderResponse,
   stimulus: function () {
-    const sentence = jsPsych.timelineVariable(jsPsych.timelineVariable('sentenceKey'));
+      const sentenceKey = jsPsych.timelineVariable('sentenceKey');
+      const sentence = jsPsych.timelineVariable(sentenceKey);
 
     return `
       <div style="text-align: center;">
         <div class="context-block" style="margin-bottom: 96px;">
-        </div>
-        <div>
-          <p>Speaker: <strong>${sentence}</strong></p>
+          <p>Speaker B: <strong>${sentence}</strong></p>
         </div>
         <div style="margin-top: 50px;">
           <p>How acceptable is this sentence?</p>
@@ -164,7 +164,7 @@ const No_context_template = {
       </div>
     `;
   },
-  labels: ['<p>Completely<\p><p>Acceptable<\p>', '<p>Completely<\p><p>Unacceptable<\p>'],
+  labels: ['<p>Completely\n Acceptable<\p>', '<p>Completely\n Unacceptable<\p>'],
   slider_width: 700,
   require_movement: true,
   button_label: 'Continue',
@@ -175,7 +175,7 @@ const No_context_template = {
       trial_type: jsPsych.timelineVariable('type'),
       sentence: jsPsych.timelineVariable(sentenceKey),
       sentence_type: sentenceKey,
-      context: 'None',
+      context: jsPsych.timelineVariable('context'),
       verb: jsPsych.timelineVariable('verb'),
       factP: jsPsych.timelineVariable('factP'),
       modal: jsPsych.timelineVariable('modal'),
