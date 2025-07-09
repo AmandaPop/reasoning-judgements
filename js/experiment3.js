@@ -113,8 +113,7 @@ function startExperiment() {
 const context_template = {
   type: jsPsychHtmlSliderResponse,
   stimulus: function () {
-    const sentenceKey = jsPsych.timelineVariable('sentenceKey');
-    const sentence = jsPsych.timelineVariable(sentenceKey);
+    const sentence = jsPsych.timelineVariable(jsPsych.timelineVariable('sentenceKey'));
 
     return `
       <div style="text-align: center;">
@@ -125,7 +124,7 @@ const context_template = {
           <p><strong>${sentence}</strong></p>
         </div>
         <div style="margin-top: 50px;">
-          <p><strong>Does the speaker mean that they don't know?</strong></p>
+          <p>Does the speaker mean that they don't know?</p>
         </div>
       </div>
     `;
@@ -154,8 +153,7 @@ const context_template = {
 const No_context_template = {
   type: jsPsychHtmlSliderResponse,
   stimulus: function () {
-    const sentenceKey = jsPsych.timelineVariable('sentenceKey');
-    const sentence = jsPsych.timelineVariable(sentenceKey);
+    const sentence = jsPsych.timelineVariable(jsPsych.timelineVariable('sentenceKey'));
 
     return `
       <div style="text-align: center;">
@@ -165,12 +163,11 @@ const No_context_template = {
           <p><strong>${sentence}</strong></p>
         </div>
         <div style="margin-top: 50px;">
-          <p><strong>Does the speaker mean that they don't know?</strong></p>
+          <p>Does the speaker mean that they don't know?</p>
         </div>
       </div>
     `;
   },
-  // Remove the prompt here
   labels: ['Yes', 'No'],
   slider_width: 800,
   require_movement: true,
