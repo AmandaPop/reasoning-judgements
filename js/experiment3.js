@@ -134,7 +134,7 @@ const context_template = {
       </div>
     `;
   },
-  prompt: "Does the speaker mean that they don't know?",
+  prompt: "<p>Does the speaker mean that they don't know?<\p>",
   labels: ['Yes', 'No'],
   slider_width: 800,
   require_movement: true,
@@ -202,7 +202,13 @@ const No_context_template = {
     .sampleWithoutReplacement(fillers, 3)
     .map(filler => ({ ...filler, type: 'filler' }));
   //combine and shuffle all trials
-  const combinedTrials = jsPsych.randomization.shuffle(testTrials.concat(fillerTrials));
+  const combinedTrials = jsPsych.randomization.shuffle(
+    testTrials.concat(fillerTrials)
+  ).map(trial => {
+    const sentenceKey = jsPsych.randomization.sampleWithoutReplacement(['SI', 'No_SI'], 1)[0];
+    return { ...trial, sentenceKey };
+  });
+
   console.log(combinedTrials); //testing to find whats in my trial data
 
   //depending on context or no context condition show that type of trial
