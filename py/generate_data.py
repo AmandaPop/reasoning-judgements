@@ -8,6 +8,8 @@ def write_csv(filename, sents):
     with open(filename, mode='w', newline='') as file:
         writer = csv.DictWriter(file, fieldnames=['sentence',
                                                    "verb", 
+                                                   'SI',
+                                                   "No_SI",
                                                    "context", 
                                                    'factP', 
                                                    'modal', 
@@ -29,7 +31,6 @@ conditions = [i for i in itertools.product(nps, verbs, modals, P, conditional, c
 
 data = []
 for condition in conditions:
-    #print(condition)
     np, verb, modal, p, conditional, context = condition
     if np == 'Sally':
         person = 3
@@ -37,10 +38,21 @@ for condition in conditions:
         person = 2
     else:
         person = 1
+        #sally thinks/beleives P
     if person == 3 and modal == '':
-        sentence = f'{np} {modal}{verb}s {p[0]}.'
+        sentence = f'{np} {verb}s {p[0]}.'
+        si = f"{np} {verb}s but doesn't know {p[0]}."
+        no_si = f"{np} {verb}s and possibly knows {p[0]}."
+    #I/You think/believe P
+    elif person != 3 and modal == '':
+        sentence = f'{np} {verb} {p[0]}.'
+        si = f"{np} {verb} but don't know {p[0]}."
+        no_si = f"{np} {verb} and possibly know {p[0]}."
     else:
+    #Sally/I/You can think/believe P
         sentence = f'{np} {modal} {verb} {p[0]}.'
+        si = f"{np} {modal} {verb} but don't know {p[0]}."
+        no_si = f"{np} {modal} {verb} and possibly know {p[0]}."
     if conditional:
         sentence = f"If {np} {verb} {p[0]}, then {np[0]} {q}."
     if context == 'QUD_weak':
@@ -59,8 +71,11 @@ for condition in conditions:
             c = f'Do I know {p[0]}?'
     factP = p[1]
 
+
     stimulus = {
         'sentence' : sentence,
+        'SI' : si,
+        'No_SI' : no_si,
         'verb' : verb,
         'context': c,
         'factP' : factP,
