@@ -29,7 +29,8 @@ Papa.parse('data_csv/data.csv', {
           factP: row.factP,
           modal: row.modal,
           person: row.person,
-          conditional: row.conditional
+          conditional: row.conditional,
+          type: 'main'
         });
       }
     });
@@ -58,7 +59,8 @@ Papa.parse('data_csv/fillers.csv', {
           factP: row.factP,
           modal: row.modal,
           person: row.person,
-          conditional: row.conditional
+          conditional: row.conditional,
+          type: 'filler'
         });
       }
     });
