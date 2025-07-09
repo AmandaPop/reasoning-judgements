@@ -13,7 +13,7 @@ function maybeStartExperiment() {
     startExperiment();
   }
 }
-
+//load data
 Papa.parse('data_csv/data.csv', {
   download: true,
   header: true,
@@ -42,31 +42,29 @@ Papa.parse('data_csv/data.csv', {
 
 
 //load the filler csv
-Papa.parse('data_csv/fillers_think.csv', {
+Papa.parse('data_csv/fillers.csv', {
   download: true,
   header: true,
   complete: function(results) {
     fillers = [];
-    results.data.forEach(row => {
-      try {
-        const parsedContext = JSON.parse(row.context.replace(/'/g, '"'));
 
+    results.data.forEach(row => {
+      if (row.sentence && row.context) {
         fillers.push({
-          original: row.original,
-          target: row.target,
-          context: parsedContext,
-          tense: row.tense,
-          form: row.form,
-          person: row.person
+          sentence: row.sentence,
+          context: row.context,  
+          verb: row.verb,
+          factP: row.factP,
+          modal: row.modal,
+          person: row.person,
+          conditional: row.conditional
         });
-      } catch (e) {
-        //skip row
       }
     });
 
-    //console.log('Fillers loaded:', fillers);
+    console.log('Fillers loaded:', fillers);
     fillersLoaded = true;
-    maybeStartExperiment(); 
+    maybeStartExperiment();
   }
 });
 
@@ -80,8 +78,15 @@ function startExperiment() {
 
   const participantID = jsPsych.randomization.randomID(10);
   jsPsych.data.addProperties({ participant_id: participantID });
+    const random_int = jsPsych.randomization.randomInt(0,1)
+  let condition;
+  if (random_int == 0){
+    condition = 'context'
+  } else {
+    condition = 'no_context'
+  }
 
-const welcome = {
+  const welcome = {
   type: jsPsychHtmlKeyboardResponse,
   stimulus: `
     <div style="
@@ -97,9 +102,9 @@ const welcome = {
     </div>
   `,
   choices: [' '],
-};
+    };
 
-    const instructions= {
+  const instructions= {
     type: jsPsychHtmlKeyboardResponse,
     stimulus: `
       <h1>Instructions</h1> 
@@ -109,90 +114,50 @@ const welcome = {
     `,
     choices: [' '],
   };
-    //placeholder if consent form is necessary
-    const consent_form = {
-        type: jsPsychImageButtonResponse,
-        stimulus: './consent_placeholder.png',
-        choices: ['Decline', 'Accept'],
-        prompt: "<p>Do you wish to participate?</p>"
-    };
 
-    const example_noSI = {
-      type: jsPsychHtmlSliderResponse,
-      stimulus: `
-        <div style="text-align: center;">
-          <div class="context-block" style="margin-bottom: 96px;">
-            <p>John has been working on the company’s payroll system for over five years. He personally ran the final checks this morning before the direct deposits were triggered. He also received confirmation emails from both the payroll software and the bank. At lunch, several coworkers mentioned already seeing the deposit in their accounts. Everything about the process went exactly as it always does.</p>
-          </div>
-          <div>
-            <p><strong>John thinks and possibly knows that everyone has been paid now.</strong></p>
-          </div>
-        </div>
-      `,
-        prompt: 'not know?<br>',
-        labels: [
-          '<div style="text-align: center;"><span>Completely</span><br><span>unacceptable</span></div>',
-          '<div style="text-align: center;"><span>Completely</span><br><span>acceptable</span></div>'
-        ],
-        slider_width: 700,
-        require_movement: true,
-        button_label: 'Continue',
-    }
-
-        const example_SI = {
-      type: jsPsychHtmlSliderResponse,
-      stimulus: `
-        <div style="text-align: center;">
-          <div class="context-block" style="margin-bottom: 96px;">
-            <p>Much of Northern Canada is covered by ice and permafrost. The future of the permafrost is uncertain because the Arctic has been warming at three times the global average as a result of climate change in Canada. Canada's annual average temperature over land has risen by 1.7 °C (3.1 °F), with changes ranging from 1.1 to 2.3 °C (2.0 to 4.1 °F) in various regions, since 1948. 
-            </p>
-          </div>
-          <div>
-            <p><strong>It is thought but not known that the permafrost definitely will melt substantially in the next 5 years.</strong></p>
-          </div>
-        </div>
-      `,
-        prompt: 'How acceptable is this sentence?<br>',
-        labels: [
-          '<div style="text-align: center;"><span>Completely</span><br><span>unacceptable</span></div>',
-          '<div style="text-align: center;"><span>Completely</span><br><span>acceptable</span></div>'
-          ],
-        slider_width: 700,
-        require_movement: true,
-        button_label: 'Continue',
-    }
-
-    const ready_to_begin = {
-    type: jsPsychHtmlKeyboardResponse,
-    stimulus: `
-      <p>Now you are ready to begin.</p>
-      <p> The instructions are repreated below for a reminder.</p>
-        <p>This experiment is seeking your feedback on different sentences containing the word think. All the sentences have been taken from Wikipedia articles. What we want to know is whether the way the sentence is phrased could make sense given the rest of the context of the article that is shown. If it is an acceptable sentence for that context, use the slider to place the nob on the scale depending on how acceptable you feel the sentence is. </p>
-      <p>Press SPACE to start.</p>
-    `,
-    choices: [' '],
-  };
-
-  const trial_template = {
+  const context_template = {
     type: jsPsychHtmlSliderResponse,
     stimulus: function () {
-      const contextArray = jsPsych.timelineVariable('context');
-      const contextText = contextArray.join(' ')
       return `
         <div style="text-align: center;">
           <div class="context-block" style="margin-bottom: 96px;">
             <p>${jsPsych.timelineVariable('context')}</p>
           </div>
           <div>
-            <p><strong>${jsPsych.timelineVariable(sentence)}</strong></p>
+            <p><strong>${jsPsych.timelineVariable('sentence')}</strong></p>
           </div>
         </div>
       `;
     },
-    prompt: 'Does the speaker know?<br>',
-    labels: [
-  '<div style="text-align: center;"><span>Completely</span><br><span>unacceptable</span></div>',
-  '<div style="text-align: center;"><span>Completely</span><br><span>acceptable</span></div>'
+    prompt: "Does the speaker mean that they don't know?",
+    labels: ['Yes', 'No'
+
+    ],
+    slider_width: 800,
+    require_movement: true,
+    button_label: 'Continue',
+    data: {
+      collect: true,
+      trial_type: jsPsych.timelineVariable('type'),
+      sentence: jsPsych.timelineVariable('sentence'),
+      context: jsPsych.timelineVariable('context'),
+      verb: jsPsych.timelineVariable('verb'),
+      factP: jsPsych.timelineVariable('factP'),
+      modal: jsPsych.timelineVariable('modal'),
+      person: jsPsych.timelineVariable('person'),
+      conditional: jsPsych.timelineVariable('conditional')
+    },
+  };
+
+    const No_context_template = {
+    type: jsPsychHtmlSliderResponse,
+    stimulus: function () {
+      return `
+            <p><strong>${jsPsych.timelineVariable('sentence')}</strong></p>
+      `;
+    },
+    prompt: "Does the speaker mean that they don't know?",
+    labels: ['Yes', 'No'
     ],
     slider_width: 800,
     require_movement: true,
@@ -221,11 +186,21 @@ const welcome = {
   const combinedTrials = jsPsych.randomization.shuffle(testTrials.concat(fillerTrials));
   console.log(combinedTrials); //testing to find whats in my trial data
 
-  const trial_procedure = {
-    timeline: [trial_template],
-    timeline_variables: combinedTrials,
-    randomize_order: false //already shuffled
+  //depending on context or no context condition show that type of trial
+  let trial_procedure;
+  if (condition == 'context') {
+      trial_procedure = {
+      timeline: [context_template],
+      timeline_variables: combinedTrials,
+      randomize_order: false //already shuffled
   };
+  } else {
+      trial_procedure = {
+      timeline: [No_context_template],
+      timeline_variables: combinedTrials,
+      randomize_order: false //already shuffled
+  };
+  }
 
   const save_data = {
     type: jsPsychPipe,
@@ -258,7 +233,6 @@ const welcome = {
 
   jsPsych.run([welcome, 
     instructions, 
-    ready_to_begin, 
     trial_procedure, 
     save_data, 
     finish]);

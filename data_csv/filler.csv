@@ -1,0 +1,249 @@
+sentence,verb,context,factP,modal,person,conditional
+"If I believe the sky is red, then I went for a run.",believe,Do you believe the sky is red?,0,can,1,True
+"If I believe the sky is red, then I went for a run.",believe,Do you believe the sky is red?,0,can,1,True
+I can believe the sky is red.,believe,Do you believe the sky is red?,0,can,1,False
+I can believe the sky is red.,believe,Do you believe the sky is red?,0,can,1,False
+"If I believe the sky is blue, then I went for a run.",believe,Do you believe the sky is blue?,1,can,1,True
+"If I believe the sky is blue, then I went for a run.",believe,Do you believe the sky is blue?,1,can,1,True
+I can believe the sky is blue.,believe,Do you believe the sky is blue?,1,can,1,False
+I can believe the sky is blue.,believe,Do you believe the sky is blue?,1,can,1,False
+"If I believe the sky is red, then I went for a run.",believe,Do you believe the sky is red?,0,could,1,True
+"If I believe the sky is red, then I went for a run.",believe,Do you believe the sky is red?,0,could,1,True
+I could believe the sky is red.,believe,Do you believe the sky is red?,0,could,1,False
+I could believe the sky is red.,believe,Do you believe the sky is red?,0,could,1,False
+"If I believe the sky is blue, then I went for a run.",believe,Do you believe the sky is blue?,1,could,1,True
+"If I believe the sky is blue, then I went for a run.",believe,Do you believe the sky is blue?,1,could,1,True
+I could believe the sky is blue.,believe,Do you believe the sky is blue?,1,could,1,False
+I could believe the sky is blue.,believe,Do you believe the sky is blue?,1,could,1,False
+"If I believe the sky is red, then I went for a run.",believe,Do you believe the sky is red?,0,might,1,True
+"If I believe the sky is red, then I went for a run.",believe,Do you believe the sky is red?,0,might,1,True
+I might believe the sky is red.,believe,Do you believe the sky is red?,0,might,1,False
+I might believe the sky is red.,believe,Do you believe the sky is red?,0,might,1,False
+"If I believe the sky is blue, then I went for a run.",believe,Do you believe the sky is blue?,1,might,1,True
+"If I believe the sky is blue, then I went for a run.",believe,Do you believe the sky is blue?,1,might,1,True
+I might believe the sky is blue.,believe,Do you believe the sky is blue?,1,might,1,False
+I might believe the sky is blue.,believe,Do you believe the sky is blue?,1,might,1,False
+"If I believe the sky is red, then I went for a run.",believe,Do you believe the sky is red?,0,will,1,True
+"If I believe the sky is red, then I went for a run.",believe,Do you believe the sky is red?,0,will,1,True
+I will believe the sky is red.,believe,Do you believe the sky is red?,0,will,1,False
+I will believe the sky is red.,believe,Do you believe the sky is red?,0,will,1,False
+"If I believe the sky is blue, then I went for a run.",believe,Do you believe the sky is blue?,1,will,1,True
+"If I believe the sky is blue, then I went for a run.",believe,Do you believe the sky is blue?,1,will,1,True
+I will believe the sky is blue.,believe,Do you believe the sky is blue?,1,will,1,False
+I will believe the sky is blue.,believe,Do you believe the sky is blue?,1,will,1,False
+"If I believe the sky is red, then I went for a run.",believe,Do you believe the sky is red?,0,would,1,True
+"If I believe the sky is red, then I went for a run.",believe,Do you believe the sky is red?,0,would,1,True
+I would believe the sky is red.,believe,Do you believe the sky is red?,0,would,1,False
+I would believe the sky is red.,believe,Do you believe the sky is red?,0,would,1,False
+"If I believe the sky is blue, then I went for a run.",believe,Do you believe the sky is blue?,1,would,1,True
+"If I believe the sky is blue, then I went for a run.",believe,Do you believe the sky is blue?,1,would,1,True
+I would believe the sky is blue.,believe,Do you believe the sky is blue?,1,would,1,False
+I would believe the sky is blue.,believe,Do you believe the sky is blue?,1,would,1,False
+"If I believe the sky is red, then I went for a run.",believe,Do you believe the sky is red?,0,should,1,True
+"If I believe the sky is red, then I went for a run.",believe,Do you believe the sky is red?,0,should,1,True
+I should believe the sky is red.,believe,Do you believe the sky is red?,0,should,1,False
+I should believe the sky is red.,believe,Do you believe the sky is red?,0,should,1,False
+"If I believe the sky is blue, then I went for a run.",believe,Do you believe the sky is blue?,1,should,1,True
+"If I believe the sky is blue, then I went for a run.",believe,Do you believe the sky is blue?,1,should,1,True
+I should believe the sky is blue.,believe,Do you believe the sky is blue?,1,should,1,False
+I should believe the sky is blue.,believe,Do you believe the sky is blue?,1,should,1,False
+"If I believe the sky is red, then I went for a run.",believe,Do you believe the sky is red?,0,shall,1,True
+"If I believe the sky is red, then I went for a run.",believe,Do you believe the sky is red?,0,shall,1,True
+I shall believe the sky is red.,believe,Do you believe the sky is red?,0,shall,1,False
+I shall believe the sky is red.,believe,Do you believe the sky is red?,0,shall,1,False
+"If I believe the sky is blue, then I went for a run.",believe,Do you believe the sky is blue?,1,shall,1,True
+"If I believe the sky is blue, then I went for a run.",believe,Do you believe the sky is blue?,1,shall,1,True
+I shall believe the sky is blue.,believe,Do you believe the sky is blue?,1,shall,1,False
+I shall believe the sky is blue.,believe,Do you believe the sky is blue?,1,shall,1,False
+"If I believe the sky is red, then I went for a run.",believe,Do you believe the sky is red?,0,ought to,1,True
+"If I believe the sky is red, then I went for a run.",believe,Do you believe the sky is red?,0,ought to,1,True
+I ought to believe the sky is red.,believe,Do you believe the sky is red?,0,ought to,1,False
+I ought to believe the sky is red.,believe,Do you believe the sky is red?,0,ought to,1,False
+"If I believe the sky is blue, then I went for a run.",believe,Do you believe the sky is blue?,1,ought to,1,True
+"If I believe the sky is blue, then I went for a run.",believe,Do you believe the sky is blue?,1,ought to,1,True
+I ought to believe the sky is blue.,believe,Do you believe the sky is blue?,1,ought to,1,False
+I ought to believe the sky is blue.,believe,Do you believe the sky is blue?,1,ought to,1,False
+"If I believe the sky is red, then I went for a run.",believe,Do you believe the sky is red?,0,,1,True
+"If I believe the sky is red, then I went for a run.",believe,Do you believe the sky is red?,0,,1,True
+I  believe the sky is red.,believe,Do you believe the sky is red?,0,,1,False
+I  believe the sky is red.,believe,Do you believe the sky is red?,0,,1,False
+"If I believe the sky is blue, then I went for a run.",believe,Do you believe the sky is blue?,1,,1,True
+"If I believe the sky is blue, then I went for a run.",believe,Do you believe the sky is blue?,1,,1,True
+I  believe the sky is blue.,believe,Do you believe the sky is blue?,1,,1,False
+I  believe the sky is blue.,believe,Do you believe the sky is blue?,1,,1,False
+"If I think the sky is red, then I went for a run.",think,Do you think the sky is red?,0,can,1,True
+"If I think the sky is red, then I went for a run.",think,Do you think the sky is red?,0,can,1,True
+I can think the sky is red.,think,Do you think the sky is red?,0,can,1,False
+I can think the sky is red.,think,Do you think the sky is red?,0,can,1,False
+"If I think the sky is blue, then I went for a run.",think,Do you think the sky is blue?,1,can,1,True
+"If I think the sky is blue, then I went for a run.",think,Do you think the sky is blue?,1,can,1,True
+I can think the sky is blue.,think,Do you think the sky is blue?,1,can,1,False
+I can think the sky is blue.,think,Do you think the sky is blue?,1,can,1,False
+"If I think the sky is red, then I went for a run.",think,Do you think the sky is red?,0,could,1,True
+"If I think the sky is red, then I went for a run.",think,Do you think the sky is red?,0,could,1,True
+I could think the sky is red.,think,Do you think the sky is red?,0,could,1,False
+I could think the sky is red.,think,Do you think the sky is red?,0,could,1,False
+"If I think the sky is blue, then I went for a run.",think,Do you think the sky is blue?,1,could,1,True
+"If I think the sky is blue, then I went for a run.",think,Do you think the sky is blue?,1,could,1,True
+I could think the sky is blue.,think,Do you think the sky is blue?,1,could,1,False
+I could think the sky is blue.,think,Do you think the sky is blue?,1,could,1,False
+"If I think the sky is red, then I went for a run.",think,Do you think the sky is red?,0,might,1,True
+"If I think the sky is red, then I went for a run.",think,Do you think the sky is red?,0,might,1,True
+I might think the sky is red.,think,Do you think the sky is red?,0,might,1,False
+I might think the sky is red.,think,Do you think the sky is red?,0,might,1,False
+"If I think the sky is blue, then I went for a run.",think,Do you think the sky is blue?,1,might,1,True
+"If I think the sky is blue, then I went for a run.",think,Do you think the sky is blue?,1,might,1,True
+I might think the sky is blue.,think,Do you think the sky is blue?,1,might,1,False
+I might think the sky is blue.,think,Do you think the sky is blue?,1,might,1,False
+"If I think the sky is red, then I went for a run.",think,Do you think the sky is red?,0,will,1,True
+"If I think the sky is red, then I went for a run.",think,Do you think the sky is red?,0,will,1,True
+I will think the sky is red.,think,Do you think the sky is red?,0,will,1,False
+I will think the sky is red.,think,Do you think the sky is red?,0,will,1,False
+"If I think the sky is blue, then I went for a run.",think,Do you think the sky is blue?,1,will,1,True
+"If I think the sky is blue, then I went for a run.",think,Do you think the sky is blue?,1,will,1,True
+I will think the sky is blue.,think,Do you think the sky is blue?,1,will,1,False
+I will think the sky is blue.,think,Do you think the sky is blue?,1,will,1,False
+"If I think the sky is red, then I went for a run.",think,Do you think the sky is red?,0,would,1,True
+"If I think the sky is red, then I went for a run.",think,Do you think the sky is red?,0,would,1,True
+I would think the sky is red.,think,Do you think the sky is red?,0,would,1,False
+I would think the sky is red.,think,Do you think the sky is red?,0,would,1,False
+"If I think the sky is blue, then I went for a run.",think,Do you think the sky is blue?,1,would,1,True
+"If I think the sky is blue, then I went for a run.",think,Do you think the sky is blue?,1,would,1,True
+I would think the sky is blue.,think,Do you think the sky is blue?,1,would,1,False
+I would think the sky is blue.,think,Do you think the sky is blue?,1,would,1,False
+"If I think the sky is red, then I went for a run.",think,Do you think the sky is red?,0,should,1,True
+"If I think the sky is red, then I went for a run.",think,Do you think the sky is red?,0,should,1,True
+I should think the sky is red.,think,Do you think the sky is red?,0,should,1,False
+I should think the sky is red.,think,Do you think the sky is red?,0,should,1,False
+"If I think the sky is blue, then I went for a run.",think,Do you think the sky is blue?,1,should,1,True
+"If I think the sky is blue, then I went for a run.",think,Do you think the sky is blue?,1,should,1,True
+I should think the sky is blue.,think,Do you think the sky is blue?,1,should,1,False
+I should think the sky is blue.,think,Do you think the sky is blue?,1,should,1,False
+"If I think the sky is red, then I went for a run.",think,Do you think the sky is red?,0,shall,1,True
+"If I think the sky is red, then I went for a run.",think,Do you think the sky is red?,0,shall,1,True
+I shall think the sky is red.,think,Do you think the sky is red?,0,shall,1,False
+I shall think the sky is red.,think,Do you think the sky is red?,0,shall,1,False
+"If I think the sky is blue, then I went for a run.",think,Do you think the sky is blue?,1,shall,1,True
+"If I think the sky is blue, then I went for a run.",think,Do you think the sky is blue?,1,shall,1,True
+I shall think the sky is blue.,think,Do you think the sky is blue?,1,shall,1,False
+I shall think the sky is blue.,think,Do you think the sky is blue?,1,shall,1,False
+"If I think the sky is red, then I went for a run.",think,Do you think the sky is red?,0,ought to,1,True
+"If I think the sky is red, then I went for a run.",think,Do you think the sky is red?,0,ought to,1,True
+I ought to think the sky is red.,think,Do you think the sky is red?,0,ought to,1,False
+I ought to think the sky is red.,think,Do you think the sky is red?,0,ought to,1,False
+"If I think the sky is blue, then I went for a run.",think,Do you think the sky is blue?,1,ought to,1,True
+"If I think the sky is blue, then I went for a run.",think,Do you think the sky is blue?,1,ought to,1,True
+I ought to think the sky is blue.,think,Do you think the sky is blue?,1,ought to,1,False
+I ought to think the sky is blue.,think,Do you think the sky is blue?,1,ought to,1,False
+"If I think the sky is red, then I went for a run.",think,Do you think the sky is red?,0,,1,True
+"If I think the sky is red, then I went for a run.",think,Do you think the sky is red?,0,,1,True
+I  think the sky is red.,think,Do you think the sky is red?,0,,1,False
+I  think the sky is red.,think,Do you think the sky is red?,0,,1,False
+"If I think the sky is blue, then I went for a run.",think,Do you think the sky is blue?,1,,1,True
+"If I think the sky is blue, then I went for a run.",think,Do you think the sky is blue?,1,,1,True
+I  think the sky is blue.,think,Do you think the sky is blue?,1,,1,False
+I  think the sky is blue.,think,Do you think the sky is blue?,1,,1,False
+"If You believe the sky is red, then You went for a run.",believe,Do I believe the sky is red?,0,can,2,True
+"If You believe the sky is red, then You went for a run.",believe,Do I believe the sky is red?,0,can,2,True
+You can believe the sky is red.,believe,Do I believe the sky is red?,0,can,2,False
+You can believe the sky is red.,believe,Do I believe the sky is red?,0,can,2,False
+"If You believe the sky is blue, then You went for a run.",believe,Do I believe the sky is blue?,1,can,2,True
+"If You believe the sky is blue, then You went for a run.",believe,Do I believe the sky is blue?,1,can,2,True
+You can believe the sky is blue.,believe,Do I believe the sky is blue?,1,can,2,False
+You can believe the sky is blue.,believe,Do I believe the sky is blue?,1,can,2,False
+"If You believe the sky is red, then You went for a run.",believe,Do I believe the sky is red?,0,could,2,True
+"If You believe the sky is red, then You went for a run.",believe,Do I believe the sky is red?,0,could,2,True
+You could believe the sky is red.,believe,Do I believe the sky is red?,0,could,2,False
+You could believe the sky is red.,believe,Do I believe the sky is red?,0,could,2,False
+"If You believe the sky is blue, then You went for a run.",believe,Do I believe the sky is blue?,1,could,2,True
+"If You believe the sky is blue, then You went for a run.",believe,Do I believe the sky is blue?,1,could,2,True
+You could believe the sky is blue.,believe,Do I believe the sky is blue?,1,could,2,False
+You could believe the sky is blue.,believe,Do I believe the sky is blue?,1,could,2,False
+"If You believe the sky is red, then You went for a run.",believe,Do I believe the sky is red?,0,might,2,True
+"If You believe the sky is red, then You went for a run.",believe,Do I believe the sky is red?,0,might,2,True
+You might believe the sky is red.,believe,Do I believe the sky is red?,0,might,2,False
+You might believe the sky is red.,believe,Do I believe the sky is red?,0,might,2,False
+"If You believe the sky is blue, then You went for a run.",believe,Do I believe the sky is blue?,1,might,2,True
+"If You believe the sky is blue, then You went for a run.",believe,Do I believe the sky is blue?,1,might,2,True
+You might believe the sky is blue.,believe,Do I believe the sky is blue?,1,might,2,False
+You might believe the sky is blue.,believe,Do I believe the sky is blue?,1,might,2,False
+"If You believe the sky is red, then You went for a run.",believe,Do I believe the sky is red?,0,will,2,True
+"If You believe the sky is red, then You went for a run.",believe,Do I believe the sky is red?,0,will,2,True
+You will believe the sky is red.,believe,Do I believe the sky is red?,0,will,2,False
+You will believe the sky is red.,believe,Do I believe the sky is red?,0,will,2,False
+"If You believe the sky is blue, then You went for a run.",believe,Do I believe the sky is blue?,1,will,2,True
+"If You believe the sky is blue, then You went for a run.",believe,Do I believe the sky is blue?,1,will,2,True
+You will believe the sky is blue.,believe,Do I believe the sky is blue?,1,will,2,False
+You will believe the sky is blue.,believe,Do I believe the sky is blue?,1,will,2,False
+"If You believe the sky is red, then You went for a run.",believe,Do I believe the sky is red?,0,would,2,True
+"If You believe the sky is red, then You went for a run.",believe,Do I believe the sky is red?,0,would,2,True
+You would believe the sky is red.,believe,Do I believe the sky is red?,0,would,2,False
+You would believe the sky is red.,believe,Do I believe the sky is red?,0,would,2,False
+"If You believe the sky is blue, then You went for a run.",believe,Do I believe the sky is blue?,1,would,2,True
+"If You believe the sky is blue, then You went for a run.",believe,Do I believe the sky is blue?,1,would,2,True
+You would believe the sky is blue.,believe,Do I believe the sky is blue?,1,would,2,False
+You would believe the sky is blue.,believe,Do I believe the sky is blue?,1,would,2,False
+"If You believe the sky is red, then You went for a run.",believe,Do I believe the sky is red?,0,should,2,True
+"If You believe the sky is red, then You went for a run.",believe,Do I believe the sky is red?,0,should,2,True
+You should believe the sky is red.,believe,Do I believe the sky is red?,0,should,2,False
+You should believe the sky is red.,believe,Do I believe the sky is red?,0,should,2,False
+"If You believe the sky is blue, then You went for a run.",believe,Do I believe the sky is blue?,1,should,2,True
+"If You believe the sky is blue, then You went for a run.",believe,Do I believe the sky is blue?,1,should,2,True
+You should believe the sky is blue.,believe,Do I believe the sky is blue?,1,should,2,False
+You should believe the sky is blue.,believe,Do I believe the sky is blue?,1,should,2,False
+"If You believe the sky is red, then You went for a run.",believe,Do I believe the sky is red?,0,shall,2,True
+"If You believe the sky is red, then You went for a run.",believe,Do I believe the sky is red?,0,shall,2,True
+You shall believe the sky is red.,believe,Do I believe the sky is red?,0,shall,2,False
+You shall believe the sky is red.,believe,Do I believe the sky is red?,0,shall,2,False
+"If You believe the sky is blue, then You went for a run.",believe,Do I believe the sky is blue?,1,shall,2,True
+"If You believe the sky is blue, then You went for a run.",believe,Do I believe the sky is blue?,1,shall,2,True
+You shall believe the sky is blue.,believe,Do I believe the sky is blue?,1,shall,2,False
+You shall believe the sky is blue.,believe,Do I believe the sky is blue?,1,shall,2,False
+"If You believe the sky is red, then You went for a run.",believe,Do I believe the sky is red?,0,ought to,2,True
+"If You believe the sky is red, then You went for a run.",believe,Do I believe the sky is red?,0,ought to,2,True
+You ought to believe the sky is red.,believe,Do I believe the sky is red?,0,ought to,2,False
+You ought to believe the sky is red.,believe,Do I believe the sky is red?,0,ought to,2,False
+"If You believe the sky is blue, then You went for a run.",believe,Do I believe the sky is blue?,1,ought to,2,True
+"If You believe the sky is blue, then You went for a run.",believe,Do I believe the sky is blue?,1,ought to,2,True
+You ought to believe the sky is blue.,believe,Do I believe the sky is blue?,1,ought to,2,False
+You ought to believe the sky is blue.,believe,Do I believe the sky is blue?,1,ought to,2,False
+"If You believe the sky is red, then You went for a run.",believe,Do I believe the sky is red?,0,,2,True
+"If You believe the sky is red, then You went for a run.",believe,Do I believe the sky is red?,0,,2,True
+You  believe the sky is red.,believe,Do I believe the sky is red?,0,,2,False
+You  believe the sky is red.,believe,Do I believe the sky is red?,0,,2,False
+"If You believe the sky is blue, then You went for a run.",believe,Do I believe the sky is blue?,1,,2,True
+"If You believe the sky is blue, then You went for a run.",believe,Do I believe the sky is blue?,1,,2,True
+You  believe the sky is blue.,believe,Do I believe the sky is blue?,1,,2,False
+You  believe the sky is blue.,believe,Do I believe the sky is blue?,1,,2,False
+"If You think the sky is red, then You went for a run.",think,Do I think the sky is red?,0,can,2,True
+"If You think the sky is red, then You went for a run.",think,Do I think the sky is red?,0,can,2,True
+You can think the sky is red.,think,Do I think the sky is red?,0,can,2,False
+You can think the sky is red.,think,Do I think the sky is red?,0,can,2,False
+"If You think the sky is blue, then You went for a run.",think,Do I think the sky is blue?,1,can,2,True
+"If You think the sky is blue, then You went for a run.",think,Do I think the sky is blue?,1,can,2,True
+You can think the sky is blue.,think,Do I think the sky is blue?,1,can,2,False
+You can think the sky is blue.,think,Do I think the sky is blue?,1,can,2,False
+"If You think the sky is red, then You went for a run.",think,Do I think the sky is red?,0,could,2,True
+"If You think the sky is red, then You went for a run.",think,Do I think the sky is red?,0,could,2,True
+You could think the sky is red.,think,Do I think the sky is red?,0,could,2,False
+You could think the sky is red.,think,Do I think the sky is red?,0,could,2,False
+"If You think the sky is blue, then You went for a run.",think,Do I think the sky is blue?,1,could,2,True
+"If You think the sky is blue, then You went for a run.",think,Do I think the sky is blue?,1,could,2,True
+You could think the sky is blue.,think,Do I think the sky is blue?,1,could,2,False
+You could think the sky is blue.,think,Do I think the sky is blue?,1,could,2,False
+"If You think the sky is red, then You went for a run.",think,Do I think the sky is red?,0,might,2,True
+"If You think the sky is red, then You went for a run.",think,Do I think the sky is red?,0,might,2,True
+You might think the sky is red.,think,Do I think the sky is red?,0,might,2,False
+You might think the sky is red.,think,Do I think the sky is red?,0,might,2,False
+"If You think the sky is blue, then You went for a run.",think,Do I think the sky is blue?,1,might,2,True
+"If You think the sky is blue, then You went for a run.",think,Do I think the sky is blue?,1,might,2,True
+You might think the sky is blue.,think,Do I think the sky is blue?,1,might,2,False
+You might think the sky is blue.,think,Do I think the sky is blue?,1,might,2,False
+"If You think the sky is red, then You went for a run.",think,Do I think the sky is red?,0,will,2,True
+"If You think the sky is red, then You went for a run.",think,Do I think the sky is red?,0,will,2,True
+You will think the sky is red.,think,Do I think the sky is red?,0,will,2,False
+You will think the sky is red.,think,Do I think the sky is red?,0,will,2,False
+"If You think the sky is blue, then You went for a run.",think,Do I think the sky is blue?,1,will,2,True
+"If You think the sky is blue, then You went for a run.",think,Do I think the sky is blue?,1,will,2,True
+You will think the sky is blue.,think,Do I think the sky is blue?,1,will,2,False
+You will think the sky is blue.,think,Do I think the sky is blue?,1,will,2,False
