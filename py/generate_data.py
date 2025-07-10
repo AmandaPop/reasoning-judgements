@@ -121,7 +121,7 @@ for condition in conditions:
         sentence = f'{np} {verb} {clause}.'
         si = f"{np} {verb} but don't know {clause}."
         no_si = f"{np} {verb} and possibly know {clause}."
-    elif person == 3:
+    elif person == '3':
     #Sally can think/believe P
         sentence = f'{np} {modal} {verb} {clause}.'
         si = f"{np} {modal} {verb} but doesn't know {clause}."
