@@ -101,7 +101,7 @@ function startExperiment() {
     type: jsPsychHtmlKeyboardResponse,
     stimulus: `
       <h1>Instructions</h1> 
-      <p>The instructions go here. </p>
+      <p>In this study, you will be shown a series of sentences, each containing a statement from a fictional conversation. Your task is to evaluate how acceptable each sentence sounds. </p>
       <p>Press SPACE to continue.</p>
     `,
     choices: [' '],
@@ -182,6 +182,8 @@ const No_context_template = {
     };
   }
 };
+
+/*
   //all possible conditions to see sentences in
   const conditions = [
     { SI: 'true', modal: 'true', person: 'person1', factP: 'true' },
@@ -214,6 +216,8 @@ const testTrials = conditions.map(cond => {
     stim.factP === cond.factP
   );
 
+  console.log(filtered)
+
   //shuffle the order to get random sentences
   const shuffled = jsPsych.randomization.shuffle(filtered);  // Use jsPsych randomization to shuffle
   //just take the first one
@@ -223,8 +227,45 @@ const testTrials = conditions.map(cond => {
     ...selectedStimulus,
     sentenceKey: cond.SI ? 'SI' : 'No_SI'
   };
-});
+}); */
 
+  let conditions = [];
+  //divide into modal and non modal trials
+  const modalTrials = stimuli.filter(stim => stim.modal && stim.modal.trim() !== '');
+  const nonModalTrials = stimuli.filter(stim => !stim.modal || stim.modal.trim() === '');
+
+  //divide by person trials
+  const person1_NonModalTrials = nonModalTrials.filter(stim => stim.person === '1');
+  const person3_NonModalTrials = nonModalTrials.filter(stim => stim.person === '3');
+  const person1_modalTrials = modalTrials.filter(stim => stim.person === '1');
+  const person3_modalTrials = modalTrials.filter(stim => stim.person === '3');
+
+  //divide by factP
+  const trueP_person1_modalTrials = person1_modalTrials.filter(stim => stim.factP === '1');
+  conditions.push(trueP_person1_modalTrials);
+  const trueP_person3_modalTrials = person3_modalTrials.filter(stim => stim.factP === '1');
+  conditions.push(trueP_person3_modalTrial);
+  const trueP_person1_NonModalTrials = person1_NonModalTrials.filter(stim => stim.factP === '1');
+  conditions.push(trueP_person1_NonModalTrials);
+  const trueP_person3_NonModalTrials = person3_NonModalTrials.filter(stim => stim.factP === '1');
+  conditions.push(trueP_person3_NonModalTrials);
+  const falseP_person1_modalTrials = person1_modalTrials.filter(stim => stim.factP === '0');
+  conditions.push(falseP_person1_modalTrials);
+  const falseP_person3_modalTrials = person3_modalTrials.filter(stim => stim.factP === '0');
+  conditions.push(falseP_person3_modalTrials);
+  const falseP_person1_NonModalTrials = person1_NonModalTrials.filter(stim => stim.factP === '0');
+  conditions.push(falseP_person1_NonModalTrials);
+  const falseP_person3_NonModalTrials = person3_NonModalTrials.filter(stim => stim.factP === '0');
+  conditions.push(falseP_person3_NonModalTrials);
+
+  console.log(conditions)
+
+  testTrials = jsPsych.randomization
+    .sampleWithoutReplacement(conditions, 16)
+    .map(cond => {
+      const sentenceKey = jsPsych.randomization.sampleWithoutReplacement(['SI', 'No_SI'], 1)[0];
+      return { ...cond, sentenceKey}
+    })
 
   const fillerTrials = jsPsych.randomization
     .sampleWithoutReplacement(fillers, 4)
