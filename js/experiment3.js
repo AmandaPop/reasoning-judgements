@@ -244,7 +244,7 @@ const testTrials = conditions.map(cond => {
   const trueP_person1_modalTrials = person1_modalTrials.filter(stim => stim.factP === '1');
   conditions.push(trueP_person1_modalTrials);
   const trueP_person3_modalTrials = person3_modalTrials.filter(stim => stim.factP === '1');
-  conditions.push(trueP_person3_modalTrial);
+  conditions.push(trueP_person3_modalTrials);
   const trueP_person1_NonModalTrials = person1_NonModalTrials.filter(stim => stim.factP === '1');
   conditions.push(trueP_person1_NonModalTrials);
   const trueP_person3_NonModalTrials = person3_NonModalTrials.filter(stim => stim.factP === '1');
