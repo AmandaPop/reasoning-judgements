@@ -229,7 +229,6 @@ const testTrials = conditions.map(cond => {
   };
 }); */
 
-  let conditions = [];
   //divide into modal and non modal trials
   const modalTrials = stimuli.filter(stim => stim.modal && stim.modal.trim() !== '');
   const nonModalTrials = stimuli.filter(stim => !stim.modal || stim.modal.trim() === '');
@@ -242,30 +241,35 @@ const testTrials = conditions.map(cond => {
 
   //divide by factP
   const trueP_person1_modalTrials = person1_modalTrials.filter(stim => stim.factP === '1');
-  conditions.push(trueP_person1_modalTrials);
   const trueP_person3_modalTrials = person3_modalTrials.filter(stim => stim.factP === '1');
-  conditions.push(trueP_person3_modalTrials);
   const trueP_person1_NonModalTrials = person1_NonModalTrials.filter(stim => stim.factP === '1');
-  conditions.push(trueP_person1_NonModalTrials);
   const trueP_person3_NonModalTrials = person3_NonModalTrials.filter(stim => stim.factP === '1');
-  conditions.push(trueP_person3_NonModalTrials);
   const falseP_person1_modalTrials = person1_modalTrials.filter(stim => stim.factP === '0');
-  conditions.push(falseP_person1_modalTrials);
   const falseP_person3_modalTrials = person3_modalTrials.filter(stim => stim.factP === '0');
-  conditions.push(falseP_person3_modalTrials);
   const falseP_person1_NonModalTrials = person1_NonModalTrials.filter(stim => stim.factP === '0');
-  conditions.push(falseP_person1_NonModalTrials);
   const falseP_person3_NonModalTrials = person3_NonModalTrials.filter(stim => stim.factP === '0');
-  conditions.push(falseP_person3_NonModalTrials);
 
+  const conditions = [
+    trueP_person1_modalTrials,
+    trueP_person3_modalTrials,
+    trueP_person1_NonModalTrials,
+    trueP_person3_NonModalTrials,
+    falseP_person1_modalTrials,
+    falseP_person3_modalTrials,
+    falseP_person1_NonModalTrials,
+    falseP_person3_NonModalTrials
+  ];
   console.log(conditions)
 
-  testTrials = jsPsych.randomization
-    .sampleWithoutReplacement(conditions, 16)
-    .map(cond => {
-      const sentenceKey = jsPsych.randomization.sampleWithoutReplacement(['SI', 'No_SI'], 1)[0];
-      return { ...cond, sentenceKey}
-    })
+  let testTrials = [];
+  conditions.forEach(condition => {
+    //first just sample two trials from this condition
+    const sampledTrials = jsPsych.randomization.sampleWithoutReplacement(condition, 2);
+    //label one to be the SI version and one the no SI version
+    const siTrial = { ...sampledTrials[0], sentenceKey: 'SI'};
+    const noSITrial = { ...sampledTrials[1], sentenceKey: 'No_SI'};
+    testTrials.push(siTrial, noSITrial);
+  });
 
   const fillerTrials = jsPsych.randomization
     .sampleWithoutReplacement(fillers, 4)
