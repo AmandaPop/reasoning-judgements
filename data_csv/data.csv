@@ -3,34 +3,10 @@ I can believe the sky is red.,believe,I can believe but don't know the sky is re
 I can believe the sky is red.,believe,I can believe but don't know the sky is red.,I can believe and possibly know the sky is red.,Do you know the sky is red?,0,can,1
 I can believe the sky is blue.,believe,I can believe but don't know the sky is blue.,I can believe and possibly know the sky is blue.,Do you believe the sky is blue?,1,can,1
 I can believe the sky is blue.,believe,I can believe but don't know the sky is blue.,I can believe and possibly know the sky is blue.,Do you know the sky is blue?,1,can,1
-I could believe the sky is red.,believe,I could believe but don't know the sky is red.,I could believe and possibly know the sky is red.,Do you believe the sky is red?,0,could,1
-I could believe the sky is red.,believe,I could believe but don't know the sky is red.,I could believe and possibly know the sky is red.,Do you know the sky is red?,0,could,1
-I could believe the sky is blue.,believe,I could believe but don't know the sky is blue.,I could believe and possibly know the sky is blue.,Do you believe the sky is blue?,1,could,1
-I could believe the sky is blue.,believe,I could believe but don't know the sky is blue.,I could believe and possibly know the sky is blue.,Do you know the sky is blue?,1,could,1
-I might believe the sky is red.,believe,I might believe but don't know the sky is red.,I might believe and possibly know the sky is red.,Do you believe the sky is red?,0,might,1
-I might believe the sky is red.,believe,I might believe but don't know the sky is red.,I might believe and possibly know the sky is red.,Do you know the sky is red?,0,might,1
-I might believe the sky is blue.,believe,I might believe but don't know the sky is blue.,I might believe and possibly know the sky is blue.,Do you believe the sky is blue?,1,might,1
-I might believe the sky is blue.,believe,I might believe but don't know the sky is blue.,I might believe and possibly know the sky is blue.,Do you know the sky is blue?,1,might,1
-I will believe the sky is red.,believe,I will believe but don't know the sky is red.,I will believe and possibly know the sky is red.,Do you believe the sky is red?,0,will,1
-I will believe the sky is red.,believe,I will believe but don't know the sky is red.,I will believe and possibly know the sky is red.,Do you know the sky is red?,0,will,1
-I will believe the sky is blue.,believe,I will believe but don't know the sky is blue.,I will believe and possibly know the sky is blue.,Do you believe the sky is blue?,1,will,1
-I will believe the sky is blue.,believe,I will believe but don't know the sky is blue.,I will believe and possibly know the sky is blue.,Do you know the sky is blue?,1,will,1
-I would believe the sky is red.,believe,I would believe but don't know the sky is red.,I would believe and possibly know the sky is red.,Do you believe the sky is red?,0,would,1
-I would believe the sky is red.,believe,I would believe but don't know the sky is red.,I would believe and possibly know the sky is red.,Do you know the sky is red?,0,would,1
-I would believe the sky is blue.,believe,I would believe but don't know the sky is blue.,I would believe and possibly know the sky is blue.,Do you believe the sky is blue?,1,would,1
-I would believe the sky is blue.,believe,I would believe but don't know the sky is blue.,I would believe and possibly know the sky is blue.,Do you know the sky is blue?,1,would,1
-I should believe the sky is red.,believe,I should believe but don't know the sky is red.,I should believe and possibly know the sky is red.,Do you believe the sky is red?,0,should,1
-I should believe the sky is red.,believe,I should believe but don't know the sky is red.,I should believe and possibly know the sky is red.,Do you know the sky is red?,0,should,1
-I should believe the sky is blue.,believe,I should believe but don't know the sky is blue.,I should believe and possibly know the sky is blue.,Do you believe the sky is blue?,1,should,1
-I should believe the sky is blue.,believe,I should believe but don't know the sky is blue.,I should believe and possibly know the sky is blue.,Do you know the sky is blue?,1,should,1
-I shall believe the sky is red.,believe,I shall believe but don't know the sky is red.,I shall believe and possibly know the sky is red.,Do you believe the sky is red?,0,shall,1
-I shall believe the sky is red.,believe,I shall believe but don't know the sky is red.,I shall believe and possibly know the sky is red.,Do you know the sky is red?,0,shall,1
-I shall believe the sky is blue.,believe,I shall believe but don't know the sky is blue.,I shall believe and possibly know the sky is blue.,Do you believe the sky is blue?,1,shall,1
-I shall believe the sky is blue.,believe,I shall believe but don't know the sky is blue.,I shall believe and possibly know the sky is blue.,Do you know the sky is blue?,1,shall,1
-I ought to believe the sky is red.,believe,I ought to believe but don't know the sky is red.,I ought to believe and possibly know the sky is red.,Do you believe the sky is red?,0,ought to,1
-I ought to believe the sky is red.,believe,I ought to believe but don't know the sky is red.,I ought to believe and possibly know the sky is red.,Do you know the sky is red?,0,ought to,1
-I ought to believe the sky is blue.,believe,I ought to believe but don't know the sky is blue.,I ought to believe and possibly know the sky is blue.,Do you believe the sky is blue?,1,ought to,1
-I ought to believe the sky is blue.,believe,I ought to believe but don't know the sky is blue.,I ought to believe and possibly know the sky is blue.,Do you know the sky is blue?,1,ought to,1
+I must believe the sky is red.,believe,I must believe but don't know the sky is red.,I must believe and possibly know the sky is red.,Do you believe the sky is red?,0,must,1
+I must believe the sky is red.,believe,I must believe but don't know the sky is red.,I must believe and possibly know the sky is red.,Do you know the sky is red?,0,must,1
+I must believe the sky is blue.,believe,I must believe but don't know the sky is blue.,I must believe and possibly know the sky is blue.,Do you believe the sky is blue?,1,must,1
+I must believe the sky is blue.,believe,I must believe but don't know the sky is blue.,I must believe and possibly know the sky is blue.,Do you know the sky is blue?,1,must,1
 I believe the sky is red.,believe,I believe but don't know the sky is red.,I believe and possibly know the sky is red.,Do you believe the sky is red?,0,,1
 I believe the sky is red.,believe,I believe but don't know the sky is red.,I believe and possibly know the sky is red.,Do you know the sky is red?,0,,1
 I believe the sky is blue.,believe,I believe but don't know the sky is blue.,I believe and possibly know the sky is blue.,Do you believe the sky is blue?,1,,1
@@ -39,142 +15,22 @@ I can think the sky is red.,think,I can think but don't know the sky is red.,I c
 I can think the sky is red.,think,I can think but don't know the sky is red.,I can think and possibly know the sky is red.,Do you know the sky is red?,0,can,1
 I can think the sky is blue.,think,I can think but don't know the sky is blue.,I can think and possibly know the sky is blue.,Do you think the sky is blue?,1,can,1
 I can think the sky is blue.,think,I can think but don't know the sky is blue.,I can think and possibly know the sky is blue.,Do you know the sky is blue?,1,can,1
-I could think the sky is red.,think,I could think but don't know the sky is red.,I could think and possibly know the sky is red.,Do you think the sky is red?,0,could,1
-I could think the sky is red.,think,I could think but don't know the sky is red.,I could think and possibly know the sky is red.,Do you know the sky is red?,0,could,1
-I could think the sky is blue.,think,I could think but don't know the sky is blue.,I could think and possibly know the sky is blue.,Do you think the sky is blue?,1,could,1
-I could think the sky is blue.,think,I could think but don't know the sky is blue.,I could think and possibly know the sky is blue.,Do you know the sky is blue?,1,could,1
-I might think the sky is red.,think,I might think but don't know the sky is red.,I might think and possibly know the sky is red.,Do you think the sky is red?,0,might,1
-I might think the sky is red.,think,I might think but don't know the sky is red.,I might think and possibly know the sky is red.,Do you know the sky is red?,0,might,1
-I might think the sky is blue.,think,I might think but don't know the sky is blue.,I might think and possibly know the sky is blue.,Do you think the sky is blue?,1,might,1
-I might think the sky is blue.,think,I might think but don't know the sky is blue.,I might think and possibly know the sky is blue.,Do you know the sky is blue?,1,might,1
-I will think the sky is red.,think,I will think but don't know the sky is red.,I will think and possibly know the sky is red.,Do you think the sky is red?,0,will,1
-I will think the sky is red.,think,I will think but don't know the sky is red.,I will think and possibly know the sky is red.,Do you know the sky is red?,0,will,1
-I will think the sky is blue.,think,I will think but don't know the sky is blue.,I will think and possibly know the sky is blue.,Do you think the sky is blue?,1,will,1
-I will think the sky is blue.,think,I will think but don't know the sky is blue.,I will think and possibly know the sky is blue.,Do you know the sky is blue?,1,will,1
-I would think the sky is red.,think,I would think but don't know the sky is red.,I would think and possibly know the sky is red.,Do you think the sky is red?,0,would,1
-I would think the sky is red.,think,I would think but don't know the sky is red.,I would think and possibly know the sky is red.,Do you know the sky is red?,0,would,1
-I would think the sky is blue.,think,I would think but don't know the sky is blue.,I would think and possibly know the sky is blue.,Do you think the sky is blue?,1,would,1
-I would think the sky is blue.,think,I would think but don't know the sky is blue.,I would think and possibly know the sky is blue.,Do you know the sky is blue?,1,would,1
-I should think the sky is red.,think,I should think but don't know the sky is red.,I should think and possibly know the sky is red.,Do you think the sky is red?,0,should,1
-I should think the sky is red.,think,I should think but don't know the sky is red.,I should think and possibly know the sky is red.,Do you know the sky is red?,0,should,1
-I should think the sky is blue.,think,I should think but don't know the sky is blue.,I should think and possibly know the sky is blue.,Do you think the sky is blue?,1,should,1
-I should think the sky is blue.,think,I should think but don't know the sky is blue.,I should think and possibly know the sky is blue.,Do you know the sky is blue?,1,should,1
-I shall think the sky is red.,think,I shall think but don't know the sky is red.,I shall think and possibly know the sky is red.,Do you think the sky is red?,0,shall,1
-I shall think the sky is red.,think,I shall think but don't know the sky is red.,I shall think and possibly know the sky is red.,Do you know the sky is red?,0,shall,1
-I shall think the sky is blue.,think,I shall think but don't know the sky is blue.,I shall think and possibly know the sky is blue.,Do you think the sky is blue?,1,shall,1
-I shall think the sky is blue.,think,I shall think but don't know the sky is blue.,I shall think and possibly know the sky is blue.,Do you know the sky is blue?,1,shall,1
-I ought to think the sky is red.,think,I ought to think but don't know the sky is red.,I ought to think and possibly know the sky is red.,Do you think the sky is red?,0,ought to,1
-I ought to think the sky is red.,think,I ought to think but don't know the sky is red.,I ought to think and possibly know the sky is red.,Do you know the sky is red?,0,ought to,1
-I ought to think the sky is blue.,think,I ought to think but don't know the sky is blue.,I ought to think and possibly know the sky is blue.,Do you think the sky is blue?,1,ought to,1
-I ought to think the sky is blue.,think,I ought to think but don't know the sky is blue.,I ought to think and possibly know the sky is blue.,Do you know the sky is blue?,1,ought to,1
+I must think the sky is red.,think,I must think but don't know the sky is red.,I must think and possibly know the sky is red.,Do you think the sky is red?,0,must,1
+I must think the sky is red.,think,I must think but don't know the sky is red.,I must think and possibly know the sky is red.,Do you know the sky is red?,0,must,1
+I must think the sky is blue.,think,I must think but don't know the sky is blue.,I must think and possibly know the sky is blue.,Do you think the sky is blue?,1,must,1
+I must think the sky is blue.,think,I must think but don't know the sky is blue.,I must think and possibly know the sky is blue.,Do you know the sky is blue?,1,must,1
 I think the sky is red.,think,I think but don't know the sky is red.,I think and possibly know the sky is red.,Do you think the sky is red?,0,,1
 I think the sky is red.,think,I think but don't know the sky is red.,I think and possibly know the sky is red.,Do you know the sky is red?,0,,1
 I think the sky is blue.,think,I think but don't know the sky is blue.,I think and possibly know the sky is blue.,Do you think the sky is blue?,1,,1
 I think the sky is blue.,think,I think but don't know the sky is blue.,I think and possibly know the sky is blue.,Do you know the sky is blue?,1,,1
-You can believe the sky is red.,believe,You can believe but don't know the sky is red.,You can believe and possibly know the sky is red.,Do I believe the sky is red?,0,can,2
-You can believe the sky is red.,believe,You can believe but don't know the sky is red.,You can believe and possibly know the sky is red.,Do I know the sky is red?,0,can,2
-You can believe the sky is blue.,believe,You can believe but don't know the sky is blue.,You can believe and possibly know the sky is blue.,Do I believe the sky is blue?,1,can,2
-You can believe the sky is blue.,believe,You can believe but don't know the sky is blue.,You can believe and possibly know the sky is blue.,Do I know the sky is blue?,1,can,2
-You could believe the sky is red.,believe,You could believe but don't know the sky is red.,You could believe and possibly know the sky is red.,Do I believe the sky is red?,0,could,2
-You could believe the sky is red.,believe,You could believe but don't know the sky is red.,You could believe and possibly know the sky is red.,Do I know the sky is red?,0,could,2
-You could believe the sky is blue.,believe,You could believe but don't know the sky is blue.,You could believe and possibly know the sky is blue.,Do I believe the sky is blue?,1,could,2
-You could believe the sky is blue.,believe,You could believe but don't know the sky is blue.,You could believe and possibly know the sky is blue.,Do I know the sky is blue?,1,could,2
-You might believe the sky is red.,believe,You might believe but don't know the sky is red.,You might believe and possibly know the sky is red.,Do I believe the sky is red?,0,might,2
-You might believe the sky is red.,believe,You might believe but don't know the sky is red.,You might believe and possibly know the sky is red.,Do I know the sky is red?,0,might,2
-You might believe the sky is blue.,believe,You might believe but don't know the sky is blue.,You might believe and possibly know the sky is blue.,Do I believe the sky is blue?,1,might,2
-You might believe the sky is blue.,believe,You might believe but don't know the sky is blue.,You might believe and possibly know the sky is blue.,Do I know the sky is blue?,1,might,2
-You will believe the sky is red.,believe,You will believe but don't know the sky is red.,You will believe and possibly know the sky is red.,Do I believe the sky is red?,0,will,2
-You will believe the sky is red.,believe,You will believe but don't know the sky is red.,You will believe and possibly know the sky is red.,Do I know the sky is red?,0,will,2
-You will believe the sky is blue.,believe,You will believe but don't know the sky is blue.,You will believe and possibly know the sky is blue.,Do I believe the sky is blue?,1,will,2
-You will believe the sky is blue.,believe,You will believe but don't know the sky is blue.,You will believe and possibly know the sky is blue.,Do I know the sky is blue?,1,will,2
-You would believe the sky is red.,believe,You would believe but don't know the sky is red.,You would believe and possibly know the sky is red.,Do I believe the sky is red?,0,would,2
-You would believe the sky is red.,believe,You would believe but don't know the sky is red.,You would believe and possibly know the sky is red.,Do I know the sky is red?,0,would,2
-You would believe the sky is blue.,believe,You would believe but don't know the sky is blue.,You would believe and possibly know the sky is blue.,Do I believe the sky is blue?,1,would,2
-You would believe the sky is blue.,believe,You would believe but don't know the sky is blue.,You would believe and possibly know the sky is blue.,Do I know the sky is blue?,1,would,2
-You should believe the sky is red.,believe,You should believe but don't know the sky is red.,You should believe and possibly know the sky is red.,Do I believe the sky is red?,0,should,2
-You should believe the sky is red.,believe,You should believe but don't know the sky is red.,You should believe and possibly know the sky is red.,Do I know the sky is red?,0,should,2
-You should believe the sky is blue.,believe,You should believe but don't know the sky is blue.,You should believe and possibly know the sky is blue.,Do I believe the sky is blue?,1,should,2
-You should believe the sky is blue.,believe,You should believe but don't know the sky is blue.,You should believe and possibly know the sky is blue.,Do I know the sky is blue?,1,should,2
-You shall believe the sky is red.,believe,You shall believe but don't know the sky is red.,You shall believe and possibly know the sky is red.,Do I believe the sky is red?,0,shall,2
-You shall believe the sky is red.,believe,You shall believe but don't know the sky is red.,You shall believe and possibly know the sky is red.,Do I know the sky is red?,0,shall,2
-You shall believe the sky is blue.,believe,You shall believe but don't know the sky is blue.,You shall believe and possibly know the sky is blue.,Do I believe the sky is blue?,1,shall,2
-You shall believe the sky is blue.,believe,You shall believe but don't know the sky is blue.,You shall believe and possibly know the sky is blue.,Do I know the sky is blue?,1,shall,2
-You ought to believe the sky is red.,believe,You ought to believe but don't know the sky is red.,You ought to believe and possibly know the sky is red.,Do I believe the sky is red?,0,ought to,2
-You ought to believe the sky is red.,believe,You ought to believe but don't know the sky is red.,You ought to believe and possibly know the sky is red.,Do I know the sky is red?,0,ought to,2
-You ought to believe the sky is blue.,believe,You ought to believe but don't know the sky is blue.,You ought to believe and possibly know the sky is blue.,Do I believe the sky is blue?,1,ought to,2
-You ought to believe the sky is blue.,believe,You ought to believe but don't know the sky is blue.,You ought to believe and possibly know the sky is blue.,Do I know the sky is blue?,1,ought to,2
-You believe the sky is red.,believe,You believe but don't know the sky is red.,You believe and possibly know the sky is red.,Do I believe the sky is red?,0,,2
-You believe the sky is red.,believe,You believe but don't know the sky is red.,You believe and possibly know the sky is red.,Do I know the sky is red?,0,,2
-You believe the sky is blue.,believe,You believe but don't know the sky is blue.,You believe and possibly know the sky is blue.,Do I believe the sky is blue?,1,,2
-You believe the sky is blue.,believe,You believe but don't know the sky is blue.,You believe and possibly know the sky is blue.,Do I know the sky is blue?,1,,2
-You can think the sky is red.,think,You can think but don't know the sky is red.,You can think and possibly know the sky is red.,Do I think the sky is red?,0,can,2
-You can think the sky is red.,think,You can think but don't know the sky is red.,You can think and possibly know the sky is red.,Do I know the sky is red?,0,can,2
-You can think the sky is blue.,think,You can think but don't know the sky is blue.,You can think and possibly know the sky is blue.,Do I think the sky is blue?,1,can,2
-You can think the sky is blue.,think,You can think but don't know the sky is blue.,You can think and possibly know the sky is blue.,Do I know the sky is blue?,1,can,2
-You could think the sky is red.,think,You could think but don't know the sky is red.,You could think and possibly know the sky is red.,Do I think the sky is red?,0,could,2
-You could think the sky is red.,think,You could think but don't know the sky is red.,You could think and possibly know the sky is red.,Do I know the sky is red?,0,could,2
-You could think the sky is blue.,think,You could think but don't know the sky is blue.,You could think and possibly know the sky is blue.,Do I think the sky is blue?,1,could,2
-You could think the sky is blue.,think,You could think but don't know the sky is blue.,You could think and possibly know the sky is blue.,Do I know the sky is blue?,1,could,2
-You might think the sky is red.,think,You might think but don't know the sky is red.,You might think and possibly know the sky is red.,Do I think the sky is red?,0,might,2
-You might think the sky is red.,think,You might think but don't know the sky is red.,You might think and possibly know the sky is red.,Do I know the sky is red?,0,might,2
-You might think the sky is blue.,think,You might think but don't know the sky is blue.,You might think and possibly know the sky is blue.,Do I think the sky is blue?,1,might,2
-You might think the sky is blue.,think,You might think but don't know the sky is blue.,You might think and possibly know the sky is blue.,Do I know the sky is blue?,1,might,2
-You will think the sky is red.,think,You will think but don't know the sky is red.,You will think and possibly know the sky is red.,Do I think the sky is red?,0,will,2
-You will think the sky is red.,think,You will think but don't know the sky is red.,You will think and possibly know the sky is red.,Do I know the sky is red?,0,will,2
-You will think the sky is blue.,think,You will think but don't know the sky is blue.,You will think and possibly know the sky is blue.,Do I think the sky is blue?,1,will,2
-You will think the sky is blue.,think,You will think but don't know the sky is blue.,You will think and possibly know the sky is blue.,Do I know the sky is blue?,1,will,2
-You would think the sky is red.,think,You would think but don't know the sky is red.,You would think and possibly know the sky is red.,Do I think the sky is red?,0,would,2
-You would think the sky is red.,think,You would think but don't know the sky is red.,You would think and possibly know the sky is red.,Do I know the sky is red?,0,would,2
-You would think the sky is blue.,think,You would think but don't know the sky is blue.,You would think and possibly know the sky is blue.,Do I think the sky is blue?,1,would,2
-You would think the sky is blue.,think,You would think but don't know the sky is blue.,You would think and possibly know the sky is blue.,Do I know the sky is blue?,1,would,2
-You should think the sky is red.,think,You should think but don't know the sky is red.,You should think and possibly know the sky is red.,Do I think the sky is red?,0,should,2
-You should think the sky is red.,think,You should think but don't know the sky is red.,You should think and possibly know the sky is red.,Do I know the sky is red?,0,should,2
-You should think the sky is blue.,think,You should think but don't know the sky is blue.,You should think and possibly know the sky is blue.,Do I think the sky is blue?,1,should,2
-You should think the sky is blue.,think,You should think but don't know the sky is blue.,You should think and possibly know the sky is blue.,Do I know the sky is blue?,1,should,2
-You shall think the sky is red.,think,You shall think but don't know the sky is red.,You shall think and possibly know the sky is red.,Do I think the sky is red?,0,shall,2
-You shall think the sky is red.,think,You shall think but don't know the sky is red.,You shall think and possibly know the sky is red.,Do I know the sky is red?,0,shall,2
-You shall think the sky is blue.,think,You shall think but don't know the sky is blue.,You shall think and possibly know the sky is blue.,Do I think the sky is blue?,1,shall,2
-You shall think the sky is blue.,think,You shall think but don't know the sky is blue.,You shall think and possibly know the sky is blue.,Do I know the sky is blue?,1,shall,2
-You ought to think the sky is red.,think,You ought to think but don't know the sky is red.,You ought to think and possibly know the sky is red.,Do I think the sky is red?,0,ought to,2
-You ought to think the sky is red.,think,You ought to think but don't know the sky is red.,You ought to think and possibly know the sky is red.,Do I know the sky is red?,0,ought to,2
-You ought to think the sky is blue.,think,You ought to think but don't know the sky is blue.,You ought to think and possibly know the sky is blue.,Do I think the sky is blue?,1,ought to,2
-You ought to think the sky is blue.,think,You ought to think but don't know the sky is blue.,You ought to think and possibly know the sky is blue.,Do I know the sky is blue?,1,ought to,2
-You think the sky is red.,think,You think but don't know the sky is red.,You think and possibly know the sky is red.,Do I think the sky is red?,0,,2
-You think the sky is red.,think,You think but don't know the sky is red.,You think and possibly know the sky is red.,Do I know the sky is red?,0,,2
-You think the sky is blue.,think,You think but don't know the sky is blue.,You think and possibly know the sky is blue.,Do I think the sky is blue?,1,,2
-You think the sky is blue.,think,You think but don't know the sky is blue.,You think and possibly know the sky is blue.,Do I know the sky is blue?,1,,2
 Sally can believe the sky is red.,believe,Sally can believe but doesn't know the sky is red.,Sally can believe and possibly know the sky is red.,Does Sally believe the sky is red?,0,can,3
 Sally can believe the sky is red.,believe,Sally can believe but doesn't know the sky is red.,Sally can believe and possibly know the sky is red.,Does she know the sky is red?,0,can,3
 Sally can believe the sky is blue.,believe,Sally can believe but doesn't know the sky is blue.,Sally can believe and possibly know the sky is blue.,Does Sally believe the sky is blue?,1,can,3
 Sally can believe the sky is blue.,believe,Sally can believe but doesn't know the sky is blue.,Sally can believe and possibly know the sky is blue.,Does she know the sky is blue?,1,can,3
-Sally could believe the sky is red.,believe,Sally could believe but doesn't know the sky is red.,Sally could believe and possibly know the sky is red.,Does Sally believe the sky is red?,0,could,3
-Sally could believe the sky is red.,believe,Sally could believe but doesn't know the sky is red.,Sally could believe and possibly know the sky is red.,Does she know the sky is red?,0,could,3
-Sally could believe the sky is blue.,believe,Sally could believe but doesn't know the sky is blue.,Sally could believe and possibly know the sky is blue.,Does Sally believe the sky is blue?,1,could,3
-Sally could believe the sky is blue.,believe,Sally could believe but doesn't know the sky is blue.,Sally could believe and possibly know the sky is blue.,Does she know the sky is blue?,1,could,3
-Sally might believe the sky is red.,believe,Sally might believe but doesn't know the sky is red.,Sally might believe and possibly know the sky is red.,Does Sally believe the sky is red?,0,might,3
-Sally might believe the sky is red.,believe,Sally might believe but doesn't know the sky is red.,Sally might believe and possibly know the sky is red.,Does she know the sky is red?,0,might,3
-Sally might believe the sky is blue.,believe,Sally might believe but doesn't know the sky is blue.,Sally might believe and possibly know the sky is blue.,Does Sally believe the sky is blue?,1,might,3
-Sally might believe the sky is blue.,believe,Sally might believe but doesn't know the sky is blue.,Sally might believe and possibly know the sky is blue.,Does she know the sky is blue?,1,might,3
-Sally will believe the sky is red.,believe,Sally will believe but doesn't know the sky is red.,Sally will believe and possibly know the sky is red.,Does Sally believe the sky is red?,0,will,3
-Sally will believe the sky is red.,believe,Sally will believe but doesn't know the sky is red.,Sally will believe and possibly know the sky is red.,Does she know the sky is red?,0,will,3
-Sally will believe the sky is blue.,believe,Sally will believe but doesn't know the sky is blue.,Sally will believe and possibly know the sky is blue.,Does Sally believe the sky is blue?,1,will,3
-Sally will believe the sky is blue.,believe,Sally will believe but doesn't know the sky is blue.,Sally will believe and possibly know the sky is blue.,Does she know the sky is blue?,1,will,3
-Sally would believe the sky is red.,believe,Sally would believe but doesn't know the sky is red.,Sally would believe and possibly know the sky is red.,Does Sally believe the sky is red?,0,would,3
-Sally would believe the sky is red.,believe,Sally would believe but doesn't know the sky is red.,Sally would believe and possibly know the sky is red.,Does she know the sky is red?,0,would,3
-Sally would believe the sky is blue.,believe,Sally would believe but doesn't know the sky is blue.,Sally would believe and possibly know the sky is blue.,Does Sally believe the sky is blue?,1,would,3
-Sally would believe the sky is blue.,believe,Sally would believe but doesn't know the sky is blue.,Sally would believe and possibly know the sky is blue.,Does she know the sky is blue?,1,would,3
-Sally should believe the sky is red.,believe,Sally should believe but doesn't know the sky is red.,Sally should believe and possibly know the sky is red.,Does Sally believe the sky is red?,0,should,3
-Sally should believe the sky is red.,believe,Sally should believe but doesn't know the sky is red.,Sally should believe and possibly know the sky is red.,Does she know the sky is red?,0,should,3
-Sally should believe the sky is blue.,believe,Sally should believe but doesn't know the sky is blue.,Sally should believe and possibly know the sky is blue.,Does Sally believe the sky is blue?,1,should,3
-Sally should believe the sky is blue.,believe,Sally should believe but doesn't know the sky is blue.,Sally should believe and possibly know the sky is blue.,Does she know the sky is blue?,1,should,3
-Sally shall believe the sky is red.,believe,Sally shall believe but doesn't know the sky is red.,Sally shall believe and possibly know the sky is red.,Does Sally believe the sky is red?,0,shall,3
-Sally shall believe the sky is red.,believe,Sally shall believe but doesn't know the sky is red.,Sally shall believe and possibly know the sky is red.,Does she know the sky is red?,0,shall,3
-Sally shall believe the sky is blue.,believe,Sally shall believe but doesn't know the sky is blue.,Sally shall believe and possibly know the sky is blue.,Does Sally believe the sky is blue?,1,shall,3
-Sally shall believe the sky is blue.,believe,Sally shall believe but doesn't know the sky is blue.,Sally shall believe and possibly know the sky is blue.,Does she know the sky is blue?,1,shall,3
-Sally ought to believe the sky is red.,believe,Sally ought to believe but doesn't know the sky is red.,Sally ought to believe and possibly know the sky is red.,Does Sally believe the sky is red?,0,ought to,3
-Sally ought to believe the sky is red.,believe,Sally ought to believe but doesn't know the sky is red.,Sally ought to believe and possibly know the sky is red.,Does she know the sky is red?,0,ought to,3
-Sally ought to believe the sky is blue.,believe,Sally ought to believe but doesn't know the sky is blue.,Sally ought to believe and possibly know the sky is blue.,Does Sally believe the sky is blue?,1,ought to,3
-Sally ought to believe the sky is blue.,believe,Sally ought to believe but doesn't know the sky is blue.,Sally ought to believe and possibly know the sky is blue.,Does she know the sky is blue?,1,ought to,3
+Sally must believe the sky is red.,believe,Sally must believe but doesn't know the sky is red.,Sally must believe and possibly know the sky is red.,Does Sally believe the sky is red?,0,must,3
+Sally must believe the sky is red.,believe,Sally must believe but doesn't know the sky is red.,Sally must believe and possibly know the sky is red.,Does she know the sky is red?,0,must,3
+Sally must believe the sky is blue.,believe,Sally must believe but doesn't know the sky is blue.,Sally must believe and possibly know the sky is blue.,Does Sally believe the sky is blue?,1,must,3
+Sally must believe the sky is blue.,believe,Sally must believe but doesn't know the sky is blue.,Sally must believe and possibly know the sky is blue.,Does she know the sky is blue?,1,must,3
 Sally believes the sky is red.,believe,Sally believes but doesn't know the sky is red.,Sally believes and possibly knows the sky is red.,Does Sally believe the sky is red?,0,,3
 Sally believes the sky is red.,believe,Sally believes but doesn't know the sky is red.,Sally believes and possibly knows the sky is red.,Does she know the sky is red?,0,,3
 Sally believes the sky is blue.,believe,Sally believes but doesn't know the sky is blue.,Sally believes and possibly knows the sky is blue.,Does Sally believe the sky is blue?,1,,3
@@ -183,34 +39,10 @@ Sally can think the sky is red.,think,Sally can think but doesn't know the sky i
 Sally can think the sky is red.,think,Sally can think but doesn't know the sky is red.,Sally can think and possibly know the sky is red.,Does she know the sky is red?,0,can,3
 Sally can think the sky is blue.,think,Sally can think but doesn't know the sky is blue.,Sally can think and possibly know the sky is blue.,Does Sally think the sky is blue?,1,can,3
 Sally can think the sky is blue.,think,Sally can think but doesn't know the sky is blue.,Sally can think and possibly know the sky is blue.,Does she know the sky is blue?,1,can,3
-Sally could think the sky is red.,think,Sally could think but doesn't know the sky is red.,Sally could think and possibly know the sky is red.,Does Sally think the sky is red?,0,could,3
-Sally could think the sky is red.,think,Sally could think but doesn't know the sky is red.,Sally could think and possibly know the sky is red.,Does she know the sky is red?,0,could,3
-Sally could think the sky is blue.,think,Sally could think but doesn't know the sky is blue.,Sally could think and possibly know the sky is blue.,Does Sally think the sky is blue?,1,could,3
-Sally could think the sky is blue.,think,Sally could think but doesn't know the sky is blue.,Sally could think and possibly know the sky is blue.,Does she know the sky is blue?,1,could,3
-Sally might think the sky is red.,think,Sally might think but doesn't know the sky is red.,Sally might think and possibly know the sky is red.,Does Sally think the sky is red?,0,might,3
-Sally might think the sky is red.,think,Sally might think but doesn't know the sky is red.,Sally might think and possibly know the sky is red.,Does she know the sky is red?,0,might,3
-Sally might think the sky is blue.,think,Sally might think but doesn't know the sky is blue.,Sally might think and possibly know the sky is blue.,Does Sally think the sky is blue?,1,might,3
-Sally might think the sky is blue.,think,Sally might think but doesn't know the sky is blue.,Sally might think and possibly know the sky is blue.,Does she know the sky is blue?,1,might,3
-Sally will think the sky is red.,think,Sally will think but doesn't know the sky is red.,Sally will think and possibly know the sky is red.,Does Sally think the sky is red?,0,will,3
-Sally will think the sky is red.,think,Sally will think but doesn't know the sky is red.,Sally will think and possibly know the sky is red.,Does she know the sky is red?,0,will,3
-Sally will think the sky is blue.,think,Sally will think but doesn't know the sky is blue.,Sally will think and possibly know the sky is blue.,Does Sally think the sky is blue?,1,will,3
-Sally will think the sky is blue.,think,Sally will think but doesn't know the sky is blue.,Sally will think and possibly know the sky is blue.,Does she know the sky is blue?,1,will,3
-Sally would think the sky is red.,think,Sally would think but doesn't know the sky is red.,Sally would think and possibly know the sky is red.,Does Sally think the sky is red?,0,would,3
-Sally would think the sky is red.,think,Sally would think but doesn't know the sky is red.,Sally would think and possibly know the sky is red.,Does she know the sky is red?,0,would,3
-Sally would think the sky is blue.,think,Sally would think but doesn't know the sky is blue.,Sally would think and possibly know the sky is blue.,Does Sally think the sky is blue?,1,would,3
-Sally would think the sky is blue.,think,Sally would think but doesn't know the sky is blue.,Sally would think and possibly know the sky is blue.,Does she know the sky is blue?,1,would,3
-Sally should think the sky is red.,think,Sally should think but doesn't know the sky is red.,Sally should think and possibly know the sky is red.,Does Sally think the sky is red?,0,should,3
-Sally should think the sky is red.,think,Sally should think but doesn't know the sky is red.,Sally should think and possibly know the sky is red.,Does she know the sky is red?,0,should,3
-Sally should think the sky is blue.,think,Sally should think but doesn't know the sky is blue.,Sally should think and possibly know the sky is blue.,Does Sally think the sky is blue?,1,should,3
-Sally should think the sky is blue.,think,Sally should think but doesn't know the sky is blue.,Sally should think and possibly know the sky is blue.,Does she know the sky is blue?,1,should,3
-Sally shall think the sky is red.,think,Sally shall think but doesn't know the sky is red.,Sally shall think and possibly know the sky is red.,Does Sally think the sky is red?,0,shall,3
-Sally shall think the sky is red.,think,Sally shall think but doesn't know the sky is red.,Sally shall think and possibly know the sky is red.,Does she know the sky is red?,0,shall,3
-Sally shall think the sky is blue.,think,Sally shall think but doesn't know the sky is blue.,Sally shall think and possibly know the sky is blue.,Does Sally think the sky is blue?,1,shall,3
-Sally shall think the sky is blue.,think,Sally shall think but doesn't know the sky is blue.,Sally shall think and possibly know the sky is blue.,Does she know the sky is blue?,1,shall,3
-Sally ought to think the sky is red.,think,Sally ought to think but doesn't know the sky is red.,Sally ought to think and possibly know the sky is red.,Does Sally think the sky is red?,0,ought to,3
-Sally ought to think the sky is red.,think,Sally ought to think but doesn't know the sky is red.,Sally ought to think and possibly know the sky is red.,Does she know the sky is red?,0,ought to,3
-Sally ought to think the sky is blue.,think,Sally ought to think but doesn't know the sky is blue.,Sally ought to think and possibly know the sky is blue.,Does Sally think the sky is blue?,1,ought to,3
-Sally ought to think the sky is blue.,think,Sally ought to think but doesn't know the sky is blue.,Sally ought to think and possibly know the sky is blue.,Does she know the sky is blue?,1,ought to,3
+Sally must think the sky is red.,think,Sally must think but doesn't know the sky is red.,Sally must think and possibly know the sky is red.,Does Sally think the sky is red?,0,must,3
+Sally must think the sky is red.,think,Sally must think but doesn't know the sky is red.,Sally must think and possibly know the sky is red.,Does she know the sky is red?,0,must,3
+Sally must think the sky is blue.,think,Sally must think but doesn't know the sky is blue.,Sally must think and possibly know the sky is blue.,Does Sally think the sky is blue?,1,must,3
+Sally must think the sky is blue.,think,Sally must think but doesn't know the sky is blue.,Sally must think and possibly know the sky is blue.,Does she know the sky is blue?,1,must,3
 Sally thinks the sky is red.,think,Sally thinks but doesn't know the sky is red.,Sally thinks and possibly knows the sky is red.,Does Sally think the sky is red?,0,,3
 Sally thinks the sky is red.,think,Sally thinks but doesn't know the sky is red.,Sally thinks and possibly knows the sky is red.,Does she know the sky is red?,0,,3
 Sally thinks the sky is blue.,think,Sally thinks but doesn't know the sky is blue.,Sally thinks and possibly knows the sky is blue.,Does Sally think the sky is blue?,1,,3

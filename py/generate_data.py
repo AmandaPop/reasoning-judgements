@@ -18,9 +18,9 @@ def write_csv(filename, sents):
         writer.writeheader()
         writer.writerows(sents)
 
-nps = ['I', 'You', 'Sally'] 
+nps = ['I', 'Sally'] 
 verbs = ['believe', 'think']
-modals = ['can', 'could', 'might', 'will', 'would', 'should', 'shall', 'ought to', '']
+modals = ['can', 'must', '']
 P = [('the sky is red', 0), ('the sky is blue', 1)]
 q = 'went for a run'
 #conditional = [True, False]

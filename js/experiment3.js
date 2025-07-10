@@ -182,33 +182,52 @@ const No_context_template = {
     };
   }
 };
+  //all possible conditions to see sentences in
+  const conditions = [
+    { SI: 'true', modal: 'true', person: 'person1', factP: 'true' },
+    { SI: 'true', modal: 'true', person: 'person1', factP: 'false' },
+    { SI: 'true', modal: 'true', person: 'person3', factP: 'true' },
+    { SI: 'true', modal: 'true', person: 'person3', factP: 'false' },
 
-  //separate stimuli into four groups based on modal and SI status
-  const modalTrials = stimuli.filter(stim => stim.modal && stim.modal.trim() !== '');
-  const nonModalTrials = stimuli.filter(stim => !stim.modal || stim.modal.trim() === '');
+    { SI: 'true', modal: 'false', person: 'person1', factP: 'true' },
+    { SI: 'true', modal: 'false', person: 'person1', factP: 'false' },
+    { SI: 'true', modal: 'false', person: 'person3', factP: 'true' },
+    { SI: 'true', modal: 'false', person: 'person3', factP: 'false' },
 
-  const modal_SI = jsPsych.randomization.shuffle(modalTrials).slice(0, 6).map(stim => ({ ...stim, sentenceKey: 'SI' }));
-  const modal_No_SI = jsPsych.randomization.shuffle(modalTrials).slice(6, 12).map(stim => ({ ...stim, sentenceKey: 'No_SI' }));
+    { No_SI: 'true', modal: 'true', person: 'person1', factP: 'true' },
+    { No_SI: 'true', modal: 'true', person: 'person1', factP: 'false' },
+    { No_SI: 'true', modal: 'true', person: 'person3', factP: 'true' },
+    { No_SI: 'true', modal: 'true', person: 'person3', factP: 'false' },
 
-  const nonModal_SI = jsPsych.randomization.shuffle(nonModalTrials).slice(0, 6).map(stim => ({ ...stim, sentenceKey: 'SI' }));
-  const nonModal_No_SI = jsPsych.randomization.shuffle(nonModalTrials).slice(6, 12).map(stim => ({ ...stim, sentenceKey: 'No_SI' }));
+    { No_SI: 'true', modal: 'false', person: 'person1', factP: 'true' },
+    { No_SI: 'true', modal: 'false', person: 'person1', factP: 'false' },
+    { No_SI: 'true', modal: 'false', person: 'person3', factP: 'true' },
+    { No_SI: 'true', modal: 'false', person: 'person3', factP: 'false' }
+  ];
 
-  //sample 3 from each group
-  const selectedModalSI = jsPsych.randomization.sampleWithoutReplacement(modal_SI, 3);
-  const selectedModalNoSI = jsPsych.randomization.sampleWithoutReplacement(modal_No_SI, 3);
-  const selectedNonModalSI = jsPsych.randomization.sampleWithoutReplacement(nonModal_SI, 3);
-  const selectedNonModalNoSI = jsPsych.randomization.sampleWithoutReplacement(nonModal_No_SI, 3);
+const testTrials = conditions.map(cond => {
+  //filter by condition
+  const filtered = stimuli.filter(stim =>
+    (stim.SI === cond.SI || stim.No_SI === cond.No_SI) &&
+    stim.modal === cond.modal &&
+    stim.person === cond.person &&
+    stim.factP === cond.factP
+  );
 
-  //combine and shuffle
-  const testTrials = jsPsych.randomization.shuffle([
-    ...selectedModalSI,
-    ...selectedModalNoSI,
-    ...selectedNonModalSI,
-    ...selectedNonModalNoSI
-  ]);
+  //shuffle the order to get random sentences
+  const shuffled = jsPsych.randomization.shuffle(filtered);  // Use jsPsych randomization to shuffle
+  //just take the first one
+  const selectedStimulus = shuffled[0];  // Pick the first one (randomized)
+  //add sentenceKey feature
+  return {
+    ...selectedStimulus,
+    sentenceKey: cond.SI ? 'SI' : 'No_SI'
+  };
+});
+
 
   const fillerTrials = jsPsych.randomization
-    .sampleWithoutReplacement(fillers, 3)
+    .sampleWithoutReplacement(fillers, 4)
     .map(filler => {
       const sentenceKey = jsPsych.randomization.sampleWithoutReplacement(['SI', 'No_SI'], 1)[0];
       return { ...filler, sentenceKey };
