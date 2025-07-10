@@ -125,7 +125,7 @@ for condition in conditions:
     #Sally can think/believe P
         sentence = f'{np} {modal} {verb} {clause}.'
         si = f"{np} {modal} {verb} but doesn't know {clause}."
-        no_si = f"{np} {modal} {verb} and possibly know {clause}."
+        no_si = f"{np} {modal} {verb} and possibly knows {clause}."
     #I/You can think/believe P
     else:
         sentence = f'{np} {modal} {verb} {clause}.'

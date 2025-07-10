@@ -101,7 +101,7 @@ function startExperiment() {
     type: jsPsychHtmlKeyboardResponse,
     stimulus: `
       <h1>Instructions</h1> 
-      <p>In this study, you will be shown a series of sentences, each containing a statement from a fictional conversation. Your task is to evaluate how acceptable each sentence sounds. </p>
+      <p>In this study, you will be shown a series of sentences, each containing a statement from a fictional conversation. Your task is to evaluate how acceptable each sentence sounds. On each trial, the sentence which you are being asked to evaluate is bolded. There will be 20 items to complete. </p>
       <p>Press SPACE to continue.</p>
     `,
     choices: [' '],
@@ -155,7 +155,7 @@ const No_context_template = {
     return `
       <div style="text-align: center;">
         <div class="context-block" style="margin-bottom: 96px;">
-          <p>Speaker B: <strong>${sentence}</strong></p>
+          <p>Speaker: <strong>${sentence}</strong></p>
         </div>
         <div style="margin-top: 50px;">
           <p>How acceptable is this sentence?</p>
@@ -174,7 +174,7 @@ const No_context_template = {
       trial_type: jsPsych.timelineVariable('type'),
       sentence: jsPsych.timelineVariable(sentenceKey),
       sentence_type: sentenceKey,
-      context: jsPsych.timelineVariable('context'),
+      context: 'None',
       verb: jsPsych.timelineVariable('verb'),
       factP: jsPsych.timelineVariable('factP'),
       modal: jsPsych.timelineVariable('modal'),
@@ -183,51 +183,6 @@ const No_context_template = {
   }
 };
 
-/*
-  //all possible conditions to see sentences in
-  const conditions = [
-    { SI: 'true', modal: 'true', person: 'person1', factP: 'true' },
-    { SI: 'true', modal: 'true', person: 'person1', factP: 'false' },
-    { SI: 'true', modal: 'true', person: 'person3', factP: 'true' },
-    { SI: 'true', modal: 'true', person: 'person3', factP: 'false' },
-
-    { SI: 'true', modal: 'false', person: 'person1', factP: 'true' },
-    { SI: 'true', modal: 'false', person: 'person1', factP: 'false' },
-    { SI: 'true', modal: 'false', person: 'person3', factP: 'true' },
-    { SI: 'true', modal: 'false', person: 'person3', factP: 'false' },
-
-    { No_SI: 'true', modal: 'true', person: 'person1', factP: 'true' },
-    { No_SI: 'true', modal: 'true', person: 'person1', factP: 'false' },
-    { No_SI: 'true', modal: 'true', person: 'person3', factP: 'true' },
-    { No_SI: 'true', modal: 'true', person: 'person3', factP: 'false' },
-
-    { No_SI: 'true', modal: 'false', person: 'person1', factP: 'true' },
-    { No_SI: 'true', modal: 'false', person: 'person1', factP: 'false' },
-    { No_SI: 'true', modal: 'false', person: 'person3', factP: 'true' },
-    { No_SI: 'true', modal: 'false', person: 'person3', factP: 'false' }
-  ];
-
-const testTrials = conditions.map(cond => {
-  //filter by condition
-  const filtered = stimuli.filter(stim =>
-    (stim.SI === cond.SI || stim.No_SI === cond.No_SI) &&
-    stim.modal === cond.modal &&
-    stim.person === cond.person &&
-    stim.factP === cond.factP
-  );
-
-  console.log(filtered)
-
-  //shuffle the order to get random sentences
-  const shuffled = jsPsych.randomization.shuffle(filtered);  // Use jsPsych randomization to shuffle
-  //just take the first one
-  const selectedStimulus = shuffled[0];  // Pick the first one (randomized)
-  //add sentenceKey feature
-  return {
-    ...selectedStimulus,
-    sentenceKey: cond.SI ? 'SI' : 'No_SI'
-  };
-}); */
 
   //divide into modal and non modal trials
   const modalTrials = stimuli.filter(stim => stim.modal && stim.modal.trim() !== '');
