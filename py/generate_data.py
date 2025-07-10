@@ -59,7 +59,7 @@ trueP = [('the sky is blue', 1),
       ('children learn to walk before they learn to run and jump', 1),
       ('the human heart is meant for pumping blood through the body', 1),
       ("oceans cover more than 70 percent of the earth's surface", 1),
-      ('either it will rain tomorrow or it will not rain tomorrow', 1),
+      ('there are 100 centimeters in a meter', 1),
       ('a circle is round', 1)]
 falseP = [
       ("the earth is flat", 0),

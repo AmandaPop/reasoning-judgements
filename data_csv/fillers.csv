@@ -1,5 +1,5 @@
 sentence,verb,SI,No_SI,context,factP,modal,person,conditional
-"fIf I believe the sky is red, then I went for a run.",believe,I can believe but don't know the sky is red.,I can believe and possibly know the sky is red.,Do you believe the sky is red?,0,can,1,True
-"fIf I believe the sky is red, then I went for a run.",believe,I can believe but don't know the sky is red.,I can believe and possibly know the sky is red.,Do you know the sky is red?,0,can,1,True
-fI can believe the sky is red.,believe,I can believe but don't know the sky is red.,I can believe and possibly know the sky is red.,Do you believe the sky is red?,0,can,1,False
-fI can believe the sky is red.,believe,I can believe but don't know the sky is red.,I can believe and possibly know the sky is red.,Do you know the sky is red?,0,can,1,False
+This is a filler.,believe,This is a filler.,This is a filler.,This is a filler?,0,can,1
+This is a filler.,believe,This is a filler.,This is a filler.,This is a filler?,0,can,1
+This is a filler.,believe,This is a filler.,This is a filler.,This is a filler?,0,can,1
+This is a filler.,believe,This is a filler.,This is a filler.,This is a filler?,0,can,1
