@@ -1,4 +1,4 @@
-sentence,verb,SI,No_SI,context,factP,modal,person,conditional
+sentence,verb,SI,No_SI,context,factP,modal,person
 She was able to solve the problem but she didn't solve it.,believe,This is a filler.,This is a filler.,This is a filler?,0,can,1
 I broke a finger today but not one of mine.,believe,This is a filler.,This is a filler.,This is a filler?,0,can,1
 "I believe the Yankees will win, but I'm not saying they will".,believe,This is a filler.,This is a filler.,This is a filler?,0,can,1
