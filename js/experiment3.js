@@ -121,12 +121,12 @@ const context_template = {
           <p>Speaker B: <strong>${sentence}</strong></p>
         </div>
         <div style="margin-top: 50px;">
-          <p>How acceptable is this sentence?</p>
+          <p>Does Speaker B mean that they don't know?</p>
         </div>
       </div>
     `;
   },
-  labels: ['<p>Completely\n Acceptable</p>', '<p>Completely\n Unacceptable</p>'],
+  labels: ['<p>Yes</p>', '<p>No</p>'],
   slider_width: 700,
   require_movement: true,
   button_label: 'Continue',
@@ -158,12 +158,12 @@ const No_context_template = {
           <p>Speaker: <strong>${sentence}</strong></p>
         </div>
         <div style="margin-top: 50px;">
-          <p>How acceptable is this sentence?</p>
+          <p>Does the speaker mean that they don't know?</p>
         </div>
       </div>
     `;
   },
-  labels: ['<p>Completely\n Acceptable</p>', '<p>Completely\n Unacceptable</p>'],
+  labels: ['<p>Yes</p>', '<p>No</p>'],
   slider_width: 700,
   require_movement: true,
   button_label: 'Continue',
@@ -214,7 +214,6 @@ const No_context_template = {
     falseP_person1_NonModalTrials,
     falseP_person3_NonModalTrials
   ];
-  console.log(conditions)
 
   let testTrials = [];
   conditions.forEach(condition => {
