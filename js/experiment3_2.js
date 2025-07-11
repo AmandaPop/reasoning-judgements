@@ -1,4 +1,4 @@
-
+console.log('This is the 2 version update')
 var stimuli = [];
 var fillers = [];
 var stimuliLoaded = false; //tracking to make sure experiment doesn't start without loading//
