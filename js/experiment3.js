@@ -118,7 +118,7 @@ const context_template = {
         <div class="context-block" style="margin-bottom: 96px;">
           <p>Speaker A: ${jsPsych.timelineVariable('context')}</p>
           <p> <\p>
-          <p>Speaker B: <strong>${sentence}</strong></p>
+          <p>Speaker B: <strong>${jsPsych.timelineVariable('sentence')}</strong></p>
         </div>
         <div style="margin-top: 50px;">
           <p>Does Speaker B mean that they don't know?</p>
@@ -155,7 +155,7 @@ const No_context_template = {
     return `
       <div style="text-align: center;">
         <div class="context-block" style="margin-bottom: 96px;">
-          <p>Speaker: <strong>${sentence}</strong></p>
+          <p> Speaker: <strong>${jsPsych.timelineVariable('sentence')}</strong>
         </div>
         <div style="margin-top: 50px;">
           <p>Does the speaker mean that they don't know?</p>
@@ -182,7 +182,6 @@ const No_context_template = {
     };
   }
 };
-
 
   //divide into modal and non modal trials
   const modalTrials = stimuli.filter(stim => stim.modal && stim.modal.trim() !== '');
@@ -231,7 +230,6 @@ const No_context_template = {
       const sentenceKey = jsPsych.randomization.sampleWithoutReplacement(['SI', 'No_SI'], 1)[0];
       return { ...filler, sentenceKey };
     });
-
 
     const combinedTrials = jsPsych.randomization.shuffle(
       testTrials.concat(fillerTrials)
