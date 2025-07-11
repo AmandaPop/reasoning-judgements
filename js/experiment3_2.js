@@ -116,17 +116,18 @@ const context_template = {
     return `
       <div style="text-align: center;">
         <div class="context-block" style="margin-bottom: 96px;">
-          <p>Speaker A: "${jsPsych.timelineVariable('context')}"</p>
-          <p> <\p>
-          <p>Speaker B: <strong>"${jsPsych.timelineVariable('sentence')}"</strong></p>
+          <p>Speaker A: ${jsPsych.timelineVariable('context')}</p>
+          <p> Speaker B:<\p>
+          <p> A: <strong>${jsPsych.timelineVariable('SI')}</strong>
+          <p> B: <strong>${jsPsych.timelineVariable('No_SI')}</strong>
         </div>
         <div style="margin-top: 50px;">
-          <p>Does Speaker B mean that they don't know?</p>
+          <p>Which sentence makes more sense?</p>
         </div>
       </div>
     `;
   },
-  labels: ['<p>Yes</p>', '<p>No</p>'],
+  labels: ['<p>A</p>', '<p>B</p>'],
   slider_width: 700,
   require_movement: true,
   button_label: 'Continue',
@@ -155,15 +156,16 @@ const No_context_template = {
     return `
       <div style="text-align: center;">
         <div class="context-block" style="margin-bottom: 96px;">
-          <p> Speaker: <strong>"${jsPsych.timelineVariable('sentence')}"</strong>
+          <p> A: <strong>${jsPsych.timelineVariable('SI')}</strong>
+          <p> B: <strong>${jsPsych.timelineVariable('No_SI')}</strong>
         </div>
         <div style="margin-top: 50px;">
-          <p>Does the speaker mean that they don't know?</p>
+          <p>Which sentence makes more sense?</p>
         </div>
       </div>
     `;
   },
-  labels: ['<p>Yes</p>', '<p>No</p>'],
+  labels: ['<p>A</p>', '<p>B</p>'],
   slider_width: 700,
   require_movement: true,
   button_label: 'Continue',
