@@ -114,7 +114,7 @@ const context_template = {
   stimulus: function () {
       const sentenceKey = jsPsych.timelineVariable('sentenceKey');
       const sentence = jsPsych.timelineVariable(sentenceKey);
-      const question = jsPsych.timelineVariable('np') === 'I' ? 'Does Jane mean that she does not know?' : "Does Jane mean that ${jsPsych.timelineVariable('np')} does not know?";
+      const question = jsPsych.timelineVariable('np') === 'I' ? 'Does Jane mean that she does not know?' : `Does Jane mean that ${jsPsych.timelineVariable('np')} does not know?`;
     return `
       <div style="text-align: center;">
         <div class="context-block" style="margin-bottom: 96px;">
@@ -153,7 +153,7 @@ const No_context_template = {
   stimulus: function () {
       const sentenceKey = jsPsych.timelineVariable('sentenceKey');
       const sentence = jsPsych.timelineVariable(sentenceKey);
-      const question = jsPsych.timelineVariable('np') === 'I' ? 'Does Jane mean that she does not know?' : "Does Jane mean that ${jsPsych.timelineVariable('np')} does not know?";
+      const question = jsPsych.timelineVariable('np') === 'I' ? 'Does Jane mean that she does not know?' : `Does Jane mean that ${jsPsych.timelineVariable('np')} does not know?`;
     return `
       <div style="text-align: center;">
         <div class="context-block" style="margin-bottom: 96px;">
