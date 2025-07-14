@@ -28,6 +28,7 @@ Papa.parse('data_csv/data.csv', {
           factP: row.factP,
           modal: row.modal,
           person: row.person,
+          np: row.np,
           type: 'test'
         });
       }
@@ -57,6 +58,7 @@ Papa.parse('data_csv/fillers.csv', {
           factP: row.factP,
           modal: row.modal,
           person: row.person,
+          np: row.np,
           type: 'filler'
         });
       }
@@ -101,7 +103,7 @@ function startExperiment() {
     type: jsPsychHtmlKeyboardResponse,
     stimulus: `
       <h1>Instructions</h1> 
-      <p>In this study, you will be shown a series of sentences, each containing a statement from a fictional conversation. Your task is to evaluate how acceptable each sentence sounds. On each trial, the sentence which you are being asked to evaluate is bolded. There will be 20 items to complete. </p>
+      <p>In this study, you will be shown a series of sentences, each containing a statement from a fictional conversation. Your task is to evaluate what the speaker meant by what they said. Use the slider by placing the nob towards which ever answer you prefer. If you feel unclear about your answer, you can place the nob somewhere inbetween depending on how much or less you prefer each answer. There will be 20 items to complete. </p>
       <p>Press SPACE to continue.</p>
     `,
     choices: [' '],
@@ -112,16 +114,16 @@ const context_template = {
   stimulus: function () {
       const sentenceKey = jsPsych.timelineVariable('sentenceKey');
       const sentence = jsPsych.timelineVariable(sentenceKey);
-
+      const question = jsPsych.timelineVariable('np') === 'I' ? 'Does Jane mean that she does not know?' : "Does Jane mean that ${jsPsych.timelineVariable('np')} does not know?";
     return `
       <div style="text-align: center;">
         <div class="context-block" style="margin-bottom: 96px;">
-          <p>Speaker A: "${jsPsych.timelineVariable('context')}"</p>
+          <p>John: "${jsPsych.timelineVariable('context')}"</p>
           <p> <\p>
-          <p>Speaker B: <strong>"${jsPsych.timelineVariable('sentence')}"</strong></p>
+          <p>Jane: <strong>"${jsPsych.timelineVariable('sentence')}"</strong></p>
         </div>
         <div style="margin-top: 50px;">
-          <p>Does Speaker B mean that they don't know?</p>
+          <p>${question}?</p>
         </div>
       </div>
     `;
@@ -151,14 +153,14 @@ const No_context_template = {
   stimulus: function () {
       const sentenceKey = jsPsych.timelineVariable('sentenceKey');
       const sentence = jsPsych.timelineVariable(sentenceKey);
-
+      const question = jsPsych.timelineVariable('np') === 'I' ? 'Does Jane mean that she does not know?' : "Does Jane mean that ${jsPsych.timelineVariable('np')} does not know?";
     return `
       <div style="text-align: center;">
         <div class="context-block" style="margin-bottom: 96px;">
-          <p> Speaker: <strong>"${jsPsych.timelineVariable('sentence')}"</strong>
+          <p> Jane: <strong>"${jsPsych.timelineVariable('sentence')}"</strong>
         </div>
         <div style="margin-top: 50px;">
-          <p>Does the speaker mean that they don't know?</p>
+          <p>${question}</p>
         </div>
       </div>
     `;

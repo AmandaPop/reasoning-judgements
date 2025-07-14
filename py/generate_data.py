@@ -15,6 +15,7 @@ def write_csv(filename, sents):
                                                    'factP', 
                                                    'modal', 
                                                    'person', 
+                                                   'np'
                                                    ])
         writer.writeheader()
         writer.writerows(sents)
@@ -154,6 +155,7 @@ for condition in conditions:
         'factP' : p,
         'modal' : modal,
         'person' : person,
+        'np' : np
         #'conditional' : conditional
     }
     data.append(stimulus)

@@ -28,6 +28,7 @@ Papa.parse('data_csv/data.csv', {
           factP: row.factP,
           modal: row.modal,
           person: row.person,
+          np: row.np
           type: 'test'
         });
       }
@@ -57,6 +58,7 @@ Papa.parse('data_csv/fillers.csv', {
           factP: row.factP,
           modal: row.modal,
           person: row.person,
+          np: row.np
           type: 'filler'
         });
       }
@@ -101,7 +103,7 @@ function startExperiment() {
     type: jsPsychHtmlKeyboardResponse,
     stimulus: `
       <h1>Instructions</h1> 
-      <p>In this study, you will be shown a series of sentences, each containing a statement from a fictional conversation. Your task is to evaluate how acceptable each sentence sounds. On each trial, the sentence which you are being asked to evaluate is bolded. There will be 20 items to complete. </p>
+      <p>In this study, you will be shown a series of sentences, each containing a statement from a fictional conversation. Your task is to evaluate how acceptable each sentence sounds. On each trial, there will be two sentences which you need to pick between. Use the slider by placing the nob towards whichever sentence you prefer. There will be 20 items to complete. </p>
       <p>Press SPACE to continue.</p>
     `,
     choices: [' '],
@@ -116,8 +118,8 @@ const context_template = {
     return `
       <div style="text-align: center;">
         <div class="context-block" style="margin-bottom: 96px;">
-          <p>Speaker A: ${jsPsych.timelineVariable('context')}</p>
-          <p> Speaker B:<\p>
+          <p>John: ${jsPsych.timelineVariable('context')}</p>
+          <p> Jane:<\p>
           <p> A: <strong>${jsPsych.timelineVariable('SI')}</strong>
           <p> B: <strong>${jsPsych.timelineVariable('No_SI')}</strong>
         </div>
