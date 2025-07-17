@@ -61,7 +61,6 @@ Papa.parse('data_csv/fillers.csv', {
           item: row.item,
           type: 'filler'
         });
-      
     });
     console.log('Fillers loaded:', fillers);
     fillersLoaded = true;
