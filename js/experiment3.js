@@ -80,9 +80,8 @@ function startExperiment() {
 
   const condition = jsPsych.randomization.randomInt(0, 1) === 0 ? 'context' : 'no_context';
   const verb_condition = jsPsych.randomization.randomInt(0, 1) === 0 ? 'think' : 'believe';
-  const QUD_weak = verb_condition === 'think' ? jsPsych.timelineVariable('QUD_weak_think') : jsPsych.timelineVariable('QUD_weak_believe')
-  console.log('this is QUD_weak:');
-    console.log(QUD_weak);
+  //const QUD_weak = verb_condition === 'think' ? jsPsych.timelineVariable('QUD_weak_think') : jsPsych.timelineVariable('QUD_weak_believe')
+
   const welcome = {
     type: jsPsychHtmlKeyboardResponse,
     stimulus: `
@@ -115,11 +114,8 @@ const context_template = {
   type: jsPsychHtmlSliderResponse,
   stimulus: function () {
       const QUD_strength = jsPsych.randomization.randomInt(0, 1) === 0 ? 'weak' : 'strong';
-      console.log('this is QUD_strength');
-      console.log(QUD_strength);
       const QUD = QUD_strength === 'weak' ? QUD_weak : jsPsych.timelineVariable('QUD_strong');
-      console.log('therefore, this is QUD');
-      console.log(QUD);
+      jsPsych.data.addProperties({ current_QUD: QUD });
       const sentence = verb_condition === 'believe' ? jsPsych.timelineVariable('believe_sentence') : jsPsych.timelineVariable('think_sentence');
       const question = jsPsych.timelineVariable('np') === 'I' ? 'Does Jane mean that she does not know?' : `Does Jane mean that ${jsPsych.timelineVariable('np')} does not know?`;
     return `
@@ -143,11 +139,12 @@ const context_template = {
     return {
       collect: true,
       trial_type: jsPsych.timelineVariable('type'),
-      context: QUD,
+      context: jsPsych.data.get().last(1).values()[0].current_QUD || 'undefined',
       verb: verb_condition,
       factP: jsPsych.timelineVariable('factP'),
       modal: jsPsych.timelineVariable('modal'),
       person: jsPsych.timelineVariable('person'),
+      sentence: sentence
     };
   }
 };
@@ -184,6 +181,7 @@ const No_context_template = {
       factP: jsPsych.timelineVariable('factP'),
       modal: jsPsych.timelineVariable('modal'),
       person: jsPsych.timelineVariable('person'),
+      sentence: sentence
     };
   }
 };
