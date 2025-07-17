@@ -1,4 +1,4 @@
-
+console.log('newest')
 var stimuli = [];
 var fillers = [];
 var stimuliLoaded = false; //tracking to make sure experiment doesn't start without loading//
@@ -81,7 +81,8 @@ function startExperiment() {
   const condition = jsPsych.randomization.randomInt(0, 1) === 0 ? 'context' : 'no_context';
   const verb_condition = jsPsych.randomization.randomInt(0, 1) === 0 ? 'think' : 'believe';
   const QUD_weak = verb_condition === 'think' ? jsPsych.timelineVariable('QUD_weak_think') : jsPsych.timelineVariable('QUD_weak_believe')
-
+  console.log('this is QUD_weak:');
+    console.log(QUD_weak);
   const welcome = {
     type: jsPsychHtmlKeyboardResponse,
     stimulus: `
@@ -114,7 +115,11 @@ const context_template = {
   type: jsPsychHtmlSliderResponse,
   stimulus: function () {
       const QUD_strength = jsPsych.randomization.randomInt(0, 1) === 0 ? 'weak' : 'strong';
-      const QUD = QUD_strength === 'weak' ? QUD_weak : jsPsych.timelineVariable('QUD_strong')
+      console.log('this is QUD_strength');
+      console.log(QUD_strength);
+      const QUD = QUD_strength === 'weak' ? QUD_weak : jsPsych.timelineVariable('QUD_strong');
+      console.log('therefore, this is QUD');
+      console.log(QUD);
       const sentence = verb_condition === 'believe' ? jsPsych.timelineVariable('believe_sentence') : jsPsych.timelineVariable('think_sentence');
       const question = jsPsych.timelineVariable('np') === 'I' ? 'Does Jane mean that she does not know?' : `Does Jane mean that ${jsPsych.timelineVariable('np')} does not know?`;
     return `
