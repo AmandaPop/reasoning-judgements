@@ -1,4 +1,4 @@
-console.log('newest')
+
 var stimuli = [];
 var fillers = [];
 var stimuliLoaded = false; //tracking to make sure experiment doesn't start without loading//
@@ -80,7 +80,6 @@ function startExperiment() {
 
   const condition = jsPsych.randomization.randomInt(0, 1) === 0 ? 'context' : 'no_context';
   const verb_condition = jsPsych.randomization.randomInt(0, 1) === 0 ? 'think' : 'believe';
-  //const QUD_weak = verb_condition === 'think' ? jsPsych.timelineVariable('QUD_weak_think') : jsPsych.timelineVariable('QUD_weak_believe')
 
   const welcome = {
     type: jsPsychHtmlKeyboardResponse,
@@ -104,99 +103,85 @@ function startExperiment() {
     type: jsPsychHtmlKeyboardResponse,
     stimulus: `
       <h1>Instructions</h1> 
-      <p>In this study, you will be shown a series of sentences, each containing a statement from a fictional conversation. Your task is to evaluate what the speaker meant by what they said. Use the slider by placing the nob towards which ever answer you prefer. If you feel unclear about your answer, you can place the nob somewhere inbetween depending on how much or less you prefer each answer. There will be 20 items to complete. </p>
+      <p>In this study, you will be shown a series of sentences, each containing a statement from a fictional conversation. Your task is to evaluate what the speaker meant by what they said. Use the slider by placing the knob toward whichever answer you prefer. If you feel unclear about your answer, you can place the knob somewhere in between. There will be 20 items to complete.</p>
       <p>Press SPACE to continue.</p>
     `,
     choices: [' '],
   };
 
-const context_template = {
-  type: jsPsychHtmlSliderResponse,
-  stimulus: function () {
+  //create correct trials with QUD/sentence/question values
+  function generateTrialVariables(trials, context_condition, verb_condition) {
+    return trials.map(trial => {
       const QUD_strength = jsPsych.randomization.randomInt(0, 1) === 0 ? 'weak' : 'strong';
-      const QUD = QUD_strength === 'weak' ? QUD_weak : jsPsych.timelineVariable('QUD_strong');
-      jsPsych.data.addProperties({ current_QUD: QUD });
-      const sentence = verb_condition === 'believe' ? jsPsych.timelineVariable('believe_sentence') : jsPsych.timelineVariable('think_sentence');
-      const question = jsPsych.timelineVariable('np') === 'I' ? 'Does Jane mean that she does not know?' : `Does Jane mean that ${jsPsych.timelineVariable('np')} does not know?`;
-    return `
-      <div style="text-align: center;">
-        <div class="context-block" style="margin-bottom: 96px;">
-          <p>John: "${QUD}"</p>
-          <p> <\p>
-          <p>Jane: <strong>"${sentence}"</strong></p>
+
+      let QUD;
+      if (context_condition === 'context') {
+        QUD = (QUD_strength === 'weak')
+          ? (verb_condition === 'think' ? trial.QUD_weak_think : trial.QUD_weak_believe)
+          : trial.QUD_strong;
+      } else {
+        QUD = 'None';
+      }
+
+      const sentence = verb_condition === 'believe' ? trial.believe_sentence : trial.think_sentence;
+      const question = trial.np === 'I'
+        ? 'Does Jane mean that she does not know?'
+        : `Does Jane mean that ${trial.np} does not know?`;
+
+      return {
+        ...trial,
+        context_text: QUD,
+        sentence: sentence,
+        question: question,
+        verb: verb_condition
+      };
+    });
+  }
+
+  // Unified response template for both context/no-context
+  const response_template = {
+    type: jsPsychHtmlSliderResponse,
+    stimulus: function () {
+      const contextHTML = jsPsych.timelineVariable('context_text') === 'None'
+        ? ''
+        : `<p>John: "${jsPsych.timelineVariable('context_text')}"</p>`;
+      return `
+        <div style="text-align: center;">
+          <div class="context-block" style="margin-bottom: 96px;">
+            ${contextHTML}
+            <p>Jane: <strong>"${jsPsych.timelineVariable('sentence')}"</strong></p>
+          </div>
+          <div style="margin-top: 50px;">
+            <p>${jsPsych.timelineVariable('question')}</p>
+          </div>
         </div>
-        <div style="margin-top: 50px;">
-          <p>${question}?</p>
-        </div>
-      </div>
-    `;
-  },
-  labels: ['<p>Yes</p>', '<p>No</p>'],
-  slider_width: 700,
-  require_movement: true,
-  button_label: 'Continue',
-  data: function () {
-    return {
+      `;
+    },
+    labels: ['<p>Yes</p>', '<p>No</p>'],
+    slider_width: 700,
+    require_movement: true,
+    button_label: 'Continue',
+    data: {
       collect: true,
       trial_type: jsPsych.timelineVariable('type'),
-      context: jsPsych.data.get().last(1).values()[0].current_QUD || 'undefined',
-      verb: verb_condition,
+      context: jsPsych.timelineVariable('context_text'),
+      verb: jsPsych.timelineVariable('verb'),
       factP: jsPsych.timelineVariable('factP'),
       modal: jsPsych.timelineVariable('modal'),
       person: jsPsych.timelineVariable('person'),
-      sentence: sentence
-    };
-  }
-};
+      sentence: jsPsych.timelineVariable('sentence')
+    }
+  };
 
-const No_context_template = {
-  type: jsPsychHtmlSliderResponse,
-  stimulus: function () {
-      const QUD_strength = jsPsych.randomization.randomInt(0, 1) === 0 ? 'weak' : 'strong';
-      const QUD = 'None'
-      const sentence = verb_condition === 'believe' ? jsPsych.timelineVariable('believe_sentence') : jsPsych.timelineVariable('think_sentence');
-      const question = jsPsych.timelineVariable('np') === 'I' ? 'Does Jane mean that she does not know?' : `Does Jane mean that ${jsPsych.timelineVariable('np')} does not know?`;
-    return `
-      <div style="text-align: center;">
-        <div class="context-block" style="margin-bottom: 96px;">
-          <p> <\p>
-          <p>Jane: <strong>"${sentence}"</strong></p>
-        </div>
-        <div style="margin-top: 50px;">
-          <p>${question}?</p>
-        </div>
-      </div>
-    `;
-  },
-  labels: ['<p>Yes</p>', '<p>No</p>'],
-  slider_width: 700,
-  require_movement: true,
-  button_label: 'Continue',
-  data: function () {
-    return {
-      collect: true,
-      trial_type: jsPsych.timelineVariable('type'),
-      context: QUD,
-      verb: verb_condition,
-      factP: jsPsych.timelineVariable('factP'),
-      modal: jsPsych.timelineVariable('modal'),
-      person: jsPsych.timelineVariable('person'),
-      sentence: sentence
-    };
-  }
-};
-
-  //divide into modal and non modal trials
+  //trial sampling
   const modalTrials = stimuli.filter(stim => stim.modal === 'modal');
   const nonModalTrials = stimuli.filter(stim => stim.modal === '');
 
-  //divide by person trials
   const person1_NonModalTrials = nonModalTrials.filter(stim => stim.person === '1');
   const person3_NonModalTrials = nonModalTrials.filter(stim => stim.person === '3');
   const person1_modalTrials = modalTrials.filter(stim => stim.person === '1');
   const person3_modalTrials = modalTrials.filter(stim => stim.person === '3');
 
-  //divide by factP
   const trueP_person1_modalTrials = person1_modalTrials.filter(stim => stim.factP === '1');
   const trueP_person3_modalTrials = person3_modalTrials.filter(stim => stim.factP === '1');
   const trueP_person1_NonModalTrials = person1_NonModalTrials.filter(stim => stim.factP === '1');
@@ -219,27 +204,21 @@ const No_context_template = {
 
   let sampledTrials = [];
   conditions.forEach(condition => {
-    //from the condition, sample 1 trial, this is to avoid showing a participant the same condition setting
     const sampledTrial = jsPsych.randomization.sampleWithoutReplacement(condition, 1)[0];
     sampledTrials.push(sampledTrial);
   });
-  //from the list with only one of each condition, sample 6 random trials
-  const testTrials = jsPsych.randomization.sampleWithoutReplacement(sampledTrials, 6);
-  const fillerTrials = jsPsych.randomization.sampleWithoutReplacement(fillers, 4)
- 
 
-    const combinedTrials = jsPsych.randomization.shuffle(
-      testTrials.concat(fillerTrials)
-    );
-  console.log(combinedTrials); //to debug the trial list
+  const testTrials = jsPsych.randomization.sampleWithoutReplacement(sampledTrials, 6);
+  const fillerTrials = jsPsych.randomization.sampleWithoutReplacement(fillers, 4);
+  const combinedTrials = jsPsych.randomization.shuffle(testTrials.concat(fillerTrials));
+  const preparedTrials = generateTrialVariables(combinedTrials, condition, verb_condition);
 
   const trial_procedure = {
-    timeline: [condition === 'context' ? context_template : No_context_template],
-    timeline_variables: combinedTrials,
+    timeline: [response_template],
+    timeline_variables: preparedTrials,
     randomize_order: false
   };
 
-  //save data to osf
   const save_data = {
     type: jsPsychPipe,
     action: "save",
