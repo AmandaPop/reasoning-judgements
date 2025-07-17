@@ -3,41 +3,41 @@ import sys
 import csv
 import random
 
-file = sys.argv[1]
+#add weak and strong QUD to each one and remove context as a condition
+
+#make conditions across P, modals, and person = 8 condition settings = 32 (4 sentences each) sentences = 16 sentences of true and false 
 
 def write_csv(filename, sents):
     with open(filename, mode='w', newline='') as file:
-        writer = csv.DictWriter(file, fieldnames=['sentence',
-                                                   "verb", 
-                                                   'SI',
-                                                   "No_SI",
-                                                   "context", 
+        writer = csv.DictWriter(file, fieldnames=['believe_sentence',
+                                                  'think_sentence',
+                                                  'QUD_weak_believe',
+                                                  'QUD_weak_think',
+                                                  'QUD_strong',
                                                    'factP', 
                                                    'modal', 
                                                    'person', 
-                                                   'np'
+                                                   'np',
+                                                   'item'
                                                    ])
         writer.writeheader()
         writer.writerows(sents)
 
 person = ['1', '3'] 
 nouns3 = [
-    "Alice", "Benjamin", "Charlotte", "Daniel", "Emily",
-    "Frank", "Grace", "Henry", "Isabella", "Jack",
-    "Katherine", "Liam", "Mia", "Noah", "Olivia",
-    "Peter", "Quinn", "Rachel", "Samuel", "Tara",
-    "Victoria", "William", "Xander", 'Sally',
-    "Zachary", "Andrew", "Bella", "Caleb", "Daisy",
-    "Ethan", "Fiona", "George", "Hannah", "Ian",
-    "Julia", "Kyle", "Laura", "Matthew", "Natalie",
-    "Oscar", "Paige", "Ryan", "Sophie", "Thomas",
-    "Violet", "Wesley"
-    ]
-verbs = ['believe', 'think']
-modals = ['can', 'must', '']
-
+    "Emily", "James", "Olivia", "Michael",
+    "Sophia", "Daniel", "Ava", "Benjamin",
+    "Isabella", "William", "Mia", "Alexander",
+    "Charlotte", "Ethan", "Amelia", "Noah",
+    "Liam", "Harper", "Lucas", "Ella",
+    "Henry", "Grace", "Jack", "Chloe",
+    "Max", "Lily", "Matthew", "Zoe",
+    "Jacob", "Sally", "Logan", "Sarah"
+]
+#verbs = ['believe', 'think'] 
+modals = ['modal', '']
 P = [0, 1]
-#considering to add: ('that about sums everything up', 2),
+
 trueP = [('the sky is blue', 1),
       ("people need air to breathe", 1),
       ('the moon is in the sky', 1),
@@ -61,7 +61,8 @@ trueP = [('the sky is blue', 1),
       ('the human heart is meant for pumping blood through the body', 1),
       ("oceans cover more than 70 percent of the earth's surface", 1),
       ('there are 100 centimeters in a meter', 1),
-      ('a circle is round', 1)]
+      ('a circle is round', 1)
+      ]
 falseP = [
       ("the earth is flat", 0),
       ("the sun rises in the west", 0),
@@ -85,80 +86,85 @@ falseP = [
       ("clouds are made of cotton", 0),
       ("humans can photosynthesize like plants", 0),
       ("the brain is located in the stomach", 0),
-      ('The capital of France is Madrid.', 0),
+      ('the capital of France is Madrid.', 0),
       ('Mount Everest is located in the United States.', 0)
     ]
-q = 'went for a run'
-#conditional = [True, False]
+
 contexts = ['QUD_weak', 'QUD_strong']
 
 
-conditions = [i for i in itertools.product(person, verbs, modals, P, contexts)]
+conditions = [i for i in itertools.product(person, modals, P)]
 
 data = []
 for condition in conditions:
-    person, verb, modal, p, context = condition
-    if p == 0:
-        choice = random.choice(falseP)
-        falseP.remove(choice)
-        clause = choice[0]
-    elif p == 1:
-        choice = random.choice(trueP)
-        trueP.remove(choice)
-        clause = choice[0]
-    if person == '3':
-        #pick a random noun to use, then remove it so we don't use it again
-        np = random.choice(nouns3)
-        nouns3.remove(np)
-    else:
-        np = 'I'
-        #sally thinks/beleives P
-    if person == '3' and modal == '':
-        sentence = f'{np} {verb}s {clause}.'
-        si = f"{np} {verb}s but doesn't know {clause}."
-        no_si = f"{np} {verb}s and possibly knows {clause}."
-    #I think/believe P
-    elif person != '3' and modal == '':
-        sentence = f'{np} {verb} {clause}.'
-        si = f"{np} {verb} but don't know {clause}."
-        no_si = f"{np} {verb} and possibly know {clause}."
-    elif person == '3':
-    #Sally can think/believe P
-        sentence = f'{np} {modal} {verb} {clause}.'
-        si = f"{np} {modal} {verb} but doesn't know {clause}."
-        no_si = f"{np} {modal} {verb} and possibly knows {clause}."
-    #I/You can think/believe P
-    else:
-        sentence = f'{np} {modal} {verb} {clause}.'
-        si = f"{np} {modal} {verb} but don't know {clause}."
-        no_si = f"{np} {modal} {verb} and possibly know {clause}."
-    # if conditional:
-    #     sentence = f"If {np} {verb} {p[0]}, then {np[0]} {q}."
-    if context == 'QUD_weak':
-        if person == '1':
-            c = f'Do you {verb} {clause}?'
+    person, modals, p = condition
+    for i in range(0,4):
+        #print(f'person: {person}, modals: {modals}, modal: {modals}, factP: {p}, item: {i}, clause: {p}')
+        item = i
+        if modals == 'modal':
+            modal = random.choice(['can', 'might'])
+        if p == 0:
+            choice = random.choice(falseP)
+            falseP.remove(choice)
+            clause = choice[0]
+        elif p == 1:
+            choice = random.choice(trueP)
+            trueP.remove(choice)
+            clause = choice[0]
+        if person == '3':
+            #pick a random noun to use, then remove it so we don't use it again
+            np = random.choice(nouns3)
+            nouns3.remove(np)
+        else:
+            np = 'I'
+            #sally thinks/beleives P
+        if person == '3' and modals == '':
+            believe_sentence = f'{np} believes {clause}.'
+            think_sentence = f'{np} thinks {clause}.'
+            QUD_weak_believe = f'Does {np} believe {clause}?'
+            QUD_weak_think = f'Does {np} think {clause}?'
+            QUD_strong = f'Does {np} know {clause}?'
+  
+        #I think/believe P
+        elif person != '3' and modals == '':
+            believe_sentence = f'{np} believe {clause}.'
+            think_sentence = f'{np} think {clause}.'
+            QUD_weak_believe = f'Do you believe {clause}?'
+            QUD_weak_think = f'Do you think {clause}?'
+            QUD_strong = f'Do you know {clause}?'
+
         elif person == '3':
-            c = f'Does {np} {verb} {clause}?'
-    if context == 'QUD_strong':
-        if person == '1':
-            c = f'Do you know {clause}?'
-        elif person == '3':
-            c = f'Does she know {clause}?'
+        #Sally can think/believe P
+            believe_sentence = f'{np} {modal} believe {clause}.'
+            think_sentence = f'{np} {modal} think {clause}.'
+            QUD_weak_believe = f'Does {np} believe {clause}?'
+            QUD_weak_think = f'Does {np} think {clause}?'
+            QUD_strong = f'Does {np} know {clause}?'
 
+        else:
+            believe_sentence = f'{np} {modal} believe {clause}.'
+            think_sentence = f'{np} {modal} think {clause}.'
+            QUD_weak_believe = f'Do you believe {clause}?'
+            QUD_weak_think = f'Do you think {clause}?'
+            QUD_strong = f'Do you know {clause}?'
+        
 
-    stimulus = {
-        'sentence' : sentence,
-        'SI' : si,
-        'No_SI' : no_si,
-        'verb' : verb,
-        'context': c,
-        'factP' : p,
-        'modal' : modal,
-        'person' : person,
-        'np' : np
-        #'conditional' : conditional
-    }
-    data.append(stimulus)
+        stimulus = {
+            'believe_sentence' : believe_sentence,
+            'think_sentence' : think_sentence,
+            'QUD_weak_believe' : QUD_weak_believe,
+            'QUD_weak_think' : QUD_weak_think, 
+            'QUD_strong' : QUD_strong,
+            'factP' : p,
+            'modal' : modals,
+            'person' : person,
+            'np' : np,
+            'item' : item
+        }
+        
+        data.append(stimulus)
 
-
-write_csv(file, data)
+for i, line in enumerate(data):
+    print(i)
+    print(line)
+write_csv('data.csv', data)
