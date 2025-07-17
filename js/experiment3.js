@@ -1,4 +1,4 @@
-
+console.log('new')
 var stimuli = [];
 var fillers = [];
 var stimuliLoaded = false; //tracking to make sure experiment doesn't start without loading//

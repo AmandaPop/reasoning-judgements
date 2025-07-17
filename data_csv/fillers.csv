@@ -1,5 +1,5 @@
 believe_sentence,think_sentence,QUD_weak_believe,QUD_weak_think,QUD_strong,factP,modal,person,np,item
-I don't know the colour of the sky.,I don't know the colour of the sky.,What colour is the sky?,What colour is the sky?,What colour is the sky?,0,modal,1,I,0
+I don't know your favourite band.,I don't know your favourite band.,What is my favourite band?,What is my favourite band?,What is my favourite band?,0,modal,1,I,0
 I know that it is hot outside., I know that it is hot outside., Do you know that it is hot outside?,Do you know that it is hot outside?,Do you know that it is hot outside?,0,modal,1,I,1
-Jessica doesn't know what day it is today.,Jessica doesn't know what day it is today.,Does Jessica know what day it is today?,Does Jessica know what day it is today?,Does Jessica know what day it is today?,0,modal,1,I,2
-Kristina knows the best place for coffee.,Kristina knows the best place for coffee.,Does Kristina know the best place for coffee?,Does Kristina know the best place for coffee?,Does Kristina know the best place for coffee?,0,modal,1,I,3
+Jessica doesn't know what day it is today.,Jessica doesn't know what day it is today.,Does Jessica know what day it is today?,Does Jessica know what day it is today?,Does Jessica know what day it is today?,0,modal,1,Jessica,2
+Kristina knows the best place for coffee.,Kristina knows the best place for coffee.,Does Kristina know the best place for coffee?,Does Kristina know the best place for coffee?,Does Kristina know the best place for coffee?,0,modal,1,Kristina,3
