@@ -184,8 +184,8 @@ const No_context_template = {
 };
 
   //divide into modal and non modal trials
-  const modalTrials = stimuli.filter(stim => stim.modal && stim.modal.trim() !== '');
-  const nonModalTrials = stimuli.filter(stim => !stim.modal || stim.modal.trim() === '');
+  const modalTrials = stimuli.filter(stim => stim.modal === 'modal');
+  const nonModalTrials = stimuli.filter(stim => stim.modal === '');
 
   //divide by person trials
   const person1_NonModalTrials = nonModalTrials.filter(stim => stim.person === '1');
@@ -217,7 +217,7 @@ const No_context_template = {
   let sampledTrials = [];
   conditions.forEach(condition => {
     //from the condition, sample 1 trial, this is to avoid showing a participant the same condition setting
-    const sampledTrial = jsPsych.randomization.sampleWithoutReplacement(condition, 1);
+    const sampledTrial = jsPsych.randomization.sampleWithoutReplacement(condition, 1)[0];
     sampledTrials.push(sampledTrial);
   });
   //from the list with only one of each condition, sample 6 random trials
