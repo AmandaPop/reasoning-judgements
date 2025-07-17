@@ -67,7 +67,7 @@ falseP = [
       ("the earth is flat", 0),
       ("the sun rises in the west", 0),
       ("water is dry", 0),
-      ("birds have fur", 0),
+      ("whales have feathers", 0),
       ("fish can live on land without water", 0),
       ("snow is hot", 0),
       ("fire is cold", 0),
@@ -164,7 +164,4 @@ for condition in conditions:
         
         data.append(stimulus)
 
-for i, line in enumerate(data):
-    print(i)
-    print(line)
 write_csv('data.csv', data)
