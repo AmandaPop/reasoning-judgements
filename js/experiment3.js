@@ -163,13 +163,13 @@ function startExperiment() {
     button_label: 'Continue',
     data: {
       collect: true,
-      trial_type: jsPsych.timelineVariable('type'),
+      type: jsPsych.timelineVariable('type'),
+      sentence: jsPsych.timelineVariable('sentence'),
       context: jsPsych.timelineVariable('context_text'),
       verb: jsPsych.timelineVariable('verb'),
       factP: jsPsych.timelineVariable('factP'),
       modal: jsPsych.timelineVariable('modal'),
-      person: jsPsych.timelineVariable('person'),
-      sentence: jsPsych.timelineVariable('sentence')
+      person: jsPsych.timelineVariable('person')
     }
   };
 
