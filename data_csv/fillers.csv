@@ -1,5 +1,5 @@
 believe_sentence,think_sentence,QUD_weak_believe,QUD_weak_think,QUD_strong,factP,modal,person,np,item
-This is a filler.,I might think snow is hot.,Do you believe snow is hot?,Do you think snow is hot?,Do you know snow is hot?,0,modal,1,I,0
-This is a filler.,I can think the earth is flat.,Do you believe the earth is flat?,Do you think the earth is flat?,Do you know the earth is flat?,0,modal,1,I,1
-This is a filler.,I can think the moon is made of cheese.,Do you believe the moon is made of cheese?,Do you think the moon is made of cheese?,Do you know the moon is made of cheese?,0,modal,1,I,2
-This is a filler.,I might think trees can walk.,Do you believe trees can walk?,Do you think trees can walk?,Do you know trees can walk?,0,modal,1,I,3
+This is a filler.,This is a filler.,Do you believe snow is hot?,Do you think snow is hot?,Do you know snow is hot?,0,modal,1,I,0
+This is a filler., This is a filler.,Do you believe the earth is flat?,Do you think the earth is flat?,Do you know the earth is flat?,0,modal,1,I,1
+This is a filler.,This is a filler.,Do you believe the moon is made of cheese?,Do you think the moon is made of cheese?,Do you know the moon is made of cheese?,0,modal,1,I,2
+This is a filler.,This is a filler.,Do you believe trees can walk?,Do you think trees can walk?,Do you know trees can walk?,0,modal,1,I,3

@@ -11,14 +11,13 @@ function maybeStartExperiment() {
   }
 }
 //load data
-Papa.parse('data_csv/data.csv', {
+Papa.parse('data_csv/sentences.csv', {
   download: true,
   header: true,
   complete: function(results) {
     stimuli = [];
 
     results.data.forEach(row => {
-      if (row.sentence && row.context) {
         stimuli.push({
           believe_sentence: row.believe_sentence,
           think_sentence: row.think_sentence,
@@ -32,7 +31,7 @@ Papa.parse('data_csv/data.csv', {
           item: row.item,
           type: 'test'
         });
-      }
+      
     });
 
     console.log('Stimuli loaded:', stimuli);
@@ -49,7 +48,6 @@ Papa.parse('data_csv/fillers.csv', {
     fillers = [];
 
     results.data.forEach(row => {
-      if (row.sentence && row.context) {
         fillers.push({
           believe_sentence: row.believe_sentence,
           think_sentence: row.think_sentence,
@@ -63,7 +61,7 @@ Papa.parse('data_csv/fillers.csv', {
           item: row.item,
           type: 'filler'
         });
-      }
+      
     });
     console.log('Fillers loaded:', fillers);
     fillersLoaded = true;
