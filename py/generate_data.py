@@ -18,6 +18,7 @@ def write_csv(filename, sents):
                                                    'modal', 
                                                    'person', 
                                                    'np',
+                                                   'p',
                                                    'item'
                                                    ])
         writer.writeheader()
@@ -159,6 +160,7 @@ for condition in conditions:
             'modal' : modals,
             'person' : person,
             'np' : np,
+            'p' : clause,
             'item' : item
         }
         

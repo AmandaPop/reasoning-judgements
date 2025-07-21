@@ -27,6 +27,7 @@ Papa.parse('data_csv/sentences.csv', {
           modal: row.modal,
           person: row.person,
           np: row.np,
+          p: row.p,
           item: row.item,
           type: 'test'
         });
@@ -57,6 +58,7 @@ Papa.parse('data_csv/fillers.csv', {
           modal: row.modal,
           person: row.person,
           np: row.np,
+          p: row.p,
           item: row.item,
           type: 'filler'
         });
@@ -124,8 +126,8 @@ function startExperiment() {
 
       const sentence = verb_condition === 'believe' ? trial.believe_sentence : trial.think_sentence;
       const question = trial.np === 'I'
-        ? 'Does Jane mean that she does not know?'
-        : `Does Jane mean that ${trial.np} does not know?`;
+        ? `Does Jane mean that she does not know ${trial.p}?`
+        : `Does Jane mean that ${trial.np} does not know ${trial.p}?`;
 
       return {
         ...trial,
@@ -156,8 +158,8 @@ function startExperiment() {
         </div>
       `;
     },
-    labels: ['<p>Yes</p>', '<p>No</p>'],
-    slider_width: 700,
+    labels: ['<p>No</p>', '<p>Yes</p>'],
+    slider_width: 500,
     require_movement: true,
     button_label: 'Continue',
     data: {
