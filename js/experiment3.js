@@ -126,8 +126,8 @@ function startExperiment() {
 
       const sentence = verb_condition === 'believe' ? trial.believe_sentence : trial.think_sentence;
       const question = trial.np === 'I'
-        ? `Does Jane mean that she does not know ${trial.p}?`
-        : `Does Jane mean that ${trial.np} does not know ${trial.p}?`;
+        ? `Would you conclude from this that, according to Jane, she does not know ${trial.p}?`
+        : `Would you conclude from this that, according to Jane, ${trial.np} does not know ${trial.p}?`;
 
       return {
         ...trial,
