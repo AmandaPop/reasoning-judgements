@@ -10,7 +10,7 @@ function maybeStartExperiment() {
   }
 }
 //load data
-Papa.parse('data_csv/sentences.csv', {
+Papa.parse('data_csv/believe_data.csv', {
   download: true,
   header: true,
   complete: function(results) {
@@ -24,7 +24,6 @@ Papa.parse('data_csv/sentences.csv', {
           QUD_weak_think: row.QUD_weak_think,
           QUD_strong: row.QUD_strong,
           factP: row.factP,
-          modal: row.modal,
           person: row.person,
           np: row.np,
           p: row.p,
@@ -169,38 +168,25 @@ function startExperiment() {
       context: jsPsych.timelineVariable('context_text'),
       verb: jsPsych.timelineVariable('verb'),
       factP: jsPsych.timelineVariable('factP'),
-      modal: jsPsych.timelineVariable('modal'),
       person: jsPsych.timelineVariable('person')
     }
   };
 
   //trial sampling
-  const modalTrials = stimuli.filter(stim => stim.modal === 'modal');
-  const nonModalTrials = stimuli.filter(stim => stim.modal === '');
+  const person1_Trials = stimuli.filter(stim => stim.person === '1');
+  const person3_Trials = stimuli.filter(stim => stim.person === '3');
 
-  const person1_NonModalTrials = nonModalTrials.filter(stim => stim.person === '1');
-  const person3_NonModalTrials = nonModalTrials.filter(stim => stim.person === '3');
-  const person1_modalTrials = modalTrials.filter(stim => stim.person === '1');
-  const person3_modalTrials = modalTrials.filter(stim => stim.person === '3');
+  const trueP_person1_Trials = person1_Trials.filter(stim => stim.factP === '1');
+  const trueP_person3_Trials = person3_Trials.filter(stim => stim.factP === '1');
+  const falseP_person1_Trials = person1_Trials.filter(stim => stim.factP === '0');
+  const falseP_person3_Trials = person3_Trials.filter(stim => stim.factP === '0');
 
-  const trueP_person1_modalTrials = person1_modalTrials.filter(stim => stim.factP === '1');
-  const trueP_person3_modalTrials = person3_modalTrials.filter(stim => stim.factP === '1');
-  const trueP_person1_NonModalTrials = person1_NonModalTrials.filter(stim => stim.factP === '1');
-  const trueP_person3_NonModalTrials = person3_NonModalTrials.filter(stim => stim.factP === '1');
-  const falseP_person1_modalTrials = person1_modalTrials.filter(stim => stim.factP === '0');
-  const falseP_person3_modalTrials = person3_modalTrials.filter(stim => stim.factP === '0');
-  const falseP_person1_NonModalTrials = person1_NonModalTrials.filter(stim => stim.factP === '0');
-  const falseP_person3_NonModalTrials = person3_NonModalTrials.filter(stim => stim.factP === '0');
 
   const conditions = [
-    trueP_person1_modalTrials,
-    trueP_person3_modalTrials,
-    trueP_person1_NonModalTrials,
-    trueP_person3_NonModalTrials,
-    falseP_person1_modalTrials,
-    falseP_person3_modalTrials,
-    falseP_person1_NonModalTrials,
-    falseP_person3_NonModalTrials
+    trueP_person1_Trials,
+    trueP_person3_Trials,
+    falseP_person1_Trials,
+    falseP_person3_Trials
   ];
 
   let sampledTrials = [];

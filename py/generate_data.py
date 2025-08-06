@@ -15,7 +15,6 @@ def write_csv(filename, sents):
                                                   'QUD_weak_think',
                                                   'QUD_strong',
                                                    'factP', 
-                                                   'modal', 
                                                    'person', 
                                                    'np',
                                                    'p',
@@ -36,7 +35,6 @@ nouns3 = [
     "Jacob", "Sally", "Logan", "Sarah"
 ]
 #verbs = ['believe', 'think'] 
-modals = ['modal', '']
 P = [0, 1]
 
 trueP = [('the sky is blue', 1),
@@ -94,16 +92,14 @@ falseP = [
 contexts = ['QUD_weak', 'QUD_strong']
 
 
-conditions = [i for i in itertools.product(person, modals, P)]
+conditions = [i for i in itertools.product(person, P)]
 
 data = []
 for condition in conditions:
-    person, modals, p = condition
-    for i in range(0,4):
+    person, p = condition
+    for i in range(0,5):
         #print(f'person: {person}, modals: {modals}, modal: {modals}, factP: {p}, item: {i}, clause: {p}')
         item = i
-        if modals == 'modal':
-            modal = random.choice(['can', 'might'])
         if p == 0:
             choice = random.choice(falseP)
             falseP.remove(choice)
@@ -119,7 +115,7 @@ for condition in conditions:
         else:
             np = 'I'
             #sally thinks/beleives P
-        if person == '3' and modals == '':
+        if person == '3':
             believe_sentence = f'{np} believes {clause}.'
             think_sentence = f'{np} thinks {clause}.'
             QUD_weak_believe = f'Does {np} believe {clause}?'
@@ -127,24 +123,9 @@ for condition in conditions:
             QUD_strong = f'Does {np} know {clause}?'
   
         #I think/believe P
-        elif person != '3' and modals == '':
+        elif person != '3':
             believe_sentence = f'{np} believe {clause}.'
             think_sentence = f'{np} think {clause}.'
-            QUD_weak_believe = f'Do you believe {clause}?'
-            QUD_weak_think = f'Do you think {clause}?'
-            QUD_strong = f'Do you know {clause}?'
-
-        elif person == '3':
-        #Sally can think/believe P
-            believe_sentence = f'{np} {modal} believe {clause}.'
-            think_sentence = f'{np} {modal} think {clause}.'
-            QUD_weak_believe = f'Does {np} believe {clause}?'
-            QUD_weak_think = f'Does {np} think {clause}?'
-            QUD_strong = f'Does {np} know {clause}?'
-
-        else:
-            believe_sentence = f'{np} {modal} believe {clause}.'
-            think_sentence = f'{np} {modal} think {clause}.'
             QUD_weak_believe = f'Do you believe {clause}?'
             QUD_weak_think = f'Do you think {clause}?'
             QUD_strong = f'Do you know {clause}?'
@@ -157,7 +138,6 @@ for condition in conditions:
             'QUD_weak_think' : QUD_weak_think, 
             'QUD_strong' : QUD_strong,
             'factP' : p,
-            'modal' : modals,
             'person' : person,
             'np' : np,
             'p' : clause,
