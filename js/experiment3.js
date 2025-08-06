@@ -1,4 +1,4 @@
-console.log('newest')
+
 var stimuli = [];
 var fillers = [];
 var stimuliLoaded = false; //tracking to make sure experiment doesn't start without loading//
@@ -34,7 +34,7 @@ Papa.parse('data_csv/data.csv', {
       
     });
 
-    console.log('Stimuli loaded:', stimuli);
+    
     stimuliLoaded = true;
     maybeStartExperiment();
   }
@@ -63,7 +63,7 @@ Papa.parse('data_csv/fillers.csv', {
           type: 'filler'
         });
     });
-    console.log('Fillers loaded:', fillers);
+    
     fillersLoaded = true;
     maybeStartExperiment();
   }
@@ -183,8 +183,6 @@ function startExperiment() {
   const falseP_person1_Trials = person1_Trials.filter(stim => stim.factP === '0');
   const falseP_person3_Trials = person3_Trials.filter(stim => stim.factP === '0');
 
-  console.log('testing falseP_person3_Trials', falseP_person3_Trials)
-
   const conditions = [
     trueP_person1_Trials,
     trueP_person3_Trials,
@@ -198,12 +196,9 @@ function startExperiment() {
     sampledTrials.push(sampledTrial);
   });
 
-  console.log('sampled trials:', sampledTrials)
-
   const testTrials = jsPsych.randomization.sampleWithoutReplacement(sampledTrials, 4);
   const fillerTrials = jsPsych.randomization.sampleWithoutReplacement(fillers, 2);
   const combinedTrials = jsPsych.randomization.shuffle(testTrials.concat(fillerTrials));
-  console.log(combinedTrials) //for debugging trials that are choosen
   const preparedTrials = generateTrialVariables(combinedTrials, condition, verb_condition);
 
   const trial_procedure = {
