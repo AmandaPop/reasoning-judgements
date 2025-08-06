@@ -10,7 +10,7 @@ function maybeStartExperiment() {
   }
 }
 //load data
-Papa.parse('data_csv/believe_data.csv', {
+Papa.parse('data_csv/data.csv', {
   download: true,
   header: true,
   complete: function(results) {
@@ -181,6 +181,7 @@ function startExperiment() {
   const falseP_person1_Trials = person1_Trials.filter(stim => stim.factP === '0');
   const falseP_person3_Trials = person3_Trials.filter(stim => stim.factP === '0');
 
+  console.log('testing falseP_person3_Trials', falseP_person3_Trials)
 
   const conditions = [
     trueP_person1_Trials,
@@ -194,6 +195,8 @@ function startExperiment() {
     const sampledTrial = jsPsych.randomization.sampleWithoutReplacement(condition, 1)[0];
     sampledTrials.push(sampledTrial);
   });
+
+  console.log('sampled trials:', sampledTrials)
 
   const testTrials = jsPsych.randomization.sampleWithoutReplacement(sampledTrials, 6);
   const fillerTrials = jsPsych.randomization.sampleWithoutReplacement(fillers, 4);
