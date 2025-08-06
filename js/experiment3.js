@@ -198,8 +198,8 @@ function startExperiment() {
 
   console.log('sampled trials:', sampledTrials)
 
-  const testTrials = jsPsych.randomization.sampleWithoutReplacement(sampledTrials, 6);
-  const fillerTrials = jsPsych.randomization.sampleWithoutReplacement(fillers, 4);
+  const testTrials = jsPsych.randomization.sampleWithoutReplacement(sampledTrials, 4);
+  const fillerTrials = jsPsych.randomization.sampleWithoutReplacement(fillers, 2);
   const combinedTrials = jsPsych.randomization.shuffle(testTrials.concat(fillerTrials));
   console.log(combinedTrials) //for debugging trials that are choosen
   const preparedTrials = generateTrialVariables(combinedTrials, condition, verb_condition);
