@@ -1,3 +1,4 @@
+console.log('newest')
 var stimuli = [];
 var fillers = [];
 var stimuliLoaded = false; //tracking to make sure experiment doesn't start without loading//
@@ -168,7 +169,8 @@ function startExperiment() {
       context: jsPsych.timelineVariable('context_text'),
       verb: jsPsych.timelineVariable('verb'),
       factP: jsPsych.timelineVariable('factP'),
-      person: jsPsych.timelineVariable('person')
+      person: jsPsych.timelineVariable('person'),
+      item: jsPsych.timelineVariable('item')
     }
   };
 
