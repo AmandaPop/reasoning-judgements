@@ -76,8 +76,17 @@ function startExperiment() {
     display_element: 'jspsych-target',
   });
 
-  const participantID = jsPsych.randomization.randomID(10);
-  jsPsych.data.addProperties({ participant_id: participantID });
+  // capture info from Prolific
+  var participantID = jsPsych.data.getURLVariable('PROLIFIC_PID');
+  var study_id = jsPsych.data.getURLVariable('STUDY_ID');
+  var session_id = jsPsych.data.getURLVariable('SESSION_ID');
+
+  jsPsych.data.addProperties({
+    participantID: participantID,
+    study_id: study_id,
+    session_id: session_id
+  });
+
 
   const condition = jsPsych.randomization.randomInt(0, 1) === 0 ? 'context' : 'no_context';
   const verb_condition = jsPsych.randomization.randomInt(0, 1) === 0 ? 'think' : 'believe'; //just edit manually so only one verb at a time
@@ -235,14 +244,11 @@ function startExperiment() {
         .csv()
   };
 
-  const finish = {
-    type: jsPsychHtmlKeyboardResponse,
-    stimulus: `
-      <h1>Thank you for participating!</h1> 
-      <p>You will now be redirected to Prolific to complete the study.</p>
-    `,
-    choices: ['NO_KEYS'],
-    trial_duration: 3000,
+  var finish = {
+  type: jsPsychHtmlKeyboardResponse,
+  stimulus: `<p>Thank you for participating!</p>
+    <p><a href="https://app.prolific.com/submissions/complete?cc=C13PMME4">Click here to return to Prolific and complete the study</a>.</p>`,
+  choices: "NO_KEYS"
   };
 
   //run experiment
