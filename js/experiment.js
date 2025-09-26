@@ -96,7 +96,7 @@ function startExperiment() {
     type: jsPsychImageButtonResponse,
     stimulus: 'js/consent.png',
     choices: ['Continue'],
-    stimulus_height: 400,
+    stimulus_height: 600,
   };
 
   const welcome = {
