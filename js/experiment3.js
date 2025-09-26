@@ -80,7 +80,14 @@ function startExperiment() {
   jsPsych.data.addProperties({ participant_id: participantID });
 
   const condition = jsPsych.randomization.randomInt(0, 1) === 0 ? 'context' : 'no_context';
-  const verb_condition = jsPsych.randomization.randomInt(0, 1) === 0 ? 'think' : 'believe';
+  const verb_condition = jsPsych.randomization.randomInt(0, 1) === 0 ? 'think' : 'believe'; //just edit manually so only one verb at a time
+
+
+  const consent = {
+    type: jsPsychImageButtonResponse,
+    stimulus: '/consent.png',
+    choices: ['Continue']
+  };
 
   const welcome = {
     type: jsPsychHtmlKeyboardResponse,
@@ -104,7 +111,7 @@ function startExperiment() {
     type: jsPsychHtmlKeyboardResponse,
     stimulus: `
       <h1>Instructions</h1> 
-      <p>In this study, you will be shown a series of sentences, each containing a statement from a fictional conversation. Your task is to evaluate what the speaker meant by what they said. Use the slider by placing the knob toward whichever answer you prefer. If you feel unclear about your answer, you can place the knob somewhere in between the two options to show you are partially agreeing with one or the other. There will be 10 sentences to complete.</p>
+      <p>In this study, you will be shown a series of sentences, each containing a statement from a fictional conversation. Your task is to evaluate what the speaker meant by what they said. Use the slider by placing the knob toward whichever answer you prefer. If you feel unclear about your answer, you can place the knob somewhere in between the two options to show you are partially agreeing with one or the other. There will be 6 sentences to complete.</p>
       <p>Press SPACE to continue.</p>
     `,
     choices: [' '],
@@ -231,13 +238,15 @@ function startExperiment() {
     type: jsPsychHtmlKeyboardResponse,
     stimulus: `
       <h1>Thank you for participating!</h1> 
-      <p>You can close this tab.</p>
+      <p>You will now be redirected to Prolific to complete the study.</p>
     `,
     choices: ['NO_KEYS'],
+    trial_duration: 3000,
   };
 
   //run experiment
   jsPsych.run([
+    consent,
     welcome,
     instructions,
     trial_procedure,
