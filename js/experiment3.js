@@ -85,7 +85,7 @@ function startExperiment() {
 
   const consent = {
     type: jsPsychImageButtonResponse,
-    stimulus: '/consent.png',
+    stimulus: 'scalar-diversity/js/consent.png',
     choices: ['Continue']
   };
 
