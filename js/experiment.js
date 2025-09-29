@@ -92,12 +92,47 @@ function startExperiment() {
   const verb_condition = jsPsych.randomization.randomInt(0, 1) === 0 ? 'think' : 'believe'; //just edit manually so only one verb at a time
 
 
-  const consent = {
-    type: jsPsychImageButtonResponse,
-    stimulus: 'js/consent.png',
-    choices: ['Continue'],
-    stimulus_width: 800,
-  };
+const consent = {
+  type: jsPsychHtmlKeyboardResponse,
+  stimulus: `
+    <div style="text-align: left; max-width: 800px; margin: auto; font-size: 16px;">
+      <h1>Information About This UW Research Study</h1>
+      <h2>Human Reasoning Judgements</h2>
+
+      <h3>What is this study about?</h3>
+      <p>
+        You are being asked to participate in a research study about how people reason about the meaning of the language they hear during communication. 
+        It is up to you to decide whether you want to participate. If you decide to enroll, you can stop participation at any time by leaving this page. 
+        We are asking you to be in the study because you are a native speaker of English. Please read this form and ask any questions you may have before 
+        agreeing to be in this study.
+      </p>
+
+      <h3>What will you be asked to do?</h3>
+      <p>
+        If you agree to be in this study, we will ask you to give your judgment on the intended meaning of various sentences. 
+        The total time it should take to complete is around 6 minutes. Full instructions will be given on the next page.
+      </p>
+
+      <h3>What will happen to the information you provide?</h3>
+      <p>
+        The information you provide will be kept confidential. We will store the data with your Prolific ID instead of your name.
+      </p>
+
+      <h3>What can you do if you want more information?</h3>
+      <p>
+        <strong>Talk to the study team:</strong> Amanda Popadich is the lead researcher at the University of Washington for this study and can be contacted at 
+        <a href="mailto:popadich@uw.edu">popadich@uw.edu</a>.<br>
+        <strong>Talk to someone else:</strong> If you want to talk with someone who is not part of the study team about the study, your rights as a research subject, 
+        or to report problems or complaints about the study, contact the UW Human Subjects Division at 
+        <a href="mailto:hsdinfo@uw.edu">hsdinfo@uw.edu</a> or 206-543-0098.
+      </p>
+
+      <p><strong>Please click continue when you are ready to participate in this study.</strong></p>
+    </div>
+  `,
+  choices: ['Continue'],
+};
+
 
   const welcome = {
     type: jsPsychHtmlKeyboardResponse,
