@@ -93,7 +93,7 @@ function startExperiment() {
 
 
 const consent = {
-  type: jsPsychHtmlKeyboardResponse,
+  type: jsPsychHtmlButtonResponse,
   stimulus: `
     <div style="text-align: left; max-width: 800px; margin: auto; font-size: 16px;">
       <h1>Information About This UW Research Study</h1>
