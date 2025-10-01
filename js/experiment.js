@@ -266,6 +266,14 @@ const consent = {
     randomize_order: false
   };
 
+  const feedback = {
+  type: jsPsychSurveyText,
+  questions: [
+    {prompt: 'What specific strategies did you use to answer each question?'},
+    {prompt: 'Do you have any comments or thoughts on the experiment?'}
+      ]
+      }
+
   const save_data = {
     type: jsPsychPipe,
     action: "save",
@@ -299,6 +307,7 @@ const consent = {
     welcome,
     instructions,
     trial_procedure,
+    feedback,
     save_data,
     finish
   ]);
