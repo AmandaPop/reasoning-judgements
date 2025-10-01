@@ -165,6 +165,9 @@ const consent = {
   //create correct trials with QUD/sentence/question values
   function generateTrialVariables(trials, context_condition, verb_condition) {
     return trials.map(trial => {
+    console.log("np:", trial.np, "p:", trial.p);
+    console.log("yes:", yes);
+    console.log("no:", no);
       const QUD_strength = jsPsych.randomization.randomInt(0, 1) === 0 ? 'weak' : 'strong';
 
       let QUD;
@@ -197,7 +200,6 @@ const consent = {
       };
     });
   }
-  console.log(`${jsPsych.timelineVariable('no')}`)
   //template for both context/no-context now
   const response_template = {
     type: jsPsychHtmlSliderResponse,
@@ -277,7 +279,7 @@ const feedback = {
     trial_type: 'feedback'
   },
   on_finish: function(data) {
-    // move responses out of the nested object so they don’t get dropped
+    // ove responses out of the nested object so they don’t get dropped
     data.strategies = data.response.strategies;
     data.comments = data.response.comments;
     delete data.response; // optional: keeps CSV tidy
