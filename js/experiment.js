@@ -271,8 +271,10 @@ const consent = {
   questions: [
     {prompt: 'What specific strategies did you use to answer each question?'},
     {prompt: 'Do you have any comments or thoughts on the experiment?'}
-      ]
-      }
+      ],
+  data: {
+      collect: true,
+      }}
 
   const save_data = {
     type: jsPsychPipe,
