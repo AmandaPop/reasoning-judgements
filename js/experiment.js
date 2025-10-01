@@ -197,7 +197,7 @@ const consent = {
       };
     });
   }
-
+  console.log(`${jsPsych.timelineVariable('no')}`)
   //template for both context/no-context now
   const response_template = {
     type: jsPsychHtmlSliderResponse,
