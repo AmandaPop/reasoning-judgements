@@ -180,12 +180,19 @@ const consent = {
       const question = trial.np === 'I'
         ? `Would you conclude from this that, according to Jane, she does not know ${trial.p}?`
         : `Would you conclude from this that, according to Jane, ${trial.np} does not know ${trial.p}?`;
-
+      const no = trial.np === 'I'
+        ? `No, Jane isn't saying anything about whether she knows ${trial.p}?`
+        : `No, Jane isn't saying anything about whether ${trial.np} knows ${trial.p}?`;
+      const yes = trial.np === 'I'
+        ? `Yes, Jane means she does not know ${trial.p}?`
+        : `Yes, Jane means ${trial.np} does not know ${trial.p}?`;
       return {
         ...trial,
         context_text: QUD,
         sentence: sentence,
         question: question,
+        no: no,
+        yes: yes,
         verb: verb_condition
       };
     });
@@ -210,7 +217,7 @@ const consent = {
         </div>
       `;
     },
-    labels: ['<p>No</p>', '<p>Yes</p>'],
+    labels: [`<p>${jsPsych.timelineVariable('no')}</p>`, `<p>${jsPsych.timelineVariable('yes')}</p>`],
     slider_width: 500,
     require_movement: true,
     button_label: 'Continue',
