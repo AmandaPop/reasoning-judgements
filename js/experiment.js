@@ -266,15 +266,23 @@ const consent = {
     randomize_order: false
   };
 
-  const feedback = {
+const feedback = {
   type: jsPsychSurveyText,
   questions: [
-    {prompt: 'What specific strategies did you use to answer each question?'},
-    {prompt: 'Do you have any comments or thoughts on the experiment?'}
-      ],
+    {prompt: 'What specific strategies did you use to answer each question?', name: 'strategies'},
+    {prompt: 'Do you have any comments or thoughts on the experiment?', name: 'comments'}
+  ],
   data: {
-      collect: true,
-      }}
+    collect: true,
+    trial_type: 'feedback'
+  },
+  on_finish: function(data) {
+    // move responses out of the nested object so they don’t get dropped
+    data.strategies = data.response.strategies;
+    data.comments = data.response.comments;
+    delete data.response; // optional: keeps CSV tidy
+  }
+};
 
   const save_data = {
     type: jsPsychPipe,
