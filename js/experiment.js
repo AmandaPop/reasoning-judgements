@@ -181,11 +181,11 @@ const consent = {
         ? `Would you conclude from this that, according to Jane, she does not know ${trial.p}?`
         : `Would you conclude from this that, according to Jane, ${trial.np} does not know ${trial.p}?`;
       const no = trial.np === 'I'
-        ? `No, Jane isn't saying anything about whether she knows ${trial.p}?`
-        : `No, Jane isn't saying anything about whether ${trial.np} knows ${trial.p}?`;
+        ? `No, Jane isn't saying anything about whether she knows.`
+        : `No, Jane isn't saying anything about whether ${trial.np} knows.`;
       const yes = trial.np === 'I'
-        ? `Yes, Jane means she does not know ${trial.p}?`
-        : `Yes, Jane means ${trial.np} does not know ${trial.p}?`;
+        ? `Yes, Jane means she does not know.`
+        : `Yes, Jane means ${trial.np} does not know.`;
       return {
         ...trial,
         context_text: QUD,
@@ -218,8 +218,8 @@ const consent = {
     },
     labels: function() {
       return [
-        `<div style="width:200px; white-space:normal;">${jsPsych.timelineVariable('no')}</div>`,
-        `<div style="width:200px; white-space:normal;">${jsPsych.timelineVariable('yes')}</div>`
+        `<div style="width:150px; white-space:normal;">${jsPsych.timelineVariable('no')}</div>`,
+        `<div style="width:150px; white-space:normal;">${jsPsych.timelineVariable('yes')}</div>`
       ];
     },
     slider_width: 500,
