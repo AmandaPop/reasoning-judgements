@@ -181,11 +181,11 @@ const consent = {
         ? `What would you conclude from this?`
         : `What would you conclude from this?`;
       const no = trial.np === 'I'
-        ? `Jane means she ${verb_condition}s and possibly knows.`
-        : `Jane means ${trial.np} ${verb_condition}s and possibly knows.`;
+        ? `Jane means she ${verb_condition}s and possibly knows that.`
+        : `Jane means ${trial.np} ${verb_condition}s and possibly knows that.`;
       const yes = trial.np === 'I'
-        ? `Jane means she does not know.`
-        : `Jane means ${trial.np} does not know.`;
+        ? `Jane means she does not know that.`
+        : `Jane means ${trial.np} does not know that.`;
       return {
         ...trial,
         context_text: QUD,
