@@ -186,9 +186,6 @@ const consent = {
       const yes = trial.np === 'I'
         ? `Yes, Jane means she does not know ${trial.p}?`
         : `Yes, Jane means ${trial.np} does not know ${trial.p}?`;
-        console.log("np:", trial.np, "p:", trial.p);
-        console.log("yes:", yes);
-        console.log("no:", no);
       return {
         ...trial,
         context_text: QUD,
