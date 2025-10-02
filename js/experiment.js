@@ -186,7 +186,6 @@ const consent = {
       const yes = trial.np === 'I'
         ? `Yes, Jane means she does not know ${trial.p}?`
         : `Yes, Jane means ${trial.np} does not know ${trial.p}?`;
-      console.log(jsPsych.timelineVariable('no'))
       return {
         ...trial,
         context_text: QUD,
@@ -217,7 +216,9 @@ const consent = {
         </div>
       `;
     },
-    labels: [jsPsych.timelineVariable('no'), jsPsych.timelineVariable('yes')],
+    labels: function() {
+    return [jsPsych.timelineVariable('no'), jsPsych.timelineVariable('yes')];
+    },
     slider_width: 500,
     require_movement: true,
     button_label: 'Continue',
