@@ -178,8 +178,8 @@ const consent = {
 
       const sentence = verb_condition === 'believe' ? trial.believe_sentence : trial.think_sentence;
       const question = trial.np === 'I'
-        ? `Would you conclude from this that, according to Jane, she does not know ${trial.p}?`
-        : `Would you conclude from this that, according to Jane, ${trial.np} does not know ${trial.p}?`;
+        ? `What would you conclude from this?`
+        : `What would you conclude from this?`;
       const no = trial.np === 'I'
         ? `No, Jane means she ${verb_condition}s and possibly knows.`
         : `No, Jane means ${trial.np} ${verb_condition}s and possibly knows.`;
