@@ -181,8 +181,8 @@ const consent = {
         ? `Would you conclude from this that, according to Jane, she does not know ${trial.p}?`
         : `Would you conclude from this that, according to Jane, ${trial.np} does not know ${trial.p}?`;
       const no = trial.np === 'I'
-        ? `No, Jane means it is possible she knows.`
-        : `No, Jane means it is possible ${trial.np} knows.`;
+        ? `No, Jane means she ${verb_condition}s and possibly knows.`
+        : `No, Jane means ${trial.np} ${verb_condition}s and possibly knows.`;
       const yes = trial.np === 'I'
         ? `Yes, Jane means she does not know.`
         : `Yes, Jane means ${trial.np} does not know.`;
