@@ -165,9 +165,6 @@ const consent = {
   //create correct trials with QUD/sentence/question values
   function generateTrialVariables(trials, context_condition, verb_condition) {
     return trials.map(trial => {
-    console.log("np:", trial.np, "p:", trial.p);
-    console.log("yes:", yes);
-    console.log("no:", no);
       const QUD_strength = jsPsych.randomization.randomInt(0, 1) === 0 ? 'weak' : 'strong';
 
       let QUD;
@@ -189,6 +186,9 @@ const consent = {
       const yes = trial.np === 'I'
         ? `Yes, Jane means she does not know ${trial.p}?`
         : `Yes, Jane means ${trial.np} does not know ${trial.p}?`;
+        console.log("np:", trial.np, "p:", trial.p);
+        console.log("yes:", yes);
+        console.log("no:", no);
       return {
         ...trial,
         context_text: QUD,
