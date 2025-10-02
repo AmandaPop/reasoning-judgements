@@ -218,8 +218,8 @@ const consent = {
     },
     labels: function() {
       return [
-        `<div style="width:150px; white-space:normal;">${jsPsych.timelineVariable('no')}</div>`,
-        `<div style="width:150px; white-space:normal;">${jsPsych.timelineVariable('yes')}</div>`
+        `<div style="width:150px; white-space:normal; text-align:center;">${jsPsych.timelineVariable('no')}</div>`,
+        `<div style="width:150px; white-space:normal; text-align:center;">${jsPsych.timelineVariable('yes')}</div>`
       ];
     },
     slider_width: 500,
