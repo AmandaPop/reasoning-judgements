@@ -184,8 +184,8 @@ const consent = {
         ? `Jane means she ${verb_condition}s and possibly knows that.`
         : `Jane means ${trial.np} ${verb_condition}s and possibly knows that.`;
       const yes = trial.np === 'I'
-        ? `Jane means she does not know that.`
-        : `Jane means ${trial.np} does not know that.`;
+        ? `Jane means she ${verb_condition}s but does not know that.`
+        : `Jane means ${trial.np} ${verb_condition}s but does not know that.`;
       return {
         ...trial,
         context_text: QUD,
