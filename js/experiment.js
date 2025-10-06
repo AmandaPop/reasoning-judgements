@@ -180,12 +180,21 @@ const consent = {
       const question = trial.np === 'I'
         ? `What would you conclude from this?`
         : `What would you conclude from this?`;
-      const no = trial.np === 'I'
-        ? `Jane means she ${verb_condition}s and possibly knows that.`
-        : `Jane means ${trial.np} ${verb_condition}s and possibly knows that.`;
-      const yes = trial.np === 'I'
+      const no = trial.type === 'filler'
+        ? (trial.np === 'I'
+            ? 'Jane means she knows that.'
+            : `Jane means ${trial.np} knows that.`)
+        : (trial.np === 'I'
+            ? `Jane means she ${verb_condition}s and possibly knows that.`
+            : `Jane means ${trial.np} ${verb_condition}s and possibly knows that.`);
+      const yes = trial.type === 'filler'
+      ? (trial.np === 'I'
+          ? `Jane means she does not know that.`
+          : `Jane means ${trial.np} does not know that.`)
+      : (trial.np === 'I'
         ? `Jane means she ${verb_condition}s but does not know that.`
-        : `Jane means ${trial.np} ${verb_condition}s but does not know that.`;
+        : `Jane means ${trial.np} ${verb_condition}s but does not know that.`);
+
       return {
         ...trial,
         context_text: QUD,
