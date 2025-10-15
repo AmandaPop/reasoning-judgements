@@ -89,7 +89,7 @@ function startExperiment() {
 
 
   const condition = jsPsych.randomization.randomInt(0, 1) === 0 ? 'context' : 'no_context';
-  const verb_condition = jsPsych.randomization.randomInt(0, 1) === 0 ? 'think' : 'believe'; //just edit manually so only one verb at a time
+  const verb_condition = 'think' //jsPsych.randomization.randomInt(0, 1) === 0 ? 'think' : 'believe'; //just edit manually so only one verb at a time
 
 
 const consent = {
